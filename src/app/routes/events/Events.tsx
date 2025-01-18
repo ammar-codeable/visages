@@ -1,7 +1,8 @@
+import { events } from "@/constants/events";
 import { Star } from "lucide-react";
 import { motion } from "motion/react";
+import AnimatedBackground from "../../../components/AnimatedBackground";
 import EventCard from "../../../components/EventCard";
-import { events } from "@/constants/events";
 
 const EventsSection = ({
   rating,
@@ -61,9 +62,11 @@ const Events = () => (
   <motion.div
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
-    className="min-h-screen bg-gradient-to-br from-orange-50 via-orange-100/50 to-orange-50 px-4 py-20"
+    className="relative min-h-screen overflow-hidden bg-gradient-to-br from-orange-50 via-orange-100/50 to-orange-50 px-4 py-20"
   >
-    <div className="container mx-auto max-w-7xl">
+    <AnimatedBackground />
+
+    <div className="container relative mx-auto max-w-7xl">
       <motion.div
         className="mb-16 text-center"
         initial={{ opacity: 0, y: -20 }}
