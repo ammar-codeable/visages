@@ -1,3 +1,10 @@
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { Card } from "@/components/ui/card";
 import { events } from "@/constants/events";
 import { Star } from "lucide-react";
 import { motion } from "motion/react";
@@ -18,43 +25,45 @@ const EventsSection = ({
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ delay: index * 0.2 }}
     viewport={{ once: true }}
-    className="mb-16"
   >
-    <div className="relative mb-8">
-      <motion.div
-        className="inline-block flex items-center gap-3 rounded-full bg-white/80 px-6 py-3 shadow-sm backdrop-blur-sm"
-        whileHover={{ scale: 1.02 }}
-      >
-        <h2 className="text-2xl font-semibold text-orange-900">
-          {rating}-Star Events
-        </h2>
-        <div className="flex gap-1">
-          {Array(rating)
-            .fill(0)
-            .map((_, i) => (
-              <Star
-                key={i}
-                className="h-5 w-5 fill-orange-400 text-orange-400"
-              />
-            ))}
-        </div>
-      </motion.div>
-    </div>
-    <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-      {events
-        .filter((e) => e.rating === rating)
-        .map((event, idx) => (
-          <motion.div
-            key={idx}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: idx * 0.1 }}
-            viewport={{ once: true }}
-          >
-            <EventCard {...event} />
-          </motion.div>
-        ))}
-    </div>
+    <AccordionItem value={`rating-${rating}`} className="border-none">
+      <Card className="mb-4 overflow-hidden bg-white/80 backdrop-blur-sm">
+        <AccordionTrigger className="px-6 py-3 hover:no-underline">
+          <div className="flex items-center gap-3">
+            <h2 className="text-2xl font-semibold text-orange-900">
+              {rating}-Star Events
+            </h2>
+            <div className="flex gap-1">
+              {Array(rating)
+                .fill(0)
+                .map((_, i) => (
+                  <Star
+                    key={i}
+                    className="h-5 w-5 fill-orange-400 text-orange-400"
+                  />
+                ))}
+            </div>
+          </div>
+        </AccordionTrigger>
+        <AccordionContent>
+          <div className="grid grid-cols-1 gap-8 p-6 pt-2 md:grid-cols-2 lg:grid-cols-3">
+            {events
+              .filter((e) => e.rating === rating)
+              .map((event, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: idx * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <EventCard {...event} />
+                </motion.div>
+              ))}
+          </div>
+        </AccordionContent>
+      </Card>
+    </AccordionItem>
   </motion.div>
 );
 
@@ -87,14 +96,16 @@ const Events = () => (
         </p>
       </motion.div>
 
-      {[5, 4, 3].map((rating, index) => (
-        <EventsSection
-          key={rating}
-          rating={rating}
-          events={events}
-          index={index}
-        />
-      ))}
+      <Accordion type="multiple" defaultValue={["rating-5"]}>
+        {[5, 4, 3].map((rating, index) => (
+          <EventsSection
+            key={rating}
+            rating={rating}
+            events={events}
+            index={index}
+          />
+        ))}
+      </Accordion>
     </div>
   </motion.div>
 );
