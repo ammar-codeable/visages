@@ -11,13 +11,16 @@ import { motion } from "motion/react";
 import AnimatedBackground from "../../../components/AnimatedBackground";
 import EventCard from "../../../components/EventCard";
 
+// Add this type definition
+type Event = (typeof events)[number];
+
 const EventsSection = ({
   rating,
   events,
   index,
 }: {
   rating: number;
-  events: typeof events;
+  events: Event[];
   index: number;
 }) => (
   <motion.div
