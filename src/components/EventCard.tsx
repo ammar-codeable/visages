@@ -5,7 +5,16 @@ import { Card } from "@/components/ui/card";
 import EventDialog from "./EventDialog";
 import { Event } from "@/constants/events";
 
-const EventCard = ({ title, date, location, image, description, rating }: Event) => {
+const EventCard = ({ 
+  title, 
+  date, 
+  venue, 
+  image, 
+  description, 
+  rating, 
+  rules,
+  capacity 
+}: Event) => {
   const [dialogOpen, setDialogOpen] = useState(false);
 
   return (
@@ -51,7 +60,7 @@ const EventCard = ({ title, date, location, image, description, rating }: Event)
             </div>
             <div className="flex items-center gap-2 text-orange-700">
               <MapPin className="h-4 w-4" />
-              <p className="text-sm font-medium line-clamp-1">{location}</p>
+              <p className="text-sm font-medium line-clamp-1">{venue}</p>
             </div>
           </div>
           
@@ -67,7 +76,16 @@ const EventCard = ({ title, date, location, image, description, rating }: Event)
       <EventDialog
         open={dialogOpen}
         onOpenChange={setDialogOpen}
-        event={{ title, date, location, image, description, rating }}
+        event={{ 
+          title, 
+          date, 
+          venue, 
+          image, 
+          description, 
+          rating, 
+          rules,
+          capacity 
+        }}
       />
     </>
   );
