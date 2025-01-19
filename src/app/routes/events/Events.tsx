@@ -1,5 +1,6 @@
 import AnimatedBackground from "@/components/AnimatedBackground";
 import EventCard from "@/components/EventCard";
+import StarRating from "@/components/StarRating";
 import {
   Accordion,
   AccordionContent,
@@ -8,7 +9,6 @@ import {
 } from "@/components/ui/accordion";
 import { Card } from "@/components/ui/card";
 import { Event, events } from "@/constants/events";
-import { Star } from "lucide-react";
 import { motion } from "motion/react";
 
 const EventsSection = ({
@@ -34,16 +34,7 @@ const EventsSection = ({
               <h2 className="text-3xl font-bold text-orange-900 transition-colors group-hover:text-orange-700">
                 {rating}-Star Events
               </h2>
-              <div className="flex gap-1.5">
-                {Array(rating)
-                  .fill(0)
-                  .map((_, i) => (
-                    <Star
-                      key={i}
-                      className="h-6 w-6 fill-orange-400 text-orange-400 transition-colors group-hover:fill-orange-500 group-hover:text-orange-500"
-                    />
-                  ))}
-              </div>
+              <StarRating rating={rating} size="lg" />
             </div>
           </div>
         </AccordionTrigger>

@@ -1,9 +1,10 @@
-import { Calendar, MapPin, Star } from "lucide-react";
+import { Calendar, MapPin } from "lucide-react";
 import { motion } from "motion/react";
 import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import EventDialog from "./EventDialog";
 import { Event } from "@/constants/events";
+import StarRating from "./StarRating";
 
 const EventCard = ({ 
   title, 
@@ -38,13 +39,8 @@ const EventCard = ({
           </motion.div>
           
           {/* Rating Badge */}
-          <div className="absolute top-4 right-4 flex items-center gap-1.5 rounded-full bg-black/50 px-3 py-1.5 backdrop-blur-sm">
-            {Array(rating).fill(0).map((_, i) => (
-              <Star
-                key={i}
-                className="h-4 w-4 fill-orange-400 text-orange-400 drop-shadow-lg"
-              />
-            ))}
+          <div className="absolute top-4 right-4 flex items-center rounded-full bg-black/50 px-3 py-1.5 backdrop-blur-sm">
+            <StarRating rating={rating} size="sm" />
           </div>
         </div>
 

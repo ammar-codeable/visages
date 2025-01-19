@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { Calendar, MapPin, Star, Users } from "lucide-react";
+import { Calendar, MapPin, Users } from "lucide-react";
+import StarRating from "./StarRating";
 
 type EventDialogProps = {
   open: boolean;
@@ -34,16 +35,7 @@ const EventDialog = ({ open, onOpenChange, event }: EventDialogProps) => {
           <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
             <div className="flex items-center justify-between">
               <h2 className="text-3xl font-bold">{event.title}</h2>
-              <div className="flex gap-1">
-                {Array(event.rating)
-                  .fill(0)
-                  .map((_, i) => (
-                    <Star
-                      key={i}
-                      className="h-5 w-5 fill-orange-400 text-orange-400"
-                    />
-                  ))}
-              </div>
+              <StarRating rating={event.rating} size="lg" />
             </div>
           </div>
         </div>
