@@ -5,74 +5,63 @@ import { Card } from "@/components/ui/card";
 import EventDialog from "./EventDialog";
 import { Event } from "@/constants/events";
 
-const EventCard = ({
-  title,
-  date,
-  location,
-  image,
-  description,
-  rating,
-}: Event) => {
+const EventCard = ({ title, date, location, image, description, rating }: Event) => {
   const [dialogOpen, setDialogOpen] = useState(false);
 
   return (
     <>
       <Card
-        className="overflow-hidden cursor-pointer transition-transform hover:scale-[1.02]"
+        className="group relative overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
         onClick={() => setDialogOpen(true)}
       >
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          whileHover={{ y: -5 }}
-          className="group overflow-hidden rounded-xl border border-orange-100 bg-white/90 shadow-lg backdrop-blur"
-        >
-          <div className="relative overflow-hidden">
-            <motion.img
-              whileHover={{ scale: 1.1 }}
-              transition={{ duration: 0.3 }}
+        <div className="relative overflow-hidden rounded-t-xl">
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            transition={{ duration: 0.4 }}
+            className="relative h-56"
+          >
+            <img
               src={image}
               alt={title}
-              className="h-56 w-full object-cover"
+              className="h-full w-full object-cover transition-transform"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.2 }}
-              className="absolute bottom-4 right-4 flex gap-1"
-            >
-              {Array(rating)
-                .fill(0)
-                .map((_, i) => (
-                  <Star
-                    key={i}
-                    className="h-5 w-5 fill-orange-400 text-orange-400 drop-shadow-lg"
-                  />
-                ))}
-            </motion.div>
-          </div>
-          <motion.div
-            className="p-6"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-          >
-            <h2 className="mb-3 text-2xl font-semibold text-orange-900 transition-colors group-hover:text-orange-700">
-              {title}
-            </h2>
-            <div className="mb-2 flex items-center gap-2 text-orange-700">
-              <Calendar className="h-4 w-4" />
-              <p className="text-sm">{date}</p>
-            </div>
-            <div className="mb-4 flex items-center gap-2 text-orange-700">
-              <MapPin className="h-4 w-4" />
-              <p className="text-sm">{location}</p>
-            </div>
-            <p className="line-clamp-2 text-orange-800/90">{description}</p>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
           </motion.div>
-        </motion.div>
+          
+          {/* Rating Badge */}
+          <div className="absolute top-4 right-4 flex items-center gap-1.5 rounded-full bg-black/50 px-3 py-1.5 backdrop-blur-sm">
+            {Array(rating).fill(0).map((_, i) => (
+              <Star
+                key={i}
+                className="h-4 w-4 fill-orange-400 text-orange-400 drop-shadow-lg"
+              />
+            ))}
+          </div>
+        </div>
+
+        <div className="relative z-10 rounded-b-xl bg-white/95 p-6 backdrop-blur-sm">
+          <h2 className="mb-3 text-xl font-bold text-orange-900 group-hover:text-orange-700 transition-colors line-clamp-1">
+            {title}
+          </h2>
+          
+          <div className="space-y-2 mb-4">
+            <div className="flex items-center gap-2 text-orange-700">
+              <Calendar className="h-4 w-4" />
+              <p className="text-sm font-medium">{date}</p>
+            </div>
+            <div className="flex items-center gap-2 text-orange-700">
+              <MapPin className="h-4 w-4" />
+              <p className="text-sm font-medium line-clamp-1">{location}</p>
+            </div>
+          </div>
+          
+          <p className="text-sm text-orange-800/90 line-clamp-2">
+            {description}
+          </p>
+
+          {/* Hover effect overlay */}
+          <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-orange-400 to-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+        </div>
       </Card>
 
       <EventDialog
