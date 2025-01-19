@@ -6,13 +6,13 @@ const Home = () => (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="relative flex h-screen items-center overflow-hidden"
+      className="relative flex h-screen items-center overflow-hidden bg-slate-950"
     >
       <motion.div
         initial={{ scale: 1.2 }}
         animate={{ scale: 1 }}
         transition={{ duration: 1.5 }}
-        className="absolute inset-0 bg-[url('/world-map-dots.png')] opacity-20"
+        className="absolute inset-0 bg-[url('/world-map-dots.png')] opacity-10"
         style={{ backgroundSize: "cover", backgroundPosition: "center" }}
       />
       <div className="container z-10 mx-auto px-4">
@@ -21,7 +21,7 @@ const Home = () => (
           animate={{ y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-7xl font-bold text-transparent">
+          <h1 className="mb-6 bg-gradient-to-r from-orange-400 to-amber-500 bg-clip-text text-7xl font-bold text-transparent">
             Visages 2024
           </h1>
           <div className="space-y-4">
@@ -50,7 +50,7 @@ const Home = () => (
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
-      className="bg-gradient-to-b from-slate-950 to-blue-950 py-32"
+      className="bg-gradient-to-b from-slate-950 to-slate-900 py-32"
     >
       <div className="container mx-auto px-4">
         <h2 className="mb-16 text-center text-4xl font-bold text-white">
@@ -83,7 +83,7 @@ const Home = () => (
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
-      className="bg-gradient-to-b from-blue-950 to-purple-950 py-32"
+      className="bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950 py-32"
     >
       <div className="container mx-auto px-4">
         <h2 className="mb-16 text-center text-4xl font-bold text-white">
@@ -115,7 +115,7 @@ const Home = () => (
     >
       <Link
         to="/events"
-        className="rounded-full bg-gradient-to-r from-blue-500 to-purple-500 px-8 py-3 font-bold text-white shadow-lg transition-all hover:brightness-110"
+        className="rounded-full bg-gradient-to-r from-orange-500 to-amber-500 px-8 py-3 font-bold text-white shadow-lg transition-all hover:brightness-110"
       >
         Explore Events
       </Link>
