@@ -98,7 +98,7 @@ const Events = () => (
         </p>
       </motion.div>
 
-      <Accordion type="multiple" defaultValue={["rating-5"]}>
+      <Accordion type="multiple">
         {[5, 4, 3].map((rating, index) => (
           <EventsSection
             key={rating}
