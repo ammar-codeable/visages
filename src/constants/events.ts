@@ -1,4 +1,13 @@
-export const events = [
+export type Event = {
+  title: string;
+  date: string;
+  location: string;
+  image: string;
+  description: string;
+  rating: number;
+};
+
+export const events: readonly Event[] = [
   {
     title: "Annual Photography Exhibition",
     date: "October 15, 2023",
@@ -26,4 +35,4 @@ export const events = [
       "Join our outdoor photography expedition to capture the beauty of nature.",
     rating: 3,
   },
-] as const;
+];

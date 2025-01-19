@@ -3,15 +3,7 @@ import { motion } from "motion/react";
 import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import EventDialog from "./EventDialog";
-
-interface Event {
-  title: string;
-  date: string;
-  location: string;
-  image: string;
-  description: string;
-  rating: 3 | 4 | 5;
-}
+import { Event } from "@/constants/events";
 
 const EventCard = ({
   title,

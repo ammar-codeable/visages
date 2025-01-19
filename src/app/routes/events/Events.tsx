@@ -1,3 +1,5 @@
+import AnimatedBackground from "@/components/AnimatedBackground";
+import EventCard from "@/components/EventCard";
 import {
   Accordion,
   AccordionContent,
@@ -5,14 +7,9 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card } from "@/components/ui/card";
-import { events } from "@/constants/events";
+import { events, Event } from "@/constants/events";
 import { Star } from "lucide-react";
 import { motion } from "motion/react";
-import AnimatedBackground from "../../../components/AnimatedBackground";
-import EventCard from "../../../components/EventCard";
-
-// Add this type definition
-type Event = (typeof events)[number];
 
 const EventsSection = ({
   rating,
@@ -20,7 +17,7 @@ const EventsSection = ({
   index,
 }: {
   rating: number;
-  events: Event[];
+  events: readonly Event[];
   index: number;
 }) => (
   <motion.div
