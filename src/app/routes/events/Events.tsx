@@ -7,7 +7,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card } from "@/components/ui/card";
-import { events, Event } from "@/constants/events";
+import { Event, events } from "@/constants/events";
 import { Star } from "lucide-react";
 import { motion } from "motion/react";
 
@@ -27,26 +27,28 @@ const EventsSection = ({
     viewport={{ once: true }}
   >
     <AccordionItem value={`rating-${rating}`} className="border-none">
-      <Card className="mb-4 overflow-hidden bg-white/80 backdrop-blur-sm">
-        <AccordionTrigger className="px-6 py-3 hover:no-underline">
-          <div className="flex items-center gap-3">
-            <h2 className="text-2xl font-semibold text-orange-900">
-              {rating}-Star Events
-            </h2>
-            <div className="flex gap-1">
-              {Array(rating)
-                .fill(0)
-                .map((_, i) => (
-                  <Star
-                    key={i}
-                    className="h-5 w-5 fill-orange-400 text-orange-400"
-                  />
-                ))}
+      <Card className="mb-4 overflow-hidden bg-white/80 backdrop-blur-sm transition-all duration-300 hover:bg-white/90">
+        <AccordionTrigger className="group px-8 py-5 hover:no-underline">
+          <div className="flex w-full items-center gap-6">
+            <div className="flex flex-1 items-center gap-4">
+              <h2 className="text-3xl font-bold text-orange-900 transition-colors group-hover:text-orange-700">
+                {rating}-Star Events
+              </h2>
+              <div className="flex gap-1.5">
+                {Array(rating)
+                  .fill(0)
+                  .map((_, i) => (
+                    <Star
+                      key={i}
+                      className="h-6 w-6 fill-orange-400 text-orange-400 transition-colors group-hover:fill-orange-500 group-hover:text-orange-500"
+                    />
+                  ))}
+              </div>
             </div>
           </div>
         </AccordionTrigger>
         <AccordionContent>
-          <div className="grid grid-cols-1 gap-8 p-6 pt-2 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-8 p-8 pt-2 md:grid-cols-2 lg:grid-cols-4">
             {events
               .filter((e) => e.rating === rating)
               .map((event, idx) => (
@@ -75,7 +77,7 @@ const Events = () => (
   >
     <AnimatedBackground />
 
-    <div className="container relative mx-auto max-w-7xl">
+    <div className="container relative mx-auto max-w-[90rem]">
       <motion.div
         className="mb-16 text-center"
         initial={{ opacity: 0, y: -20 }}
