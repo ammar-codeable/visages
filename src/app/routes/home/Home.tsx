@@ -22,7 +22,7 @@ const Home = () => (
           transition={{ duration: 0.8 }}
         >
           <h1 className="mb-6 bg-gradient-to-r from-orange-400 to-amber-500 bg-clip-text text-7xl font-bold text-transparent">
-            Visages 2024
+            Visages 2025
           </h1>
           <div className="space-y-4">
             <motion.p
@@ -39,7 +39,7 @@ const Home = () => (
               transition={{ delay: 0.7 }}
               className="text-xl text-white/70"
             >
-              February 15-17, 2024 • St. Joseph's University
+              February 15-17, 2025• St. Joseph's University
             </motion.p>
           </div>
         </motion.div>
