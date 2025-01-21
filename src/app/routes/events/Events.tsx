@@ -61,46 +61,48 @@ const EventsSection = ({
 );
 
 const Events = () => (
-  <motion.div
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    className="relative min-h-screen overflow-hidden bg-gradient-to-br from-orange-50 via-orange-100/50 to-orange-50 px-4 py-20"
-  >
-    <AnimatedBackground />
-
-    <div className="container relative mx-auto max-w-[90rem]">
-      <motion.div
-        className="mb-16 text-center"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <h1 className="relative mb-4 inline-block text-5xl font-bold text-orange-900">
-          Cultural Events
-          <motion.div
-            className="absolute -bottom-2 left-0 right-0 h-1 rounded-full bg-orange-400"
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ delay: 0.5 }}
-          />
-        </h1>
-        <p className="mt-6 text-lg text-orange-700">
-          Discover and participate in our exciting cultural events and competitions
-        </p>
-      </motion.div>
-
-      <Accordion type="multiple">
-        {[5, 4, 3].map((rating, index) => (
-          <EventsSection
-            key={rating}
-            rating={rating}
-            events={events}
-            index={index}
-          />
-        ))}
-      </Accordion>
+  <div className="relative min-h-screen">
+    {/* Fixed position background */}
+    <div className="fixed inset-0 bg-gradient-to-br from-orange-50 via-orange-100/50 to-orange-50">
+      <AnimatedBackground />
     </div>
-  </motion.div>
+
+    {/* Content container with padding and z-index */}
+    <div className="relative z-10 px-4 py-20">
+      <div className="container relative mx-auto max-w-[90rem]">
+        <motion.div
+          className="mb-16 text-center"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <h1 className="relative mb-4 inline-block text-5xl font-bold text-orange-900">
+            Cultural Events
+            <motion.div
+              className="absolute -bottom-2 left-0 right-0 h-1 rounded-full bg-orange-400"
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ delay: 0.5 }}
+            />
+          </h1>
+          <p className="mt-6 text-lg text-orange-700">
+            Discover and participate in our exciting cultural events and competitions
+          </p>
+        </motion.div>
+
+        <Accordion type="multiple">
+          {[5, 4, 3].map((rating, index) => (
+            <EventsSection
+              key={rating}
+              rating={rating}
+              events={events}
+              index={index}
+            />
+          ))}
+        </Accordion>
+      </div>
+    </div>
+  </div>
 );
 
 export default Events;
