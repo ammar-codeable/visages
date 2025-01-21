@@ -47,7 +47,7 @@ const Navbar = () => (
           Visages
         </Link>
 
-        <div className="flex items-center space-x-8">
+        <div className="flex items-center space-x-2 sm:space-x-8">
           {["Home", "Events"].map((item) => (
             <Link
               key={item}
@@ -56,7 +56,7 @@ const Navbar = () => (
                   ? "/"
                   : `/${item.toLowerCase().replace(" ", "-")}`
               }
-              className="relative font-medium text-orange-950 transition-all hover:text-orange-700"
+              className="relative font-medium text-sm sm:text-base text-orange-950 transition-all hover:text-orange-700"
             >
               <span className="relative">
                 {item}
@@ -72,9 +72,9 @@ const Navbar = () => (
             <div className="absolute -inset-0.5 rounded-lg bg-gradient-to-r from-orange-400 to-yellow-300 opacity-30 blur transition duration-200 group-hover:opacity-100"></div>
             <Button
               variant="outline"
-              className="relative flex items-center gap-2 border-2 border-orange-400 font-medium text-orange-950 hover:bg-orange-100"
+              className="relative flex items-center gap-1 sm:gap-2 border-2 border-orange-400 font-medium text-orange-950 hover:bg-orange-100 text-sm sm:text-base px-2 sm:px-4"
             >
-              <Sparkles className="h-4 w-4" />
+              <Sparkles className="h-3 w-3 sm:h-4 sm:w-4" />
               Cheer Squad
               <span className="absolute inset-0 rounded-lg ring-2 ring-orange-400/50 group-hover:ring-orange-400"></span>
             </Button>
