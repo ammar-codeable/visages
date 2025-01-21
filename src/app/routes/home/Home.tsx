@@ -42,6 +42,7 @@ const Home = () => (
             >
               February 15-17, 2025• St. Joseph's University
             </motion.p>
+            <CountdownTimer/>
           </div>
         </motion.div>
       </div>
@@ -109,7 +110,7 @@ const Home = () => (
         </div>
       </div>
     </motion.div>
-    <CountdownTimer />
+    
 
     <motion.div
       whileHover={{ scale: 1.05 }}
