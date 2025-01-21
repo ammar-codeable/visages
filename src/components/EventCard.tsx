@@ -23,10 +23,10 @@ const EventCard = ({
   return (
     <>
       <Card
-        className="group relative overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+        className="group relative flex h-[30rem] cursor-pointer flex-col overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
         onClick={() => setDialogOpen(true)}
       >
-        <div className="relative overflow-hidden rounded-t-xl">
+        <div className="relative h-56 shrink-0 overflow-hidden rounded-t-xl">
           <motion.div
             whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.4 }}
@@ -46,12 +46,12 @@ const EventCard = ({
           </div>
         </div>
 
-        <div className="relative z-10 rounded-b-xl bg-white/95 p-6 backdrop-blur-sm">
+        <div className="relative flex flex-1 flex-col p-6 bg-white/95 backdrop-blur-sm">
           <h2 className="mb-3 text-xl font-bold text-orange-900 group-hover:text-orange-700 transition-colors line-clamp-1">
             {title}
           </h2>
           
-          <div className="space-y-2 mb-4">
+          <div className="mb-4 space-y-2">
             <div className="flex items-center gap-2 text-orange-700">
               <Calendar className="h-4 w-4" />
               <p className="text-sm font-medium">{date}</p>
@@ -74,7 +74,7 @@ const EventCard = ({
             )}
           </div>
           
-          <p className="text-sm text-orange-800/90 line-clamp-2">
+          <p className="flex-1 text-sm text-orange-800/90 line-clamp-2">
             {description}
           </p>
 
