@@ -24,7 +24,7 @@ const PriceDisplay = () => (
 );
 
 const FeatureList = () => (
-  <div className="flex flex-wrap gap-6">
+  <div className="sm:flex-wrap gap-6 hidden sm:flex">
     {features.map(({ icon: Icon, text }) => (
       <div key={text} className="flex items-center gap-2 text-orange-600">
         <Icon className="h-5 w-5" />
@@ -68,7 +68,7 @@ const ContingentBanner = () => {
           <div className="flex h-full flex-1 flex-col justify-between pr-8">
             <div className="space-y-4">
               <PackageTitle />
-              <p className="text-lg text-orange-700">
+              <p className="text-lg text-orange-700 hidden sm:block">
                 Register your entire university contingent and unlock unlimited participation!
               </p>
             </div>
@@ -78,13 +78,15 @@ const ContingentBanner = () => {
         </div>
       </motion.div>
 
-      {/* Register Button */}
-      <Button
-        size="lg"
-        className="absolute bottom-3 right-4 bg-gradient-to-r from-orange-500 to-amber-500 px-8 text-white hover:from-orange-600 hover:to-amber-600"
-      >
-        Register Contingent
-      </Button>
+      {/* Register Button - Full width on mobile */}
+      <div className="absolute bottom-3 right-4 left-4 sm:left-auto">
+        <Button
+          size="lg"
+          className="w-full sm:w-auto bg-gradient-to-r from-orange-500 to-amber-500 px-8 text-white hover:from-orange-600 hover:to-amber-600"
+        >
+          Register Contingent
+        </Button>
+      </div>
     </motion.div>
   );
 };
