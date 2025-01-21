@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Calendar, MapPin, Users, IndianRupee, Clock } from "lucide-react";
 import StarRating from "./StarRating";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 type EventDialogProps = {
   open: boolean;
@@ -24,7 +25,6 @@ const EventDialog = ({ open, onOpenChange, event }: EventDialogProps) => {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-4xl h-[95vh] flex flex-col overflow-hidden p-0">
-        {/* Hero Section - Reduced height */}
         <div className="relative h-64 shrink-0 bg-orange-900">
           <img
             src={event.image}
@@ -41,8 +41,7 @@ const EventDialog = ({ open, onOpenChange, event }: EventDialogProps) => {
           </div>
         </div>
 
-        {/* Scrollable Content Area */}
-        <div className="flex-1 overflow-y-auto">
+        <ScrollArea className="flex-1">
           <div className="p-6 space-y-6">
             {/* Info Cards - Optimized Grid */}
             <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
@@ -128,7 +127,7 @@ const EventDialog = ({ open, onOpenChange, event }: EventDialogProps) => {
               )}
             </div>
           </div>
-        </div>
+        </ScrollArea>
 
         {/* Fixed Footer */}
         <div className="border-t border-orange-100 bg-white p-4 shrink-0">
