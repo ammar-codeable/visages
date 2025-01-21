@@ -1,4 +1,7 @@
-import { Link } from 'react-router';
+import { Button } from "@/components/ui/button";
+import { motion } from "motion/react";
+import { Link } from "react-router";
+import { Sparkles } from "lucide-react";
 
 const Navbar = () => (
   <div className="fixed top-0 z-50 w-full">
@@ -13,20 +16,24 @@ const Navbar = () => (
       </svg>
     </div>
 
-    <nav className="bg-gradient-to-r from-orange-100/95 via-orange-200/95 to-orange-100/95 backdrop-blur-md shadow-sm">
+    <nav className="bg-gradient-to-r from-orange-100/95 via-orange-200/95 to-orange-100/95 shadow-sm backdrop-blur-md">
       <div className="container mx-auto flex items-center justify-between p-4">
-        <Link 
-          to="/" 
+        <Link
+          to="/"
           className="text-2xl font-bold text-orange-950 transition-all hover:text-orange-700"
         >
           Visages
         </Link>
-        
-        <div className="space-x-8">
-          {['Home', 'Events'].map((item) => (
+
+        <div className="flex items-center space-x-8">
+          {["Home", "Events"].map((item) => (
             <Link
               key={item}
-              to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
+              to={
+                item === "Home"
+                  ? "/"
+                  : `/${item.toLowerCase().replace(" ", "-")}`
+              }
               className="relative font-medium text-orange-950 transition-all hover:text-orange-700"
             >
               <span className="relative">
@@ -35,6 +42,21 @@ const Navbar = () => (
               </span>
             </Link>
           ))}
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="relative group"
+          >
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-orange-400 to-yellow-300 rounded-lg blur opacity-30 group-hover:opacity-100 transition duration-200"></div>
+            <Button
+              variant="outline"
+              className="relative border-2 border-orange-400 font-medium text-orange-950 hover:bg-orange-100 flex items-center gap-2"
+            >
+              <Sparkles className="w-4 h-4" />
+              Cheer Squad
+              <span className="absolute inset-0 rounded-lg ring-2 ring-orange-400/50 group-hover:ring-orange-400"></span>
+            </Button>
+          </motion.div>
         </div>
       </div>
     </nav>
