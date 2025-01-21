@@ -76,7 +76,7 @@ const Events = () => (
         transition={{ duration: 0.5 }}
       >
         <h1 className="relative mb-4 inline-block text-5xl font-bold text-orange-900">
-          Upcoming Events
+          Cultural Events
           <motion.div
             className="absolute -bottom-2 left-0 right-0 h-1 rounded-full bg-orange-400"
             initial={{ scaleX: 0 }}
@@ -85,7 +85,7 @@ const Events = () => (
           />
         </h1>
         <p className="mt-6 text-lg text-orange-700">
-          Discover and join our premium photography events and workshops
+          Discover and participate in our exciting cultural events and competitions
         </p>
       </motion.div>
 
