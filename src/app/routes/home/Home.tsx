@@ -1,3 +1,4 @@
+import CountdownTimer from "@/components/hometimer";
 import { motion } from "motion/react";
 import { Link } from "react-router";
 
@@ -108,6 +109,7 @@ const Home = () => (
         </div>
       </div>
     </motion.div>
+    <CountdownTimer />
 
     <motion.div
       whileHover={{ scale: 1.05 }}
