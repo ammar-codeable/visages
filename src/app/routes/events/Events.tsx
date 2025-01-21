@@ -108,14 +108,26 @@ const Events = () => (
       {/* Mobile Banner (non-sticky) */}
       <div className="px-4 md:hidden">
         <div className="container mx-auto max-w-[90rem]">
-          <ContingentBanner variant="mobile" />
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+          >
+            <ContingentBanner variant="mobile" />
+          </motion.div>
         </div>
       </div>
 
       {/* Desktop Sticky Banner */}
       <div className="sticky top-20 z-20 hidden px-4 md:block">
         <div className="container mx-auto max-w-[90rem]">
-          <ContingentBanner variant="desktop" />
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+          >
+            <ContingentBanner variant="desktop" />
+          </motion.div>
         </div>
       </div>
 
