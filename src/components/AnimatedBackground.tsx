@@ -1,5 +1,6 @@
 import { Camera, Compass, Globe, LucideIcon, MapPin } from "lucide-react";
 import { motion } from "motion/react";
+import { useEffect, useState } from "react";
 
 type FloatingElement = {
   icon: LucideIcon;
@@ -8,14 +9,39 @@ type FloatingElement = {
   delay: number;
 };
 
-const generateElements = (count: number): FloatingElement[] => {
+const getScreenConfig = () => {
+  const width = window.innerWidth;
+  if (width < 640) { // mobile
+    return {
+      count: 6,
+      minSize: 32,
+      maxSize: 48
+    };
+  } else if (width < 1024) { // tablet
+    return {
+      count: 8,
+      minSize: 40,
+      maxSize: 64
+    };
+  } else { // desktop
+    return {
+      count: 14,
+      minSize: 48,
+      maxSize: 88
+    };
+  }
+};
+
+const generateElements = (): FloatingElement[] => {
   const icons = [Camera, Compass, MapPin, Globe];
-  return Array.from({ length: count }, (_, i) => ({
+  const config = getScreenConfig();
+  
+  return Array.from({ length: config.count }, (_, i) => ({
     icon: icons[i % icons.length],
-    size: Math.random() * 40 + 48, // 48-88px
+    size: Math.random() * (config.maxSize - config.minSize) + config.minSize,
     position: {
-      x: Math.random() * 85 + 5, // 5-90%
-      y: Math.random() * 70 + 10, // 10-80%
+      x: Math.random() * 85 + 5,
+      y: Math.random() * 70 + 10,
     },
     delay: Math.random() * 2,
   }));
@@ -50,7 +76,17 @@ const FloatingIcon = ({ element }: { element: FloatingElement }) => {
 };
 
 const AnimatedBackground = () => {
-  const elements = generateElements(12);
+  const [elements, setElements] = useState<FloatingElement[]>([]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setElements(generateElements());
+    };
+
+    handleResize(); // Initial generation
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
     <>
