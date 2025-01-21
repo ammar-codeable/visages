@@ -1,4 +1,5 @@
 import AnimatedBackground from "@/components/AnimatedBackground";
+import ContingentBanner from "@/components/ContingentBanner";
 import EventCard from "@/components/EventCard";
 import StarRating from "@/components/StarRating";
 import {
@@ -60,46 +61,64 @@ const EventsSection = ({
   </motion.div>
 );
 
+const EventsList = () => (
+  <Accordion type="multiple">
+    {[5, 4, 3].map((rating, index) => (
+      <EventsSection
+        key={rating}
+        rating={rating}
+        events={events}
+        index={index}
+      />
+    ))}
+  </Accordion>
+);
+
 const Events = () => (
   <div className="relative min-h-screen">
-    {/* Fixed position background */}
     <div className="fixed inset-0 bg-gradient-to-br from-orange-50 via-orange-100/50 to-orange-50">
       <AnimatedBackground />
     </div>
 
-    {/* Content container with padding and z-index */}
-    <div className="relative z-10 px-4 py-20">
-      <div className="container relative mx-auto max-w-[90rem]">
-        <motion.div
-          className="mb-16 text-center"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <h1 className="relative mb-4 inline-block text-5xl font-bold text-orange-900">
-            Cultural Events
-            <motion.div
-              className="absolute -bottom-2 left-0 right-0 h-1 rounded-full bg-orange-400"
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              transition={{ delay: 0.5 }}
-            />
-          </h1>
-          <p className="mt-6 text-lg text-orange-700">
-            Discover and participate in our exciting cultural events and competitions
-          </p>
-        </motion.div>
+    <div className="relative z-10">
+      {/* Page heading */}
+      <div className="px-4 pb-8 pt-24">
+        <div className="container relative mx-auto max-w-[90rem]">
+          <motion.div
+            className="text-center"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <h1 className="relative mb-4 inline-block text-5xl font-bold text-orange-900">
+              Cultural Events
+              <motion.div
+                className="absolute -bottom-2 left-0 right-0 h-1 rounded-full bg-orange-400"
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ delay: 0.5 }}
+              />
+            </h1>
+            <p className="mt-6 text-lg text-orange-700">
+              Discover and participate in our exciting cultural events and
+              competitions
+            </p>
+          </motion.div>
+        </div>
+      </div>
 
-        <Accordion type="multiple">
-          {[5, 4, 3].map((rating, index) => (
-            <EventsSection
-              key={rating}
-              rating={rating}
-              events={events}
-              index={index}
-            />
-          ))}
-        </Accordion>
+      {/* Sticky banner with increased top spacing */}
+      <div className="sticky top-20 z-20 px-4"> {/* Changed from top-[4.5rem] to top-24 */}
+        <div className="container mx-auto max-w-[90rem]">
+          <ContingentBanner />
+        </div>
+      </div>
+
+      {/* Events content */}
+      <div className="px-4 py-8">
+        <div className="container relative mx-auto max-w-[90rem]">
+          <EventsList />
+        </div>
       </div>
     </div>
   </div>
