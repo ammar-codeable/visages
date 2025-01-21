@@ -11,7 +11,7 @@ const features = [
 const PackageTitle = () => (
   <div className="flex items-center gap-2">
     <Sparkles className="h-6 w-6 text-orange-500" />
-    <h2 className="text-2xl font-bold text-orange-950">Premium Contingent Package</h2>
+    <h2 className="text-2xl font-bold text-orange-950">Premium Contingent Package</h2> 
   </div>
 );
 
@@ -34,11 +34,48 @@ const FeatureList = () => (
   </div>
 );
 
-const ContingentBanner = () => {
+type ContingentBannerProps = {
+  variant: 'mobile' | 'desktop';
+};
+
+const ContingentBanner = ({ variant }: ContingentBannerProps) => {
   const { scrollY } = useScroll();
-  const height = useTransform(scrollY, [0, 200], ["200px", "80px"]);
-  const expandedOpacity = useTransform(scrollY, [0, 100], [1, 0]);
-  const collapsedOpacity = useTransform(scrollY, [0, 200], [0, 1]);
+  
+  // Only apply transforms for desktop variant
+  const height = variant === 'desktop' 
+    ? useTransform(scrollY, [0, 200], ["200px", "80px"])
+    : "auto";
+  const expandedOpacity = variant === 'desktop'
+    ? useTransform(scrollY, [0, 100], [1, 0])
+    : 1;
+  const collapsedOpacity = variant === 'desktop'
+    ? useTransform(scrollY, [0, 200], [0, 1])
+    : 0;
+
+  if (variant === 'mobile') {
+    return (
+      <div className="rounded-xl border-2 border-orange-200 bg-gradient-to-r from-orange-50/95 via-white/95 to-orange-50/95 p-4 shadow-xl backdrop-blur-md">
+        <div className="flex flex-col gap-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <Sparkles className="h-5 w-5 text-orange-500" />
+              <h2 className="font-bold text-orange-950">Premium Contingent Package</h2>
+            </div>
+            <div className="text-right">
+              <div className="text-sm font-medium text-orange-600">Price</div>
+              <div className="text-xl font-bold text-orange-950">₹15,000</div>
+            </div>
+          </div>
+          <Button
+            size="lg"
+            className="w-full bg-gradient-to-r from-orange-500 to-amber-500 text-white hover:from-orange-600 hover:to-amber-600"
+          >
+            Register Contingent
+          </Button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <motion.div
