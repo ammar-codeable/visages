@@ -30,13 +30,11 @@ const EventsSection = ({
     <AccordionItem value={`rating-${rating}`} className="border-none">
       <Card className="mb-4 overflow-hidden bg-white/80 backdrop-blur-sm transition-all duration-300 hover:bg-white/90">
         <AccordionTrigger className="group px-8 py-5 hover:no-underline">
-          <div className="flex w-full items-center gap-6">
-            <div className="flex flex-1 items-center gap-4">
-              <h2 className="text-3xl font-bold text-orange-900 transition-colors group-hover:text-orange-700">
-                {rating}-Star Events
-              </h2>
-              <StarRating rating={rating} size="lg" />
-            </div>
+          <div className="flex w-full flex-col gap-2 sm:flex-row sm:items-center sm:gap-4">
+            <h2 className="text-3xl font-bold text-orange-900 transition-colors group-hover:text-orange-700">
+              {rating}-Star Events
+            </h2>
+            <StarRating rating={rating} size="lg" />
           </div>
         </AccordionTrigger>
         <AccordionContent>
