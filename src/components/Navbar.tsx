@@ -23,7 +23,7 @@ const Navbar = () => (
         </Link>
         
         <div className="space-x-8">
-          {['Home', 'Events', 'Contact'].map((item) => (
+          {['Home', 'Events'].map((item) => (
             <Link
               key={item}
               to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
