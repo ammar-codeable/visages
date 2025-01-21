@@ -103,14 +103,21 @@ const Events = () => (
               Discover and participate in our exciting cultural events and
               competitions
             </p>
-          </motion.div>
+          </motion.div> 
         </div>
       </div>
 
-      {/* Sticky banner with increased top spacing */}
-      <div className="sticky top-20 z-20 px-4"> {/* Changed from top-[4.5rem] to top-24 */}
+      {/* Mobile Banner (non-sticky) */}
+      <div className="px-4 md:hidden">
         <div className="container mx-auto max-w-[90rem]">
-          <ContingentBanner />
+          <ContingentBanner variant="mobile" />
+        </div>
+      </div>
+
+      {/* Desktop Sticky Banner */}
+      <div className="sticky top-20 z-20 hidden px-4 md:block">
+        <div className="container mx-auto max-w-[90rem]">
+          <ContingentBanner variant="desktop" />
         </div>
       </div>
 
