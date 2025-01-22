@@ -1,5 +1,6 @@
 import SparkleIcon from "@/components/SparkleIcon";
 import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
 import { motion } from "motion/react";
 import { Link } from "react-router";
 
@@ -40,12 +41,20 @@ const Navbar = () => (
 
     <nav className="bg-gradient-to-r from-orange-100/95 via-orange-200/95 to-orange-100/95 shadow-sm backdrop-blur-md">
       <div className="container mx-auto flex items-center justify-between p-4">
-        <Link
-          to="/"
-          className="text-2xl font-bold text-orange-950 transition-all hover:text-orange-700"
-        >
-          Visages
-        </Link>
+        <div className="flex items-center gap-4">
+          <img
+            src="/university-logo.png"
+            alt="University Logo"
+            className="h-12 w-auto object-contain"
+          />
+          <Separator orientation="vertical" className="h-8 bg-orange-300/80" />
+          <Link
+            to="/"
+            className="text-2xl font-bold text-orange-950 transition-all hover:text-orange-700"
+          >
+            Visages
+          </Link>
+        </div>
 
         <div className="flex items-center space-x-2 sm:space-x-8">
           {["Home", "Events"].map((item) => (
