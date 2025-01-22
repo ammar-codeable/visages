@@ -2,9 +2,9 @@ import SparkleIcon from "@/components/SparkleIcon";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Home, Menu, Store, X } from "lucide-react";
-import { motion, AnimatePresence } from "motion/react";
-import { Link } from "react-router";
+import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
+import { Link } from "react-router";
 
 const navItems = [
   { to: "/", icon: Home, label: "Home" },
@@ -37,33 +37,48 @@ const DecorativeBorder = () => (
   </div>
 );
 
-const MobileDropdown = ({ isOpen }: { isOpen: boolean; onClose: () => void }) => (
+const MobileDropdown = ({
+  isOpen,
+}: {
+  isOpen: boolean;
+  onClose: () => void;
+}) => (
   <AnimatePresence>
     {isOpen && (
       <motion.div
         initial={{ opacity: 0, height: 0 }}
         animate={{ opacity: 1, height: "auto" }}
         exit={{ opacity: 0, height: 0 }}
-        className="sm:hidden border-t border-orange-200" 
+        className="border-t border-orange-200 sm:hidden"
       >
-        <div className="flex flex-col space-y-4 p-4">
-          {navItems.map(({ to, icon: Icon, label }) => (
-            <Link
-              key={to}
-              to={to}
-              className="flex items-center gap-2 text-base font-bold text-orange-950 hover:text-orange-700"
+        <div className="p-4">
+          <div className="mb-4 rounded-lg bg-orange-100 p-3">
+            <div className="flex items-center gap-2">
+              <p className="text-sm font-medium text-orange-950">
+                Only contingent registrations are eligible for the overall prize
+              </p>
+            </div>
+          </div>
+
+          <div className="flex flex-col space-y-4">
+            {navItems.map(({ to, icon: Icon, label }) => (
+              <Link
+                key={to}
+                to={to}
+                className="flex items-center gap-2 text-base font-bold text-orange-950 hover:text-orange-700"
+              >
+                <Icon className="h-5 w-5" />
+                {label}
+              </Link>
+            ))}
+            <Button
+              variant="outline"
+              className="flex items-center justify-center gap-2 border-2 border-orange-400 font-bold text-orange-600 hover:bg-orange-200/60"
             >
-              <Icon className="h-5 w-5" />
-              {label}
-            </Link>
-          ))}
-          <Button
-            variant="outline"
-            className="flex items-center justify-center gap-2 border-2 border-orange-400 font-bold text-orange-950 hover:bg-orange-200/60"
-          >
-            <SparkleIcon />
-            Cheer Squad
-          </Button>
+              <SparkleIcon />
+              Cheer Squad
+            </Button>
+          </div>
         </div>
       </motion.div>
     )}
@@ -78,7 +93,7 @@ const Navbar = () => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="fixed top-0 z-50 w-full" 
+      className="fixed top-0 z-50 w-full"
     >
       <DecorativeBorder />
 
@@ -90,7 +105,10 @@ const Navbar = () => {
               alt="University Logo"
               className="h-12 w-auto object-contain"
             />
-            <Separator orientation="vertical" className="h-8 bg-orange-300/80" />
+            <Separator
+              orientation="vertical"
+              className="h-8 bg-orange-300/80"
+            />
             <Link
               to="/"
               className="text-2xl font-bold text-orange-950 transition-all hover:text-orange-700"
@@ -102,13 +120,13 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="sm:hidden text-orange-950"
+            className="text-orange-950 sm:hidden"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
 
           {/* Desktop Navigation */}
-          <div className="hidden sm:flex items-center space-x-8">
+          <div className="hidden items-center space-x-8 sm:flex">
             {navItems.map(({ to, icon: Icon, label }) => (
               <Link
                 key={to}
@@ -130,7 +148,7 @@ const Navbar = () => {
               <div className="absolute -inset-0.5 rounded-lg bg-gradient-to-r from-orange-400 to-yellow-300 opacity-30 blur transition duration-200 group-hover:opacity-100"></div>
               <Button
                 variant="outline"
-                className="relative flex items-center gap-1 border-2 border-orange-400 px-2 text-sm font-medium text-orange-950 hover:border-orange-500 hover:bg-orange-200/60 sm:gap-2 sm:px-4 sm:text-base"
+                className="relative flex items-center gap-1 border-2 border-orange-400 px-2 text-sm font-medium text-orange-600 hover:border-orange-500 hover:bg-orange-200/60 sm:gap-2 sm:px-4 sm:text-base"
               >
                 <SparkleIcon />
                 <span className="hidden sm:block">Cheer Squad</span>

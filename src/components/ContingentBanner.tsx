@@ -50,20 +50,22 @@ const FeatureList = () => (
   </div>
 );
 
-const ContingentInfo = () => (
+const ContingentTooltip = () => (
   <TooltipProvider delayDuration={100}>
     <Tooltip>
       <TooltipTrigger>
-        <Info className="h-4 w-4 text-orange-500 hover:text-orange-600" />
+        <Info className="h-4 w-4 text-orange-700 hover:text-orange-600" />
       </TooltipTrigger>
       <TooltipContent
         className="max-w-[250px] border-orange-200 bg-gradient-to-r from-orange-50/95 via-orange-100/95 to-orange-50/95 text-orange-950"
         sideOffset={4}
       >
-        <span>Additional teams require separate registration. </span>
-        <span className="font-bold text-orange-900">
+        <p className="text-sm">
+          Additional teams require separate registration.
+        </p>
+        <p className="font-bold">
           Only contingent registrations are eligible for the overall prize.
-        </span>
+        </p>
       </TooltipContent>
     </Tooltip>
   </TooltipProvider>
@@ -93,15 +95,28 @@ const ContingentBanner = ({ variant }: ContingentBannerProps) => {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <Sparkles className="h-5 w-5 text-orange-500" />
-              <h2 className="font-bold text-orange-950">
+              <h2 className="font-bold text-orange-950 text-xl">
                 Premium Contingent Package
               </h2>
             </div>
             <div className="text-right">
               <div className="text-sm font-medium text-orange-600">Price</div>
               <div className="text-xl font-bold text-orange-950">₹15,000</div>
+              <div className="text-sm font-medium text-orange-600">
+                per university
+              </div>
             </div>
           </div>
+
+          <div className="rounded-lg bg-orange-100 p-3">
+            <div className="flex items-center gap-2">
+              <p className="text-sm font-medium text-orange-950">
+                Only contingent registrations are eligible for the overall prize
+              </p>
+              <ContingentTooltip />
+            </div>
+          </div>
+
           <Button
             size="lg"
             className="w-full bg-gradient-to-r from-orange-500 to-amber-500 text-white hover:from-orange-600 hover:to-amber-600"
@@ -130,7 +145,7 @@ const ContingentBanner = ({ variant }: ContingentBannerProps) => {
               <h2 className="font-bold text-orange-950">
                 Premium Contingent Package
               </h2>
-              <ContingentInfo />
+              <ContingentTooltip />
             </div>
             <p className="text-sm font-semibold text-orange-800">
               One team per event • Overall Prize Eligible
@@ -149,7 +164,7 @@ const ContingentBanner = ({ variant }: ContingentBannerProps) => {
             <div className="space-y-4">
               <div className="flex items-center gap-2">
                 <PackageTitle />
-                <ContingentInfo />
+                <ContingentTooltip />
               </div>
               <span className="hidden text-lg text-orange-700 sm:block">
                 Send one team per event from your university!
