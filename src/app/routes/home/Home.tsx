@@ -138,19 +138,40 @@ const Home = () => (
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        className="bg-orange-50 py-16"
+        className="bg-white py-16"
       >
         <div className="container mx-auto px-4">
-          <h2 className="mb-8 text-center text-4xl font-bold text-orange-900">
-            Festival Highlights
+          <h2 className="mb-8 text-center text-4xl font-extrabold text-orange-900 sm:text-5xl">
+            About VISAGES
           </h2>
+          <p className="text-center text-lg text-orange-700 sm:text-xl">
+            Visages is an annual cultural festival that celebrates the diversity and it is an annual level fest for
+            students to showcase their talents and skills in various fields. The fest is a two-day event that includes
+            various competitions, workshops, and performances. The event is organized by the students and faculty of
+            St. Joseph's University, Bengaluru.
+          </p>
+        </div>
+      </motion.div>
+
+      {/* Cultural Zones */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        className="bg-gradient-to-b from-orange-50 to-orange-200 py-16"
+      >
+        <div className="container mx-auto px-4">
+          <h2 className="mb-8 text-center text-4xl font-extrabold text-orange-900 sm:text-5xl">
+            Major Events or We Can explain about 5 or 4 or any star events
+          </h2>
+      
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
             {["Dance", "Music", "Art", "Food"].map((category, index) => (
               <motion.div
                 key={category}
-                initial={{ y: 50, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ delay: index * 0.1 }}
+                initial={{ scale: 0.9, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                transition={{ delay: index * 0.2,type:"spring",stiffness:80 }}
                 className="rounded-xl bg-white p-6 text-orange-800 shadow-lg"
               >
                 <h4 className="mb-2 text-xl font-semibold">{category}</h4>
