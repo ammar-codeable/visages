@@ -11,6 +11,13 @@ import {
 import { Card } from "@/components/ui/card";
 import { Event, events } from "@/constants/events";
 import { motion } from "motion/react";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { Info } from "lucide-react";
 
 const EventsSection = ({
   rating,
@@ -31,9 +38,25 @@ const EventsSection = ({
       <Card className="mb-4 overflow-hidden bg-white/80 backdrop-blur-sm transition-all duration-300 hover:bg-white/90">
         <AccordionTrigger className="group px-8 py-5 hover:no-underline">
           <div className="flex w-full flex-col gap-2 sm:flex-row sm:items-center sm:gap-4">
-            <h2 className="text-3xl font-bold text-orange-900 transition-colors group-hover:text-orange-700">
-              {rating}-Star Events
-            </h2>
+            <div className="flex items-center gap-2">
+              <h2 className="text-3xl font-bold text-orange-900 transition-colors group-hover:text-orange-700">
+                {rating}-Star Events
+              </h2>
+              <TooltipProvider delayDuration={100}>
+                <Tooltip>
+                  <TooltipTrigger>
+                    <Info className="h-5 w-5 text-orange-500 hover:text-orange-600" />
+                  </TooltipTrigger>
+                  <TooltipContent
+                    className="border-orange-200 bg-gradient-to-r from-orange-50/95 via-orange-100/95 to-orange-50/95 text-orange-950 text-base"
+                    sideOffset={4}
+                  >
+                    Worth {rating === 5 ? "1500" : rating === 4 ? "1000" : "500"} points
+                    towards overall prize.
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+            </div>
             <StarRating rating={rating} size="lg" />
           </div>
         </AccordionTrigger>
