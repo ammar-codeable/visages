@@ -1,5 +1,5 @@
+import SparkleIcon from "@/components/SparkleIcon";
 import { Button } from "@/components/ui/button";
-import { Sparkles } from "lucide-react";
 import { motion } from "motion/react";
 import { Link } from "react-router";
 
@@ -56,7 +56,7 @@ const Navbar = () => (
                   ? "/"
                   : `/${item.toLowerCase().replace(" ", "-")}`
               }
-              className="relative font-medium text-sm sm:text-base text-orange-950 transition-all hover:text-orange-700"
+              className="relative text-sm font-medium text-orange-950 transition-all hover:text-orange-700 sm:text-base"
             >
               <span className="relative">
                 {item}
@@ -72,11 +72,11 @@ const Navbar = () => (
             <div className="absolute -inset-0.5 rounded-lg bg-gradient-to-r from-orange-400 to-yellow-300 opacity-30 blur transition duration-200 group-hover:opacity-100"></div>
             <Button
               variant="outline"
-              className="relative flex items-center gap-1 sm:gap-2 border-2 border-orange-400 font-medium text-orange-950 hover:bg-orange-100 text-sm sm:text-base px-2 sm:px-4"
+              className="relative flex items-center gap-1 border-2 border-orange-400 px-2 text-sm font-medium text-orange-950 hover:border-orange-500 hover:bg-orange-200/60 sm:gap-2 sm:px-4 sm:text-base"
             >
-              <Sparkles className="h-3 w-3 sm:h-4 sm:w-4" />
-              Cheer Squad
-              <span className="absolute inset-0 rounded-lg ring-2 ring-orange-400/50 group-hover:ring-orange-400"></span>
+              <SparkleIcon />
+              <span className="hidden sm:block">Cheer Squad</span>
+              <span className="absolute inset-0 rounded-lg ring-2 ring-orange-400/50 group-hover:ring-orange-500/60"></span>
             </Button>
           </motion.div>
         </div>
