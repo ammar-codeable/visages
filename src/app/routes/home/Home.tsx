@@ -24,15 +24,21 @@ const Home = () => (
             animate={{ y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="mb-6 bg-gradient-to-r from-orange-400 to-amber-500 bg-clip-text text-7xl font-bold text-transparent">
-              Visages 2025
-            </h1>
-            <p className="text-4xl text-orange-800">
-              Around the World in Three Days
-            </p>
-            <p className="mt-4 text-lg text-orange-700">
-              February 15-17, 2025 • St. Joseph's University
-            </p>
+            <div className="text-center">
+              <p className="mt-4 font-serif text-3xl text-orange-700 sm:text-5xl">
+                St. Joseph's University
+              </p>
+              <h1 className="h-16 sm:h-20 bg-gradient-to-r from-orange-400 to-amber-500 bg-clip-text text-5xl font-extrabold text-transparent sm:text-7xl ">
+                Visages 2025
+              </h1>
+              <p className="text-2xl text-orange-800 sm:text-4xl">
+                Around the World in Two Days
+              </p>
+              <p className="mt-4 text-base text-orange-700 sm:text-2xl">
+                February 20-21, 2025
+              </p>
+            </div>
+
             <CountdownTimer />
           </motion.div>
         </div>
