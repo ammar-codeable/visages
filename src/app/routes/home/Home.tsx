@@ -1,3 +1,4 @@
+import CountdownTimer from "@/components/CountdownTimer";
 import { motion } from "motion/react";
 import { Link } from "react-router";
 
@@ -22,7 +23,7 @@ const Home = () => (
           transition={{ duration: 0.8 }}
         >
           <h1 className="mb-6 bg-gradient-to-r from-orange-400 to-amber-500 bg-clip-text text-7xl font-bold text-transparent">
-            Visages 2024
+            Visages 2025
           </h1>
           <div className="space-y-4">
             <motion.p
@@ -39,8 +40,9 @@ const Home = () => (
               transition={{ delay: 0.7 }}
               className="text-xl text-white/70"
             >
-              February 15-17, 2024 • St. Joseph's University
+              February 15-17, 2025• St. Joseph's University
             </motion.p>
+            <CountdownTimer/>
           </div>
         </motion.div>
       </div>
@@ -56,7 +58,7 @@ const Home = () => (
         <h2 className="mb-16 text-center text-4xl font-bold text-white">
           Cultural Zones
         </h2>
-        <div className="flex snap-x snap-mandatory space-x-8 overflow-x-auto pb-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 ">
           {["Americas", "Europe", "Asia", "Africa", "Oceania"].map(
             (region, index) => (
               <motion.div
@@ -86,7 +88,7 @@ const Home = () => (
       className="bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950 py-32"
     >
       <div className="container mx-auto px-4">
-        <h2 className="mb-16 text-center text-4xl font-bold text-white">
+        <h2 className="mb-16 text-center text-4xl font-bold text-white relative ">
           Festival Highlights
         </h2>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
@@ -108,6 +110,7 @@ const Home = () => (
         </div>
       </div>
     </motion.div>
+    
 
     <motion.div
       whileHover={{ scale: 1.05 }}
