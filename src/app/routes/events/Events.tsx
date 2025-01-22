@@ -23,10 +23,12 @@ const EventsSection = ({
   rating,
   events,
   index,
+  isOpenSection = false,
 }: {
   rating: number;
   events: readonly Event[];
   index: number;
+  isOpenSection?: boolean;
 }) => (
   <motion.div
     initial={{ opacity: 0, y: 30 }}
@@ -34,36 +36,38 @@ const EventsSection = ({
     transition={{ delay: index * 0.2 }}
     viewport={{ once: true }}
   >
-    <AccordionItem value={`rating-${rating}`} className="border-none">
+    <AccordionItem value={`rating-${isOpenSection ? 'open' : rating}`} className="border-none">
       <Card className="mb-4 overflow-hidden bg-white/80 backdrop-blur-sm transition-all duration-300 hover:bg-white/90">
         <AccordionTrigger className="group px-8 py-5 hover:no-underline">
           <div className="flex w-full flex-col gap-2 sm:flex-row sm:items-center sm:gap-4">
             <div className="flex items-center gap-2">
               <h2 className="text-3xl font-bold text-orange-900 transition-colors group-hover:text-orange-700">
-                {rating}-Star Events
+                {isOpenSection ? "Open Events" : `${rating}-Star Events`}
               </h2>
-              <TooltipProvider delayDuration={100}>
-                <Tooltip>
-                  <TooltipTrigger>
-                    <Info className="h-5 w-5 text-orange-500 hover:text-orange-600" />
-                  </TooltipTrigger>
-                  <TooltipContent
-                    className="border-orange-200 bg-gradient-to-r from-orange-50/95 via-orange-100/95 to-orange-50/95 text-orange-950 text-base"
-                    sideOffset={4}
-                  >
-                    Worth {rating === 5 ? "1500" : rating === 4 ? "1000" : "500"} points
-                    towards overall prize.
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
+              {!isOpenSection && (
+                <TooltipProvider delayDuration={100}>
+                  <Tooltip>
+                    <TooltipTrigger>
+                      <Info className="h-5 w-5 text-orange-500 hover:text-orange-600" />
+                    </TooltipTrigger>
+                    <TooltipContent
+                      className="border-orange-200 bg-gradient-to-r from-orange-50/95 via-orange-100/95 to-orange-50/95 text-orange-950 text-base"
+                      sideOffset={4}
+                    >
+                      Worth {rating === 5 ? "1500" : rating === 4 ? "1000" : "500"} points
+                      towards overall prize.
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
+              )}
             </div>
-            <StarRating rating={rating} size="lg" />
+            {!isOpenSection && <StarRating rating={rating} size="lg" />}
           </div>
         </AccordionTrigger>
         <AccordionContent>
           <div className="grid grid-cols-1 gap-8 p-8 pt-2 md:grid-cols-2 lg:grid-cols-4">
             {events
-              .filter((e) => e.rating === rating)
+              .filter((e) => isOpenSection ? e.open : (!e.open && e.rating === rating))
               .map((event, idx) => (
                 <motion.div
                   key={idx}
@@ -84,12 +88,18 @@ const EventsSection = ({
 
 const EventsList = () => (
   <Accordion type="multiple">
+    <EventsSection
+      rating={0}
+      events={events}
+      index={0}
+      isOpenSection={true}
+    />
     {[5, 4, 3].map((rating, index) => (
       <EventsSection
         key={rating}
         rating={rating}
         events={events}
-        index={index}
+        index={index + 1}
       />
     ))}
   </Accordion>
