@@ -1,4 +1,4 @@
-import CountdownTimer from "@/components/hometimer";
+import CountdownTimer from "@/components/CountdownTimer";
 import { motion } from "motion/react";
 import { Link } from "react-router";
 

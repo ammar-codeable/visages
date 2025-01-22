@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
+import { useEffect, useState } from "react";
 
 export default function CountdownTimer() {
   const targetDate = new Date("2025-02-14T12:00:00");
@@ -15,12 +15,12 @@ export default function CountdownTimer() {
   function getTimeLeft(targetDate: Date) {
     const now = new Date();
     const difference = targetDate.getTime() - now.getTime();
-    
+
     const days = Math.floor(difference / (1000 * 60 * 60 * 24));
     const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
     const minutes = Math.floor((difference / (1000 * 60)) % 60);
     const seconds = Math.floor((difference / 1000) % 60);
-    
+
     return { days, hours, minutes, seconds };
   }
 
@@ -29,14 +29,14 @@ export default function CountdownTimer() {
       initial={{ y: 20, opacity: 1 }}
       className="flex flex-col items-center"
     >
-      <div className="relative overflow-hidden rounded-lg bg-white/5 p-2 backdrop-blur-sm border border-white/10">
+      <div className="relative overflow-hidden rounded-lg border border-white/10 bg-white/5 p-2 backdrop-blur-sm">
         <div className="px-3 py-2">
           <span className="text-2xl font-bold text-white sm:text-3xl lg:text-4xl">
             {String(value).padStart(2, "0")}
           </span>
         </div>
       </div>
-      <span className="mt-2 text-xs font-medium text-white/70 uppercase tracking-wider sm:text-sm">
+      <span className="mt-2 text-xs font-medium uppercase tracking-wider text-white/70 sm:text-sm">
         {label}
       </span>
     </motion.div>
