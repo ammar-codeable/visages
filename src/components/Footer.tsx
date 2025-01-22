@@ -34,41 +34,6 @@ const Footer = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-          >
-            <h3 className="mb-4 text-xl font-semibold text-primary">
-              Hours
-            </h3>
-            <div className="flex flex-col gap-2 text-secondary">
-              <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
-              <p>Saturday: 10:00 AM - 4:00 PM</p>
-              <p>Sunday: Closed</p>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="md:col-span-2 lg:col-span-1"
-          >
-            <h3 className="mb-4 text-xl font-semibold text-primary">
-              About St. Joseph's University
-            </h3>
-            <p className="text-secondary">
-              St. Joseph's University, Bengaluru, established in 1882, is a premier 
-              educational institution recognized for academic excellence and holistic 
-              development. Located in the heart of Bangalore, the university carries 
-              forward a rich legacy of Jesuit education, fostering innovation, 
-              critical thinking, and cultural diversity.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
             transition={{ delay: 0.3 }}
           >
             <h3 className="mb-4 text-xl font-semibold text-primary">
@@ -81,22 +46,6 @@ const Footer = () => {
             </div>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4 }}
-            className="md:col-span-2 lg:col-span-1"
-          >
-            <h3 className="mb-4 text-xl font-semibold text-primary">
-              About Visages
-            </h3>
-            <p className="text-secondary">
-              Visages is the annual cultural festival of St. Joseph's University, Bengaluru. 
-              Join us for three days of cultural celebration as talented students from across 
-              the country come together to compete and showcase their artistic abilities.
-            </p>
-          </motion.div>
         </div>
       </div>
     </footer>
