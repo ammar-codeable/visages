@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 
 const Footer = () => {
   return (
-    <footer className="relative bg-background">
+    <footer className="relative bg-zinc-900">
       <div className="container mx-auto px-4 py-16">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           <motion.div
@@ -45,7 +45,6 @@ const Footer = () => {
               <p>Cultural Night: 6:00 PM onwards</p>
             </div>
           </motion.div>
-
         </div>
       </div>
     </footer>
