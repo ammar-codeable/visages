@@ -6,6 +6,11 @@ import { motion, AnimatePresence } from "motion/react";
 import { Link } from "react-router";
 import { useState } from "react";
 
+const navItems = [
+  { to: "/", icon: Home, label: "Home" },
+  { to: "/events", icon: Store, label: "Events" },
+];
+
 const DecorativeBorder = () => (
   <div className="absolute bottom-0 left-0 right-0 translate-y-full">
     <svg
@@ -42,20 +47,16 @@ const MobileDropdown = ({ isOpen }: { isOpen: boolean; onClose: () => void }) =>
         className="sm:hidden border-t border-orange-200" 
       >
         <div className="flex flex-col space-y-4 p-4">
-          <Link
-            to="/"
-            className="flex items-center gap-2 text-base font-bold text-orange-950 hover:text-orange-700"
-          >
-            <Home className="h-5 w-5" />
-            Home
-          </Link>
-          <Link
-            to="/events"
-            className="flex items-center gap-2 text-base font-bold text-orange-950 hover:text-orange-700"
-          >
-            <Store className="h-5 w-5" />
-            Events
-          </Link>
+          {navItems.map(({ to, icon: Icon, label }) => (
+            <Link
+              key={to}
+              to={to}
+              className="flex items-center gap-2 text-base font-bold text-orange-950 hover:text-orange-700"
+            >
+              <Icon className="h-5 w-5" />
+              {label}
+            </Link>
+          ))}
           <Button
             variant="outline"
             className="flex items-center justify-center gap-2 border-2 border-orange-400 font-bold text-orange-950 hover:bg-orange-200/60"
@@ -108,16 +109,19 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden sm:flex items-center space-x-8">
-            <Link
-              to="/events"
-              className="relative flex items-center gap-2 text-base font-bold text-orange-950 transition-all hover:text-orange-700 sm:text-lg"
-            >
-              <Store className="h-5 w-5" />
-              <span className="relative">
-                Events
-                <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-orange-400 transition-all group-hover:w-full" />
-              </span>
-            </Link>
+            {navItems.map(({ to, icon: Icon, label }) => (
+              <Link
+                key={to}
+                to={to}
+                className="relative flex items-center gap-2 text-base font-bold text-orange-950 transition-all hover:text-orange-700 sm:text-lg"
+              >
+                <Icon className="h-5 w-5" />
+                <span className="relative">
+                  {label}
+                  <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-orange-400 transition-all group-hover:w-full" />
+                </span>
+              </Link>
+            ))}
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
