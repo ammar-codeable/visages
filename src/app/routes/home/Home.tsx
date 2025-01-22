@@ -58,7 +58,7 @@ const Home = () => (
         <h2 className="mb-16 text-center text-4xl font-bold text-white">
           Cultural Zones
         </h2>
-        <div className="flex snap-x snap-mandatory space-x-8 overflow-x-auto pb-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 ">
           {["Americas", "Europe", "Asia", "Africa", "Oceania"].map(
             (region, index) => (
               <motion.div
@@ -88,7 +88,7 @@ const Home = () => (
       className="bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950 py-32"
     >
       <div className="container mx-auto px-4">
-        <h2 className="mb-16 text-center text-4xl font-bold text-white">
+        <h2 className="mb-16 text-center text-4xl font-bold text-white relative ">
           Festival Highlights
         </h2>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">

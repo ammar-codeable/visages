@@ -1,43 +1,60 @@
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 export default function CountdownTimer() {
-    const targetDate = new Date("2025-02-14T00:00:00");
-
+  const targetDate = new Date("2025-02-14T12:00:00");
   const [timeLeft, setTimeLeft] = useState(getTimeLeft(targetDate));
 
   useEffect(() => {
     const intervalId = setInterval(() => {
       setTimeLeft(getTimeLeft(targetDate));
     }, 1000);
-
     return () => clearInterval(intervalId);
   }, [targetDate]);
 
   function getTimeLeft(targetDate: Date) {
     const now = new Date();
     const difference = targetDate.getTime() - now.getTime();
-
-    if (difference <= 0) {
-      return { hours: 0, minutes: 0, seconds: 0 };
-    }
-
+    
+    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
     const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
     const minutes = Math.floor((difference / (1000 * 60)) % 60);
     const seconds = Math.floor((difference / 1000) % 60);
-
-    return { hours, minutes, seconds };
+    
+    return { days, hours, minutes, seconds };
   }
 
-  return (
-    <div className="flex flex-col items-center justify-center space-y-4">
-      <div className="relative flex items-center justify-center w-48 h-48 bg-gradient-to-r from-orange-500 to-amber-500 rounded-full border-8 border-white shadow-lg">
-        <div className="absolute text-4xl font-bold text-white">
-          {String(timeLeft.hours).padStart(2, "0")}:
-          {String(timeLeft.minutes).padStart(2, "0")}:
-          {String(timeLeft.seconds).padStart(2, "0")}
+  const TimeUnit = ({ value, label }: { value: number; label: string }) => (
+    <motion.div
+      initial={{ y: 20, opacity: 1 }}
+      className="flex flex-col items-center"
+    >
+      <div className="relative overflow-hidden rounded-lg bg-white/5 p-2 backdrop-blur-sm border border-white/10">
+        <div className="px-3 py-2">
+          <span className="text-2xl font-bold text-white sm:text-3xl lg:text-4xl">
+            {String(value).padStart(2, "0")}
+          </span>
         </div>
       </div>
-      <p className="text-white text-lg font-semibold">Time remaining for visages 2025</p>
-    </div>
+      <span className="mt-2 text-xs font-medium text-white/70 uppercase tracking-wider sm:text-sm">
+        {label}
+      </span>
+    </motion.div>
+  );
+
+  return (
+    <motion.div
+      initial={{ opacity: 1 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0.9 }}
+      className="mt-8 w-full"
+    >
+      <div className="flex justify-center gap-3 sm:gap-4 md:gap-6">
+        <TimeUnit value={timeLeft.days} label="Days" />
+        <TimeUnit value={timeLeft.hours} label="Hours" />
+        <TimeUnit value={timeLeft.minutes} label="Min" />
+        <TimeUnit value={timeLeft.seconds} label="Sec" />
+      </div>
+    </motion.div>
   );
 }
