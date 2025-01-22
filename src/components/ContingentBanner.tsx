@@ -5,12 +5,20 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { CheckCircle, IndianRupee, Info, Sparkles, Users } from "lucide-react";
+import {
+  CheckCircle,
+  IndianRupee,
+  Info,
+  Sparkles,
+  Trophy,
+  Users,
+} from "lucide-react";
 import { motion, useScroll, useTransform } from "motion/react";
 
 const features = [
   { icon: Users, text: "One Team Per Event" },
-  { icon: CheckCircle, text: "Eligible for All Events" },
+  { icon: Trophy, text: "Overall Prize Eligible" },
+  { icon: CheckCircle, text: "All Events Access" },
   { icon: IndianRupee, text: "Best Value Package" },
 ] as const;
 
@@ -48,11 +56,14 @@ const ContingentInfo = () => (
       <TooltipTrigger>
         <Info className="h-4 w-4 text-orange-500 hover:text-orange-600" />
       </TooltipTrigger>
-      <TooltipContent 
-        className="max-w-[250px] bg-gradient-to-r from-orange-50/95 via-orange-100/95 to-orange-50/95 text-orange-950 border-orange-200"
+      <TooltipContent
+        className="max-w-[250px] border-orange-200 bg-gradient-to-r from-orange-50/95 via-orange-100/95 to-orange-50/95 text-orange-950"
         sideOffset={4}
       >
-        <p>Additional teams from the same university require separate registration or another contingent package.</p>
+        <span>Additional teams require separate registration. </span>
+        <span className="font-bold text-orange-900">
+          Only contingent registrations are eligible for the overall prize.
+        </span>
       </TooltipContent>
     </Tooltip>
   </TooltipProvider>
@@ -121,8 +132,8 @@ const ContingentBanner = ({ variant }: ContingentBannerProps) => {
               </h2>
               <ContingentInfo />
             </div>
-            <p className="text-sm text-orange-700">
-              One team per event • ₹15,000
+            <p className="text-sm font-semibold text-orange-800">
+              One team per event • Overall Prize Eligible
             </p>
           </div>
         </div>
@@ -140,9 +151,13 @@ const ContingentBanner = ({ variant }: ContingentBannerProps) => {
                 <PackageTitle />
                 <ContingentInfo />
               </div>
-              <p className="hidden text-lg text-orange-700 sm:block">
+              <span className="hidden text-lg text-orange-700 sm:block">
                 Send one team per event from your university!
-              </p>
+              </span>
+              <span className="text-lg font-bold text-orange-900">
+                Only contingent registrations are eligible for the overall
+                prize.
+              </span>
             </div>
             <FeatureList />
           </div>
