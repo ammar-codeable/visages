@@ -43,8 +43,8 @@ const Home = () => (
           </motion.div>
         </div>
       </motion.div>
-
-      {/* Cultural Zones */}
+      
+      {/* About the College */}
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -52,24 +52,83 @@ const Home = () => (
         className="bg-white py-16"
       >
         <div className="container mx-auto px-4">
-          <h2 className="mb-8 text-center text-4xl font-bold text-orange-900">
-            Cultural Zones
+          <h2 className="mb-8 text-center text-4xl font-extrabold text-orange-900 sm:text-5xl">
+            About St. Joseph's University
+          </h2>
+          <p className="text-center text-lg text-orange-700 sm:text-xl">
+            St. Joseph's University, Bengaluru, established in 1882, is a premier 
+            educational institution recognized for academic excellence and holistic 
+            development. Located in the heart of Bangalore, the university carries 
+            forward a rich legacy of Jesuit education, fostering innovation, 
+            critical thinking, and cultural diversity.
+          </p>
+        </div>
+      </motion.div>
+
+      {/* Cultural Zones */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        className="bg-gradient-to-b from-orange-50 to-orange-200 py-16"
+      >
+        <div className="container mx-auto px-4">
+          <h2 className="mb-8 text-center text-4xl font-extrabold text-orange-900 sm:text-5xl">
+            Explore Our Vibrant Campus
           </h2>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {["Americas", "Europe", "Asia", "Africa", "Oceania"].map(
-              (region, index) => (
-                <motion.div
-                  key={region}
-                  initial={{ y: 50, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  transition={{ delay: index * 0.2 }}
-                  className="rounded-xl bg-orange-100 p-6 text-orange-800 shadow-lg"
-                >
-                  <h3 className="mb-2 text-2xl font-bold">{region}</h3>
-                  <p>Discover the rich heritage of {region}</p>
-                </motion.div>
-              ),
-            )}
+            {[
+              {
+                title: "Academic Excellence",
+                description:
+                  "A hub of innovation and learning, where students excel in academics and beyond.",
+                icon: "📚",
+              },
+              {
+                title: "Cultural Diversity",
+                description:
+                  "Experience a melting pot of cultures with events, clubs, and vibrant traditions.",
+                icon: "🌏",
+              },
+              {
+                title: "State-of-the-Art Facilities",
+                description:
+                  "From modern classrooms to advanced labs, our campus has it all.",
+                icon: "🏛️",
+              },
+              {
+                title: "Sports & Recreation",
+                description:
+                  "A thriving sports culture with facilities for all major sports.",
+                icon: "⚽",
+              },
+              {
+                title: "Research Opportunities",
+                description:
+                  "Engage in groundbreaking research with our expert faculty.",
+                icon: "🔬",
+              },
+              {
+                title: "Community Engagement",
+                description:
+                  "Make a difference through various outreach programs and initiatives.",
+                icon: "🤝",
+              },
+            ].map((feature, index) => (
+              <motion.div
+                key={feature.title}
+                initial={{ scale: 0.9, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                transition={{ delay: index * 0.2, type: "spring", stiffness: 80 }}
+                className="rounded-xl bg-white p-6 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition duration-300 ease-in-out"
+              >
+                <div className="flex items-center mb-4 text-4xl">
+                  <span>{feature.icon}</span>
+                  <h3 className="ml-4 text-2xl font-bold">{feature.title}</h3>
+                </div>
+                <p className="text-orange-700">{feature.description}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </motion.div>
