@@ -27,16 +27,15 @@ export default function CountdownTimer() {
   const TimeUnit = ({ value, label }: { value: number; label: string }) => (
     <motion.div
       initial={{ y: 20, opacity: 1 }}
+      transition={{ duration: 0.5 }}
       className="flex flex-col items-center"
     >
-      <div className="relative overflow-hidden rounded-lg border border-white/10 bg-white/5 p-2 backdrop-blur-sm">
-        <div className="px-3 py-2">
-          <span className="text-2xl font-bold text-white sm:text-3xl lg:text-4xl">
-            {String(value).padStart(2, "0")}
-          </span>
-        </div>
+      <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-gray-800 to-gray-900 p-3 shadow-lg">
+        <span className="text-3xl font-bold text-yellow-300 sm:text-4xl lg:text-5xl">
+          {String(value).padStart(2, "0")}
+        </span>
       </div>
-      <span className="mt-2 text-xs font-medium uppercase tracking-wider text-white/70 sm:text-sm">
+      <span className="mt-2 text-sm font-medium uppercase tracking-wide text-black-400 sm:text-base">
         {label}
       </span>
     </motion.div>
@@ -44,17 +43,15 @@ export default function CountdownTimer() {
 
   return (
     <motion.div
-      initial={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ delay: 0.9 }}
-      className="mt-8 w-full"
+      transition={{ delay: 0.3 }}
+      className="mt-8 flex w-full flex-wrap justify-center gap-4 sm:gap-6"
     >
-      <div className="flex justify-center gap-3 sm:gap-4 md:gap-6">
-        <TimeUnit value={timeLeft.days} label="Days" />
-        <TimeUnit value={timeLeft.hours} label="Hours" />
-        <TimeUnit value={timeLeft.minutes} label="Min" />
-        <TimeUnit value={timeLeft.seconds} label="Sec" />
-      </div>
+      <TimeUnit value={timeLeft.days} label="Days" />
+      <TimeUnit value={timeLeft.hours} label="Hours" />
+      <TimeUnit value={timeLeft.minutes} label="Min" />
+      <TimeUnit value={timeLeft.seconds} label="Sec" />
     </motion.div>
   );
 }
