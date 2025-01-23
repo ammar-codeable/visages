@@ -105,6 +105,12 @@ const Navbar = () => {
               alt="University Logo"
               className="h-12 w-auto object-contain"
             />
+            <a
+              href="https://sju.edu.in"
+              className="text-2xl font-bold text-orange-950 transition-all hover:text-orange-700"
+            >
+              SJU
+            </a>
             <Separator
               orientation="vertical"
               className="h-8 bg-orange-300/80"
