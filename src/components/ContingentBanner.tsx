@@ -14,6 +14,7 @@ import {
   Users,
 } from "lucide-react";
 import { motion, useScroll, useTransform } from "motion/react";
+import PointsDialog from "./PointsDialog";
 
 const features = [
   { icon: Users, text: "One Team Per Event" },
@@ -117,12 +118,15 @@ const ContingentBanner = ({ variant }: ContingentBannerProps) => {
             </div>
           </div>
 
-          <Button
-            size="lg"
-            className="w-full bg-gradient-to-r from-orange-500 to-amber-500 text-white hover:from-orange-600 hover:to-amber-600"
-          >
-            Register Contingent
-          </Button>
+          <div className="flex flex-col gap-2">
+            <PointsDialog />
+            <Button
+              size="lg"
+              className="w-full bg-gradient-to-r from-orange-500 to-amber-500 text-white hover:from-orange-600 hover:to-amber-600"
+            >
+              Register Contingent
+            </Button>
+          </div>
         </div>
       </div>
     );
@@ -182,12 +186,15 @@ const ContingentBanner = ({ variant }: ContingentBannerProps) => {
 
       {/* Register Button - Full width on mobile */}
       <div className="absolute bottom-3 left-4 right-4 sm:left-auto">
-        <Button
-          size="lg"
-          className="w-full bg-gradient-to-r from-orange-500 to-amber-500 px-8 text-white hover:from-orange-600 hover:to-amber-600 sm:w-auto"
-        >
-          Register Contingent
-        </Button>
+        <div className="flex gap-2">
+          <PointsDialog />
+          <Button
+            size="lg"
+            className="w-full bg-gradient-to-r from-orange-500 to-amber-500 px-8 text-white hover:from-orange-600 hover:to-amber-600 sm:w-auto"
+          >
+            Register Contingent
+          </Button>
+        </div>
       </div>
     </motion.div>
   );
