@@ -1,4 +1,18 @@
-import { Camera, Compass, Globe, LucideIcon, MapPin } from "lucide-react";
+import {
+  Camera,
+  Compass, // Added for locations
+  Flag,
+  Globe,
+  Landmark, // Added for destinations
+  LucideIcon,
+  Map, // Added for variety
+  MapPin,
+  Mountain,
+  MountainSnow,
+  Plane, // Moved up in priority
+  Ship,
+  Train,
+} from "lucide-react";
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 
@@ -11,31 +25,50 @@ type FloatingElement = {
 
 const getScreenConfig = () => {
   const width = window.innerWidth;
-  if (width < 640) { // mobile
+  if (width < 640) {
+    // mobile
     return {
       count: 6,
       minSize: 32,
-      maxSize: 48
+      maxSize: 48,
     };
-  } else if (width < 1024) { // tablet
+  } else if (width < 1024) {
+    // tablet
     return {
       count: 8,
       minSize: 40,
-      maxSize: 64
+      maxSize: 64,
     };
-  } else { // desktop
+  } else {
+    // desktop
     return {
       count: 14,
       minSize: 48,
-      maxSize: 88
+      maxSize: 88,
     };
   }
 };
 
 const generateElements = (): FloatingElement[] => {
-  const icons = [Camera, Compass, MapPin, Globe];
+  const icons = [
+    Plane,
+    Globe,
+    Globe,
+    Map,
+    Compass,
+    Mountain,
+    Camera,
+    Camera,
+    Ship,
+    Train,
+    Landmark,
+    MapPin,
+    MountainSnow,
+    Flag,
+  ];
+
   const config = getScreenConfig();
-  
+
   return Array.from({ length: config.count }, (_, i) => ({
     icon: icons[i % icons.length],
     size: Math.random() * (config.maxSize - config.minSize) + config.minSize,
@@ -84,8 +117,8 @@ const AnimatedBackground = () => {
     };
 
     handleResize(); // Initial generation
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
