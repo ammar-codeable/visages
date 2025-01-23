@@ -54,7 +54,7 @@ const FeatureList = () => (
 const ContingentTooltip = () => (
   <TooltipProvider delayDuration={100}>
     <Tooltip>
-      <TooltipTrigger>
+      <TooltipTrigger className="hidden md:inline-flex">
         <Info className="h-4 w-4 text-orange-700 hover:text-orange-600" />
       </TooltipTrigger>
       <TooltipContent

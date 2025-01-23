@@ -9,15 +9,15 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card } from "@/components/ui/card";
-import { Event, events } from "@/constants/events";
-import { motion } from "motion/react";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { Event, events } from "@/constants/events";
 import { Info } from "lucide-react";
+import { motion } from "motion/react";
 
 const EventsSection = ({
   rating,
@@ -36,7 +36,10 @@ const EventsSection = ({
     transition={{ delay: index * 0.2 }}
     viewport={{ once: true }}
   >
-    <AccordionItem value={`rating-${isOpenSection ? 'open' : rating}`} className="border-none">
+    <AccordionItem
+      value={`rating-${isOpenSection ? "open" : rating}`}
+      className="border-none"
+    >
       <Card className="mb-4 overflow-hidden bg-white/80 backdrop-blur-sm transition-all duration-300 hover:bg-white/90">
         <AccordionTrigger className="group px-8 py-5 hover:no-underline">
           <div className="flex w-full flex-col gap-2 sm:flex-row sm:items-center sm:gap-4">
@@ -45,24 +48,47 @@ const EventsSection = ({
                 {isOpenSection ? "Open Events" : `${rating}-Star Events`}
               </h2>
               {!isOpenSection && (
-                <TooltipProvider delayDuration={100}>
-                  <Tooltip>
-                    <TooltipTrigger>
-                      <Info className="h-5 w-5 text-orange-500 hover:text-orange-600" />
-                    </TooltipTrigger>
-                    <TooltipContent
-                      className="border-orange-200 bg-gradient-to-r from-orange-50/95 via-orange-100/95 to-orange-50/95 text-orange-950 text-base"
-                      sideOffset={4}
-                    >
-                      <p>Points distribution:</p>
-                      <ul className="mt-1 list-disc pl-4">
-                        <li>1st Place: {rating === 5 ? "1000" : rating === 4 ? "800" : "600"}</li>
-                        <li>2nd Place: {rating === 5 ? "800" : rating === 4 ? "600" : "400"}</li>
-                        <li>3rd Place: {rating === 5 ? "600" : rating === 4 ? "400" : "200"}</li>
-                      </ul>
-                    </TooltipContent>
-                  </Tooltip>
-                </TooltipProvider>
+                <>
+                  <TooltipProvider delayDuration={100}>
+                    <Tooltip>
+                      <TooltipTrigger className="hidden md:inline-flex">
+                        <Info className="h-5 w-5 text-orange-500 hover:text-orange-600" />
+                      </TooltipTrigger>
+                      <TooltipContent
+                        className="border-orange-200 bg-gradient-to-r from-orange-50/95 via-orange-100/95 to-orange-50/95 text-base text-orange-950"
+                        sideOffset={4}
+                      >
+                        <p>Points distribution:</p>
+                        <ul className="mt-1 list-disc pl-4">
+                          <li>
+                            1st Place:{" "}
+                            {rating === 5
+                              ? "1000"
+                              : rating === 4
+                                ? "800"
+                                : "600"}
+                          </li>
+                          <li>
+                            2nd Place:{" "}
+                            {rating === 5
+                              ? "800"
+                              : rating === 4
+                                ? "600"
+                                : "400"}
+                          </li>
+                          <li>
+                            3rd Place:{" "}
+                            {rating === 5
+                              ? "600"
+                              : rating === 4
+                                ? "400"
+                                : "200"}
+                          </li>
+                        </ul>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
+                </>
               )}
             </div>
             {!isOpenSection && <StarRating rating={rating} size="lg" />}
@@ -71,7 +97,9 @@ const EventsSection = ({
         <AccordionContent>
           <div className="grid grid-cols-1 gap-8 p-8 pt-2 md:grid-cols-2 lg:grid-cols-4">
             {events
-              .filter((e) => isOpenSection ? e.open : (!e.open && e.rating === rating))
+              .filter((e) =>
+                isOpenSection ? e.open : !e.open && e.rating === rating,
+              )
               .map((event, idx) => (
                 <motion.div
                   key={idx}
@@ -92,12 +120,7 @@ const EventsSection = ({
 
 const EventsList = () => (
   <Accordion type="single" collapsible>
-    <EventsSection
-      rating={0}
-      events={events}
-      index={0}
-      isOpenSection={true}
-    />
+    <EventsSection rating={0} events={events} index={0} isOpenSection={true} />
     {[5, 4, 3].map((rating, index) => (
       <EventsSection
         key={rating}
@@ -138,7 +161,7 @@ const Events = () => (
               Discover and participate in our exciting cultural events and
               competitions
             </p>
-          </motion.div> 
+          </motion.div>
         </div>
       </div>
 
