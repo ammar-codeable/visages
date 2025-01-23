@@ -2,6 +2,7 @@ import CountdownTimer from "@/components/CountdownTimer";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import { motion } from "motion/react";
 import { Link } from "react-router";
+import Visages from "@/components/Visages";
 
 const Home = () => (
   <div className="relative min-h-screen">
@@ -64,7 +65,7 @@ const Home = () => (
       </motion.div>
 
       {/* Cultural Zones */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
@@ -90,8 +91,8 @@ const Home = () => (
             ))}
           </div>
         </div>
-        </motion.div>
-
+        </motion.div> */}
+         <Visages />
 
       {/* About the College */}
       <motion.div
