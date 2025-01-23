@@ -3,6 +3,7 @@ import AnimatedBackground from "@/components/AnimatedBackground";
 import { motion } from "motion/react";
 import { Link } from "react-router";
 import Visages from "@/components/Visages";
+import FancyText from "@/components/FancyText";
 
 const Home = () => (
   <div className="relative min-h-screen">
@@ -32,9 +33,9 @@ const Home = () => (
               <h1 className="h-16 sm:h-20 bg-gradient-to-r from-orange-400 to-amber-500 bg-clip-text text-5xl font-extrabold text-transparent sm:text-7xl ">
                 Visages 2025
               </h1>
-              <p className="text-2xl text-orange-800 sm:text-4xl">
-                Around the World in Two Days
-              </p>
+              <div>
+                <FancyText />
+              </div>
               <p className="mt-4 text-base text-orange-700 sm:text-2xl">
                 February 20-21, 2025
               </p>
