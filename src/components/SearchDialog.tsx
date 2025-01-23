@@ -27,16 +27,14 @@ const SearchDialog = () => {
     );
   });
 
-  // Group events by rating
-  const groupedEvents = filteredEvents.reduce(
-    (acc, event) => {
-      const rating = event.rating;
-      if (!acc[rating]) acc[rating] = [];
-      acc[rating].push(event);
-      return acc;
-    },
-    {} as Record<number, typeof events>,
-  );
+  const groupedEvents = filteredEvents.reduce<Record<number, Array<typeof events[number]>>>((acc, event) => {
+    const rating = event.rating;
+    if (!acc[rating]) {
+      acc[rating] = [];
+    }
+    acc[rating] = [...acc[rating], event];
+    return acc;
+  }, {});
 
   const ratings = Object.keys(groupedEvents).sort(
     (a, b) => Number(b) - Number(a),
