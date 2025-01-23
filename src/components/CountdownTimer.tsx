@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 
 export default function CountdownTimer() {
-  const targetDate = new Date("2025-02-21T08:00:00");
+  const targetDate = new Date("2025-02-20T08:00:00");
   const [timeLeft, setTimeLeft] = useState(getTimeLeft(targetDate));
 
   useEffect(() => {
@@ -20,7 +20,9 @@ export default function CountdownTimer() {
     const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
     const minutes = Math.floor((difference / (1000 * 60)) % 60);
     const seconds = Math.floor((difference / 1000) % 60);
-
+    if(seconds <=0){
+      return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+    }
     return { days, hours, minutes, seconds };
   }
 
