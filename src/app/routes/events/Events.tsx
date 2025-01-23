@@ -91,7 +91,7 @@ const EventsSection = ({
 );
 
 const EventsList = () => (
-  <Accordion type="multiple">
+  <Accordion type="single" collapsible>
     <EventsSection
       rating={0}
       events={events}
