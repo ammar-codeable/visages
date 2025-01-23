@@ -54,8 +54,12 @@ const EventsSection = ({
                       className="border-orange-200 bg-gradient-to-r from-orange-50/95 via-orange-100/95 to-orange-50/95 text-orange-950 text-base"
                       sideOffset={4}
                     >
-                      Worth {rating === 5 ? "1500" : rating === 4 ? "1000" : "500"} points
-                      towards overall prize.
+                      <p>Points distribution:</p>
+                      <ul className="mt-1 list-disc pl-4">
+                        <li>1st Place: {rating === 5 ? "1000" : rating === 4 ? "800" : "600"}</li>
+                        <li>2nd Place: {rating === 5 ? "800" : rating === 4 ? "600" : "400"}</li>
+                        <li>3rd Place: {rating === 5 ? "600" : rating === 4 ? "400" : "200"}</li>
+                      </ul>
                     </TooltipContent>
                   </Tooltip>
                 </TooltipProvider>
