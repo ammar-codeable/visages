@@ -5,6 +5,7 @@ import { Home, Menu, Store, X } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
 import { Link } from "react-router";
+import SearchDialog from "@/components/SearchDialog";
 
 const navItems = [
   { to: "/", icon: Home, label: "Home" },
@@ -61,6 +62,8 @@ const MobileDropdown = ({
           </div>
 
           <div className="flex flex-col space-y-4">
+            {/* Add search button at the top of mobile menu */}
+            <SearchDialog />
             {navItems.map(({ to, icon: Icon, label }) => (
               <Link
                 key={to}
@@ -132,7 +135,8 @@ const Navbar = () => {
           </button>
 
           {/* Desktop Navigation */}
-          <div className="hidden items-center space-x-8 sm:flex">
+          <div className="hidden items-center space-x-8 md:flex">
+            <SearchDialog />
             {navItems.map(({ to, icon: Icon, label }) => (
               <Link
                 key={to}
