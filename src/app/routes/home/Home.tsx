@@ -1,6 +1,6 @@
-import AnimatedBackground from "@/components/AnimatedBackground";
 import CountdownTimer from "@/components/CountdownTimer";
 import FancyText from "@/components/FancyText";
+import Globe from "@/components/Globe";
 import VisagesHighlights from "@/components/VisagesHighlights";
 import { motion } from "motion/react";
 import { Link } from "react-router";
@@ -8,9 +8,14 @@ import VisagesLogo from "/visages-logo.png";
 
 const Home = () => (
   <div className="relative min-h-screen">
-    {/* Background */}
-    <div className="fixed inset-0 bg-gradient-to-br from-orange-50 via-orange-100/50 to-orange-50">
-      <AnimatedBackground />
+    {/* Background with Globe */}
+    <div className="fixed inset-0">
+      <div className="absolute inset-0 flex translate-y-4 items-center justify-center">
+        <div className="scale-125 opacity-80">
+          <Globe />
+        </div>
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-br from-orange-50/80 via-orange-100/75 to-orange-50/80" />
     </div>
 
     {/* Content */}
