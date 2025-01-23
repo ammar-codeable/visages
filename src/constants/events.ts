@@ -36,7 +36,8 @@ export const events: readonly Event[] = [
     title: "Western Group Dance",
     date: "",
     venue: "Main Stage",
-    image: "https://static.wixstatic.com/media/d90ac3_63db656ddfa8483bbd89dd3f926df712~mv2.jpg/v1/fill/w_1469,h_828,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01,enc_auto/d90ac3_63db656ddfa8483bbd89dd3f926df712~mv2.jpg",
+    image:
+      "https://static.wixstatic.com/media/d90ac3_63db656ddfa8483bbd89dd3f926df712~mv2.jpg/v1/fill/w_1469,h_828,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01,enc_auto/d90ac3_63db656ddfa8483bbd89dd3f926df712~mv2.jpg",
     description: "A dynamic fusion of Western dance styles and music.",
     rating: 5,
     registrationFee: 1500,
@@ -194,7 +195,8 @@ export const events: readonly Event[] = [
     title: "Air Crash",
     date: "",
     venue: "",
-    image: "https://th.bing.com/th/id/OIF.4qYNGRGkJO7rLeG1ftmbaw?rs=1&pid=ImgDetMain",
+    image:
+      "https://th.bing.com/th/id/OIF.4qYNGRGkJO7rLeG1ftmbaw?rs=1&pid=ImgDetMain",
     description:
       "On-the-spot characters and creative scenarios to test your imagination.",
     rating: 4,
@@ -211,7 +213,8 @@ export const events: readonly Event[] = [
     title: "Indian Solo Dance",
     date: "",
     venue: "Aloysius Hall",
-    image: "https://cdn.groupmuse.com/b186beaa-467c-45d1-b858-6b472ea8b3d8/-/scale_crop/1800x960/center/-/max_icc_size/10/-/format/auto/-/quality/lighter/-/progressive/yes/",
+    image:
+      "https://cdn.groupmuse.com/b186beaa-467c-45d1-b858-6b472ea8b3d8/-/scale_crop/1800x960/center/-/max_icc_size/10/-/format/auto/-/quality/lighter/-/progressive/yes/",
     description:
       "Show your skills in Indian dance styles and captivate the audience.",
     rating: 4,
@@ -231,7 +234,8 @@ export const events: readonly Event[] = [
     title: "Reel Making",
     date: "",
     venue: "",
-    image: "https://www.maketecheasier.com/assets/uploads/2022/08/best-apps-to-make-instagram-reels-featured-image-800x400.jpg",
+    image:
+      "https://www.maketecheasier.com/assets/uploads/2022/08/best-apps-to-make-instagram-reels-featured-image-800x400.jpg",
     description:
       "Create captivating reels to showcase your creativity and win hearts.",
     rating: 4,
@@ -252,7 +256,8 @@ export const events: readonly Event[] = [
     title: "Stand-up Comedy",
     date: "",
     venue: "",
-    image: "https://media.gqindia.com/wp-content/uploads/2020/02/standup-comedy-specials.jpg",
+    image:
+      "https://media.gqindia.com/wp-content/uploads/2020/02/standup-comedy-specials.jpg",
     description:
       "An opportunity to showcase your comedic talent in front of an audience.",
     rating: 3,
@@ -271,7 +276,8 @@ export const events: readonly Event[] = [
     title: "Treasure Hunt",
     date: "",
     venue: "Campus-wide",
-    image: "https://pluspng.com/img-png/treasure-hunt-png-hd-treasure-hunt-1920.jpg",
+    image:
+      "https://pluspng.com/img-png/treasure-hunt-png-hd-treasure-hunt-1920.jpg",
     description: "Follow clues and solve riddles to find the hidden treasure.",
     rating: 3,
     registrationFee: 500,
@@ -311,7 +317,8 @@ export const events: readonly Event[] = [
     title: "BGMI",
     date: "",
     venue: "Online",
-    image: "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWRicmgxMGlnN3BzbGp1anZxMGJhdmN3ajFoeHdzNmd5MmQxYnV0eSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/vVwv7I87uB9gZ7avim/giphy.gif",
+    image:
+      "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWRicmgxMGlnN3BzbGp1anZxMGJhdmN3ajFoeHdzNmd5MmQxYnV0eSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/vVwv7I87uB9gZ7avim/giphy.gif",
     description:
       "An exhilarating online gaming tournament for BGMI enthusiasts, testing teamwork and strategy.",
     rating: 0,
@@ -360,7 +367,8 @@ export const events: readonly Event[] = [
     title: "Battle of Bands",
     date: "",
     venue: "",
-    image: "https://i.pinimg.com/originals/95/e3/ed/95e3ed74aa66610a2bea7c58245b6fdd.gif",
+    image:
+      "https://i.pinimg.com/originals/95/e3/ed/95e3ed74aa66610a2bea7c58245b6fdd.gif",
     description:
       "A thrilling musical competition where college bands battle it out with electrifying performances.",
     rating: 0,
@@ -386,7 +394,8 @@ export const events: readonly Event[] = [
     title: "Improv",
     date: "",
     venue: "",
-    image: "https://www.ere.net/_next/image?url=https%3A%2F%2Fapi.eremedia.com%2Fwp-content%2Fuploads%2F2018%2F06%2Fimprov.jpg&w=1200&q=75",
+    image:
+      "https://www.ere.net/_next/image?url=https%3A%2F%2Fapi.eremedia.com%2Fwp-content%2Fuploads%2F2018%2F06%2Fimprov.jpg&w=1200&q=75",
     description:
       "A dynamic and spontaneous event where teams create entertaining and unpredictable skits based on random prompts.",
     rating: 3,
@@ -405,7 +414,8 @@ export const events: readonly Event[] = [
     title: "Face Painting",
     date: "",
     venue: "",
-    image: "https://media.gettyimages.com/id/1419740490/video/happy-halloween-mother-paint-little-girls-face-makeup-applied-for-trick-or-treating-for.jpg?s=640x640&k=20&c=EuqSy19bgc_yGyZFXKR4CTIqEFYkfyrqCOK0Lz8vNZs=",
+    image:
+      "https://media.gettyimages.com/id/1419740490/video/happy-halloween-mother-paint-little-girls-face-makeup-applied-for-trick-or-treating-for.jpg?s=640x640&k=20&c=EuqSy19bgc_yGyZFXKR4CTIqEFYkfyrqCOK0Lz8vNZs=",
     description:
       "A creative event where participants showcase their artistic skills by painting faces inspired by cultural elements, traditions, or landmarks worldwide.",
     rating: 3,
@@ -448,7 +458,8 @@ export const events: readonly Event[] = [
     title: "Solo Instrumental",
     date: "",
     venue: "",
-    image: "https://cdn.pixabay.com/animation/2023/04/06/23/17/23-17-32-365_512.gif",
+    image:
+      "https://cdn.pixabay.com/animation/2023/04/06/23/17/23-17-32-365_512.gif",
     description:
       "A platform for solo musicians to showcase their technical skills and creativity through live instrumental performances.",
     rating: 3,
@@ -472,7 +483,8 @@ export const events: readonly Event[] = [
     title: "DJ Wars",
     date: "",
     venue: "",
-    image: "https://i0.wp.com/jasminpatterson.com/wp-content/uploads/2018/05/What-Acting-Like-The-World-Really-Means-5.21.18.jpg?w=1920&ssl=1",
+    image:
+      "https://i0.wp.com/jasminpatterson.com/wp-content/uploads/2018/05/What-Acting-Like-The-World-Really-Means-5.21.18.jpg?w=1920&ssl=1",
     description:
       "A thrilling competition where DJs showcase their original mixes and battle for the ultimate title.",
     rating: 4,
@@ -492,7 +504,8 @@ export const events: readonly Event[] = [
     title: "Solo Classical Singing",
     date: "",
     venue: "",
-    image: "https://indianewengland.com/wp-content/uploads/2018/03/Kaushiki_Chakraborty-LQ-e1522282105483.jpg",
+    image:
+      "https://indianewengland.com/wp-content/uploads/2018/03/Kaushiki_Chakraborty-LQ-e1522282105483.jpg",
     description:
       "A classical music event where participants showcase their vocal skills in Hindustani or Carnatic music.",
     rating: 4,
@@ -513,7 +526,8 @@ export const events: readonly Event[] = [
     title: "Western Solo Music",
     date: "",
     venue: "",
-    image: "https://www.careersinmusic.com/wp-content/uploads/2018/11/singing-competition.jpg",
+    image:
+      "https://www.careersinmusic.com/wp-content/uploads/2018/11/singing-competition.jpg",
     description:
       "A solo singing competition where participants perform English songs, showcasing their vocal prowess.",
     rating: 4,
@@ -535,7 +549,8 @@ export const events: readonly Event[] = [
     title: "Indian Solo Singing",
     date: "",
     venue: "",
-    image: "https://i0.wp.com/www.socialnews.xyz/wp-content/uploads/2023/03/23/9af842f4d6651f8e1238cb1a7686a4d1.jpg?fit=1999%2C1413&quality=80&zoom=1&ssl=1?v=1679584024",
+    image:
+      "https://i0.wp.com/www.socialnews.xyz/wp-content/uploads/2023/03/23/9af842f4d6651f8e1238cb1a7686a4d1.jpg?fit=1999%2C1413&quality=80&zoom=1&ssl=1?v=1679584024",
     description:
       "A solo singing competition where participants perform Indian songs based on specific themes, showcasing their vocal talent and creativity.",
     rating: 4,
@@ -561,7 +576,8 @@ export const events: readonly Event[] = [
     title: "Art",
     date: "",
     venue: "",
-    image: "https://th.bing.com/th/id/OIP.ZB6Icf7u5qEgVZfkWwZyiQHaE7?rs=1&pid=ImgDetMain",
+    image:
+      "https://th.bing.com/th/id/OIP.ZB6Icf7u5qEgVZfkWwZyiQHaE7?rs=1&pid=ImgDetMain",
     description: "",
     rating: 3,
     rules: [],
@@ -572,7 +588,8 @@ export const events: readonly Event[] = [
     title: "Minute to Win It",
     date: "",
     venue: "",
-    image: "https://d8it4huxumps7.cloudfront.net/uploads/images/opportunity/mobile_banner/6540c1859cbc2_just-a-minute-competition.png",
+    image:
+      "https://d8it4huxumps7.cloudfront.net/uploads/images/opportunity/mobile_banner/6540c1859cbc2_just-a-minute-competition.png",
     description: "",
     rating: 3,
     rules: [],
@@ -594,7 +611,7 @@ export const events: readonly Event[] = [
     title: "Western Solo Dance",
     date: "",
     venue: "",
-    image: "westernsolo.jpg",
+    image: "/src/assets/western-solo.jpg",
     description: "",
     rating: 4,
     rules: [],
@@ -605,7 +622,8 @@ export const events: readonly Event[] = [
     title: "Council Wars",
     date: "",
     venue: "Main Stage",
-    image: "https://www.careeraddict.com/uploads/article/60560/student-life-school-council-campaign.png",
+    image:
+      "https://www.careeraddict.com/uploads/article/60560/student-life-school-council-campaign.png",
     description: "",
     rating: 5,
     rules: [
