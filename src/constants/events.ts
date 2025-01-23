@@ -1,3 +1,5 @@
+import westernSolo from "@/assets/western-solo.jpg";
+
 export type Event = {
   title: string;
   date: string;
@@ -611,7 +613,7 @@ export const events: readonly Event[] = [
     title: "Western Solo Dance",
     date: "",
     venue: "",
-    image: "/src/assets/western-solo.jpg",
+    image: westernSolo,
     description: "",
     rating: 4,
     rules: [],
