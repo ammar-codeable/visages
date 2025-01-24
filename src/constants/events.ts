@@ -12,6 +12,7 @@ export type Event = {
   registrationFee: number;
   timeLimit?: string;
   open: boolean;
+  paymentLink: string;
 };
 
 export const events: readonly Event[] = [
@@ -33,6 +34,7 @@ export const events: readonly Event[] = [
     capacity: "8-14 members",
     timeLimit: "5+1 minutes",
     open: false,
+    paymentLink: "",
   },
   {
     title: "Western Group Dance",
@@ -53,6 +55,7 @@ export const events: readonly Event[] = [
     capacity: "5-20 members",
     timeLimit: "3+2 minutes",
     open: false,
+    paymentLink: "",
   },
   {
     title: "Fashion Walk",
@@ -75,6 +78,7 @@ export const events: readonly Event[] = [
     capacity: "8-10 members",
     timeLimit: "6+2 minutes",
     open: false,
+    paymentLink: "",
   },
   {
     title: "Indian Group Singing",
@@ -96,6 +100,7 @@ export const events: readonly Event[] = [
     capacity: "3-8 members",
     timeLimit: "5+2 minutes",
     open: false,
+    paymentLink: "",
   },
   {
     title: "Western Group Singing",
@@ -120,6 +125,7 @@ export const events: readonly Event[] = [
     capacity: "6-10 members, 2 team per college. Cap at 15 teams",
     timeLimit: "6+2 minutes (6 minutes performance + 2 minute soundcheck)",
     open: false,
+    paymentLink: "",
   },
   {
     title: "Mad Ads",
@@ -133,6 +139,7 @@ export const events: readonly Event[] = [
     capacity: "6-8 members",
     timeLimit: "3+1 minutes",
     open: false,
+    paymentLink: "",
   },
   {
     title: "Personality",
@@ -150,6 +157,7 @@ export const events: readonly Event[] = [
     ],
     capacity: undefined,
     open: false,
+    paymentLink: "",
   },
   {
     title: "Street Play",
@@ -173,6 +181,7 @@ export const events: readonly Event[] = [
     capacity: "12-15 members",
     timeLimit: "18+2 minutes",
     open: false,
+    paymentLink: "",
   },
   {
     title: "Mock Rock",
@@ -192,6 +201,7 @@ export const events: readonly Event[] = [
     capacity: "6-8 members",
     timeLimit: "4+2 minutes",
     open: false,
+    paymentLink: "",
   },
   {
     title: "Air Crash",
@@ -210,6 +220,7 @@ export const events: readonly Event[] = [
     ],
     capacity: undefined,
     open: false,
+    paymentLink: "",
   },
   {
     title: "Indian Solo Dance",
@@ -231,6 +242,7 @@ export const events: readonly Event[] = [
     capacity: "individual",
     timeLimit: "3+1 minutes (Inclusive of entry, stage set up and exit)",
     open: false,
+    paymentLink: "",
   },
   {
     title: "Reel Making",
@@ -253,6 +265,7 @@ export const events: readonly Event[] = [
     ],
     capacity: "Individual",
     open: false,
+    paymentLink: "",
   },
   {
     title: "Stand-up Comedy",
@@ -273,6 +286,7 @@ export const events: readonly Event[] = [
     capacity: "Individual",
     timeLimit: "3+1 minutes",
     open: false,
+    paymentLink: "",
   },
   {
     title: "Treasure Hunt",
@@ -292,6 +306,7 @@ export const events: readonly Event[] = [
     capacity: "3 members",
     timeLimit: undefined,
     open: false,
+    paymentLink: "",
   },
   {
     title: "Rap and Beatbox",
@@ -314,6 +329,7 @@ export const events: readonly Event[] = [
     capacity: "2 members per team",
     timeLimit: "3+1 minutes (Showcase round)",
     open: false,
+    paymentLink: "",
   },
   {
     title: "BGMI",
@@ -340,6 +356,7 @@ export const events: readonly Event[] = [
     capacity: "4+1 members per team",
     timeLimit: "As per BGMI tournament guidelines",
     open: true,
+    paymentLink: "",
   },
   {
     title: "Meme Making",
@@ -363,6 +380,7 @@ export const events: readonly Event[] = [
     capacity: "15 participants overall (1 participant per college)",
     timeLimit: "15 minutes",
     open: false,
+    paymentLink: "",
   },
 
   {
@@ -391,6 +409,7 @@ export const events: readonly Event[] = [
     capacity: "15 bands (4-8 members per band)",
     timeLimit: "8 minutes stage performance + 2 minutes setup",
     open: true,
+    paymentLink: "",
   },
   {
     title: "Improv",
@@ -411,6 +430,7 @@ export const events: readonly Event[] = [
     capacity: "Two members per team",
     timeLimit: "As per event structure",
     open: false,
+    paymentLink: "",
   },
   {
     title: "Face Painting",
@@ -435,6 +455,7 @@ export const events: readonly Event[] = [
     capacity: "Individual event (1 participant with a model)",
     timeLimit: "2 hours (90 minutes for painting + 30 minutes for judging)",
     open: false,
+    paymentLink: "",
   },
   {
     title: "Murder Mystery",
@@ -455,6 +476,7 @@ export const events: readonly Event[] = [
     capacity: "3 members per team, 10 teams in total",
     timeLimit: "As per event structure",
     open: false,
+    paymentLink: "",
   },
   {
     title: "Solo Instrumental",
@@ -480,6 +502,7 @@ export const events: readonly Event[] = [
     capacity: "Individual event",
     timeLimit: "3+1 minutes",
     open: false,
+    paymentLink: "",
   },
   {
     title: "DJ Wars",
@@ -501,6 +524,7 @@ export const events: readonly Event[] = [
     capacity: "Individual participation",
     timeLimit: "10+2 minutes",
     open: false,
+    paymentLink: "",
   },
   {
     title: "Solo Classical Singing",
@@ -523,6 +547,7 @@ export const events: readonly Event[] = [
     capacity: "Individual participation",
     timeLimit: "3+1 minutes",
     open: false,
+    paymentLink: "",
   },
   {
     title: "Western Solo Music",
@@ -546,6 +571,7 @@ export const events: readonly Event[] = [
     capacity: "Individual participation",
     timeLimit: "3+1 minutes",
     open: false,
+    paymentLink: "",
   },
   {
     title: "Indian Solo Singing",
@@ -573,6 +599,7 @@ export const events: readonly Event[] = [
     capacity: "Individual participation",
     timeLimit: "3+1 minutes",
     open: false,
+    paymentLink: "",
   },
   {
     title: "Art",
@@ -585,6 +612,7 @@ export const events: readonly Event[] = [
     rules: [],
     registrationFee: 0,
     open: false,
+    paymentLink: "",
   },
   {
     title: "Minute to Win It",
@@ -597,6 +625,7 @@ export const events: readonly Event[] = [
     rules: [],
     registrationFee: 250,
     open: false,
+    paymentLink: "",
   },
   {
     title: "Photography",
@@ -608,6 +637,7 @@ export const events: readonly Event[] = [
     rules: [],
     registrationFee: 250,
     open: false,
+    paymentLink: "",
   },
   {
     title: "Western Solo Dance",
@@ -619,6 +649,7 @@ export const events: readonly Event[] = [
     rules: [],
     registrationFee: 350,
     open: false,
+    paymentLink: "",
   },
   {
     title: "Council Wars",
@@ -639,5 +670,6 @@ export const events: readonly Event[] = [
     registrationFee: 1000,
     capacity: "6-8 members",
     open: false,
+    paymentLink: "",
   },
 ];
