@@ -16,7 +16,8 @@ const EventCard = ({
   rules,
   capacity,
   registrationFee,
-  timeLimit
+  timeLimit,
+  paymentLink
 }: Event) => {
   const [dialogOpen, setDialogOpen] = useState(false);
 
@@ -96,7 +97,8 @@ const EventCard = ({
           rules,
           capacity,
           registrationFee,
-          timeLimit
+          timeLimit,
+          paymentLink
         }}
       />
     </>

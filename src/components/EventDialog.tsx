@@ -18,6 +18,7 @@ type EventDialogProps = {
     capacity?: string;
     registrationFee: number;
     timeLimit?: string;
+    paymentLink: string; 
   };
 };
 
@@ -132,12 +133,29 @@ const EventDialog = ({ open, onOpenChange, event }: EventDialogProps) => {
         {/* Fixed Footer */}
         <div className="border-t border-orange-100 bg-white p-4 shrink-0">
           <div className="flex gap-3">
-            <Button
-              size="lg"
-              className="flex-1 bg-orange-500 text-white hover:bg-orange-600"
-            >
-              Register Now
-            </Button>
+            {event.paymentLink ? (
+              <a
+                href={event.paymentLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1"
+              >
+                <Button
+                  size="lg"
+                  className="w-full bg-orange-500 text-white hover:bg-orange-600"
+                >
+                  Register Now
+                </Button>
+              </a>
+            ) : (
+              <Button
+                size="lg"
+                className="flex-1 bg-orange-500 text-white hover:bg-orange-600"
+                disabled
+              >
+                Register Now
+              </Button>
+            )}
             <Button
               size="lg"
               variant="outline"

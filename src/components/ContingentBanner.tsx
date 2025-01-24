@@ -120,12 +120,20 @@ const ContingentBanner = ({ variant }: ContingentBannerProps) => {
 
           <div className="flex flex-col gap-2">
             <PointsDialog />
-            <Button
-              size="lg"
-              className="w-full bg-gradient-to-r from-orange-500 to-amber-500 text-white hover:from-orange-600 hover:to-amber-600"
+            <a
+              href=""
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto"
             >
-              Register Contingent
-            </Button>
+              <Button
+                variant="default"
+                size="lg"
+                className="w-full bg-gradient-to-r from-orange-500 to-amber-500 text-white hover:brightness-110 sm:w-auto"
+              >
+                Register Contingent
+              </Button>
+            </a>
           </div>
         </div>
       </div>
@@ -186,14 +194,22 @@ const ContingentBanner = ({ variant }: ContingentBannerProps) => {
 
       {/* Register Button - Full width on mobile */}
       <div className="absolute bottom-3 left-4 right-4 sm:left-auto">
-        <div className="flex gap-2">
+        <div className="flex flex-wrap items-center gap-3">
           <PointsDialog />
-          <Button
-            size="lg"
-            className="w-full bg-gradient-to-r from-orange-500 to-amber-500 px-8 text-white hover:from-orange-600 hover:to-amber-600 sm:w-auto"
+          <a
+            href=""
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto"
           >
-            Register Contingent
-          </Button>
+            <Button
+              variant="default"
+              size="lg"
+              className="w-full bg-gradient-to-r from-orange-500 to-amber-500 text-white hover:brightness-110 sm:w-auto"
+            >
+              Register Contingent
+            </Button>
+          </a>
         </div>
       </div>
     </motion.div>
