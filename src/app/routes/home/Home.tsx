@@ -53,14 +53,26 @@ const Home = () => (
       >
         <div className="container mx-auto px-4">
           <h2 className="mb-8 text-center text-4xl font-extrabold text-orange-900 sm:text-5xl">
-            About St. Joseph's University
+            About St Joseph's University
           </h2>
           <p className="text-center text-lg text-orange-700 sm:text-xl">
-            St. Joseph's University, Bengaluru, established in 1882, is a
-            premier educational institution recognized for academic excellence
-            and holistic development. Located in the heart of Bangalore, the
-            university carries forward a rich legacy of Jesuit education,
-            fostering innovation, critical thinking, and cultural diversity.
+            St Joseph’s University is a Jesuit university at the heart of
+            Bengaluru, the silicon city of India. Established in 1882 by Paris
+            Foreign Mission Fathers, the management of the college was handed
+            over to the Jesuit order (Society of Jesus) in 1937. The college was
+            first affiliated with the University of Madras and later with the
+            Mysore and Bangalore universities. In 1986, St Joseph’s College
+            became the first affiliated college in Karnataka to offer
+            postgraduate programmes. In 1988, it became the first college in
+            Karnataka to get a Research Centre, and in 2005, it was one of five
+            colleges in Karnataka that was awarded academic autonomy. In
+            February 2021, St Joseph's University Bill was presented in the
+            Karnataka Legislative Assembly and was subsequently passed by the
+            Legislative Assembly and Karnataka Legislative Councill. The college
+            received its University status on 2 July 2022 and was inaugurated as
+            India’s first Public-Private-Partnership University by the
+            Honourable President of India, Smt. Droupadi Murmu on 27 September
+            2022.
           </p>
         </div>
       </motion.div>
