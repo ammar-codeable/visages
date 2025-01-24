@@ -4,6 +4,7 @@ import FancyText from "@/components/FancyText";
 import VisagesHighlights from "@/components/VisagesHighlights";
 import { motion } from "motion/react";
 import { Link } from "react-router";
+import VisagesLogo from "/visages-logo.png";
 
 const Home = () => (
   <div className="relative min-h-screen">
@@ -27,9 +28,7 @@ const Home = () => (
             transition={{ duration: 0.8 }}
           >
             <div className="text-center">
-              <h1 className="h-16 bg-gradient-to-r from-orange-400 to-amber-500 bg-clip-text text-5xl font-extrabold text-transparent sm:h-20 sm:text-7xl">
-                Visages 2025
-              </h1>
+              <img src={VisagesLogo} alt="Visages" height={52} />
               <div>
                 <FancyText />
               </div>
