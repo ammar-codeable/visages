@@ -1,9 +1,9 @@
-import CountdownTimer from "@/components/CountdownTimer";
 import AnimatedBackground from "@/components/AnimatedBackground";
+import CountdownTimer from "@/components/CountdownTimer";
+import FancyText from "@/components/FancyText";
+import VisagesHighlights from "@/components/VisagesHighlights";
 import { motion } from "motion/react";
 import { Link } from "react-router";
-import Visages from "@/components/Visages";
-import FancyText from "@/components/FancyText";
 
 const Home = () => (
   <div className="relative min-h-screen">
@@ -27,10 +27,7 @@ const Home = () => (
             transition={{ duration: 0.8 }}
           >
             <div className="text-center">
-              <p className="mt-4 font-serif text-3xl text-orange-700 sm:text-5xl">
-                St. Joseph's University
-              </p>
-              <h1 className="h-16 sm:h-20 bg-gradient-to-r from-orange-400 to-amber-500 bg-clip-text text-5xl font-extrabold text-transparent sm:text-7xl ">
+              <h1 className="h-16 bg-gradient-to-r from-orange-400 to-amber-500 bg-clip-text text-5xl font-extrabold text-transparent sm:h-20 sm:text-7xl">
                 Visages 2025
               </h1>
               <div>
@@ -45,57 +42,9 @@ const Home = () => (
           </motion.div>
         </div>
       </motion.div>
-      
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        className="bg-white py-16"
-      >
-        <div className="container mx-auto px-4">
-          <h2 className="mb-8 text-center text-4xl font-extrabold text-orange-900 sm:text-5xl">
-            About VISAGES
-          </h2>
-          <p className="text-center text-lg text-orange-700 sm:text-xl">
-            Visages is an annual cultural festival that celebrates the diversity and it is an annual level fest for
-            students to showcase their talents and skills in various fields. The fest is a two-day event that includes
-            various competitions, workshops, and performances. The event is organized by the students and faculty of
-            St. Joseph's University, Bengaluru.
-          </p>
-        </div>
-      </motion.div>
 
-      {/* Cultural Zones */}
-      {/* <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        className="bg-gradient-to-b from-orange-50 to-orange-200 py-16"
-      >
-        <div className="container mx-auto px-4">
-          <h2 className="mb-8 text-center text-4xl font-extrabold text-orange-900 sm:text-5xl">
-            Major Events or We Can explain about 5 or 4 or any star events
-          </h2>
-      
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-            {["Dance", "Music", "Art", "Food"].map((category, index) => (
-              <motion.div
-                key={category}
-                initial={{ scale: 0.9, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
-                transition={{ delay: index * 0.2,type:"spring",stiffness:80 }}
-                className="rounded-xl bg-white p-6 text-orange-800 shadow-lg"
-              >
-                <h4 className="mb-2 text-xl font-semibold">{category}</h4>
-                <p>International {category.toLowerCase()} showcase</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-        </motion.div> */}
-         <Visages />
+      <VisagesHighlights />
 
-      {/* About the College */}
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -107,16 +56,15 @@ const Home = () => (
             About St. Joseph's University
           </h2>
           <p className="text-center text-lg text-orange-700 sm:text-xl">
-            St. Joseph's University, Bengaluru, established in 1882, is a premier 
-            educational institution recognized for academic excellence and holistic 
-            development. Located in the heart of Bangalore, the university carries 
-            forward a rich legacy of Jesuit education, fostering innovation, 
-            critical thinking, and cultural diversity.
+            St. Joseph's University, Bengaluru, established in 1882, is a
+            premier educational institution recognized for academic excellence
+            and holistic development. Located in the heart of Bangalore, the
+            university carries forward a rich legacy of Jesuit education,
+            fostering innovation, critical thinking, and cultural diversity.
           </p>
         </div>
       </motion.div>
 
-      {/* Cultural Zones */}
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -170,10 +118,14 @@ const Home = () => (
                 key={feature.title}
                 initial={{ scale: 0.9, opacity: 0 }}
                 whileInView={{ scale: 1, opacity: 1 }}
-                transition={{ delay: index * 0.2, type: "spring", stiffness: 80 }}
-                className="rounded-xl bg-white p-6 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition duration-300 ease-in-out"
+                transition={{
+                  delay: index * 0.2,
+                  type: "spring",
+                  stiffness: 80,
+                }}
+                className="transform rounded-xl bg-white p-6 shadow-lg transition duration-300 ease-in-out hover:-translate-y-1 hover:shadow-xl"
               >
-                <div className="flex items-center mb-4 text-4xl">
+                <div className="mb-4 flex items-center text-4xl">
                   <span>{feature.icon}</span>
                   <h3 className="ml-4 text-2xl font-bold">{feature.title}</h3>
                 </div>
@@ -185,7 +137,6 @@ const Home = () => (
       </motion.div>
 
       {/* Festival Highlights */}
-
 
       {/* Explore Events Button */}
       <motion.div
