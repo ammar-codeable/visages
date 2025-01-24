@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { Calendar, MapPin, Users, IndianRupee, Clock } from "lucide-react";
+import { Calendar, MapPin, Users, IndianRupee, Clock, Gift } from "lucide-react";
 import StarRating from "./StarRating";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
@@ -19,6 +19,7 @@ type EventDialogProps = {
     registrationFee: number;
     timeLimit?: string;
     paymentLink: string; 
+    cashPrize: number;
   };
 };
 
@@ -94,6 +95,15 @@ const EventDialog = ({ open, onOpenChange, event }: EventDialogProps) => {
                   <div>
                     <p className="text-xs font-medium text-orange-600">Time Limit</p>
                     <p className="text-sm text-orange-900">{event.timeLimit}</p>
+                  </div>
+                </div>
+              )}
+              {(
+                <div className="flex items-center gap-3 rounded-lg bg-orange-50 p-3">
+                  <Gift className="h-6 w-6 text-green-600" />
+                  <div>
+                    <p className="text-xs font-medium text-green-600">Cash Prize</p>
+                    <p className="text-sm text-green-700">₹{event.cashPrize}</p>
                   </div>
                 </div>
               )}

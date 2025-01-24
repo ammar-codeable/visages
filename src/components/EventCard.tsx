@@ -1,4 +1,4 @@
-import { Calendar, MapPin, IndianRupee, Clock } from "lucide-react";
+import { Calendar, MapPin, IndianRupee, Clock, Gift } from "lucide-react";
 import { motion } from "motion/react";
 import { useState } from "react";
 import { Card } from "@/components/ui/card";
@@ -17,7 +17,8 @@ const EventCard = ({
   capacity,
   registrationFee,
   timeLimit,
-  paymentLink
+  paymentLink,
+  cashPrize
 }: Event) => {
   const [dialogOpen, setDialogOpen] = useState(false);
 
@@ -73,7 +74,7 @@ const EventCard = ({
                 <p className="text-sm font-medium">₹{registrationFee}</p>
               </div>
             )}
-          </div>
+                      </div>
           
           <p className="flex-1 text-sm text-orange-800/90 line-clamp-2">
             {description}
@@ -98,7 +99,8 @@ const EventCard = ({
           capacity,
           registrationFee,
           timeLimit,
-          paymentLink
+          paymentLink,
+          cashPrize
         }}
       />
     </>
