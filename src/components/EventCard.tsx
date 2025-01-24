@@ -51,7 +51,7 @@ const EventCard = ({
             {title}
           </h2>
           
-          <div className="mb-4 space-y-2">
+          <div className="mb-2 space-y-2">
             <div className="flex items-center gap-2 text-orange-700">
               <Calendar className="h-4 w-4" />
               <p className="text-sm font-medium">{date}</p>

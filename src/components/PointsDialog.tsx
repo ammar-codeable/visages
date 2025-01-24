@@ -47,21 +47,21 @@ const PointsDialog = () => {
           View Points Table
         </Button>
       </DialogTrigger>
-      <DialogContent className="max-h-[80vh] overflow-auto">
+      <DialogContent className="max-w-[min(calc(100vw-2rem),32rem)] max-h-[80vh] overflow-y-auto p-6">
         <DialogHeader>
           <DialogTitle className="text-xl">Points Distribution</DialogTitle>
         </DialogHeader>
         <div className="space-y-4">
-          <div className="rounded-lg bg-orange-50 p-4">
+          <div className="rounded-lg bg-orange-50 p-3 sm:p-4">
             <div className="flex items-center gap-2">
-              <Info className="h-5 w-5 text-orange-500" />
+              <Info className="h-5 w-5 text-orange-500" /> 
               <p className="text-sm text-orange-800">
                 Only contingent registrations are eligible for overall prize points. Open events do not count towards overall points.
               </p>
             </div>
           </div>
-          <div className="rounded-lg border border-orange-200">
-            <table className="w-full">
+          <div className="rounded-lg border border-orange-200 overflow-x-auto">
+            <table className="w-full min-w-[20rem]">
               <thead className="bg-orange-100/50">
                 <tr>
                   <th className="p-3 text-center text-orange-950">Stars</th>
