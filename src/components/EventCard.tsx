@@ -17,7 +17,6 @@ const EventCard = ({
   capacity,
   registrationFee,
   timeLimit,
-  paymentLink,
   cashPrize,
 }: Event) => {
   const [dialogOpen, setDialogOpen] = useState(false);
@@ -99,7 +98,6 @@ const EventCard = ({
           capacity,
           registrationFee,
           timeLimit,
-          paymentLink,
           cashPrize,
         }}
       />

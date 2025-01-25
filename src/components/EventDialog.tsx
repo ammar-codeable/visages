@@ -4,6 +4,8 @@ import { Calendar, MapPin, Users, IndianRupee, Clock, Gift } from "lucide-react"
 import StarRating from "./StarRating";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
+const REGISTRATION_LINK = "";
+
 type EventDialogProps = {
   open: boolean;
   onOpenChange: (open: boolean) => void;
@@ -143,29 +145,19 @@ const EventDialog = ({ open, onOpenChange, event }: EventDialogProps) => {
         {/* Fixed Footer */}
         <div className="border-t border-orange-100 bg-white p-4 shrink-0">
           <div className="flex gap-3">
-            {event.paymentLink ? (
-              <a
-                href={event.paymentLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1"
-              >
-                <Button
-                  size="lg"
-                  className="w-full bg-orange-500 text-white hover:bg-orange-600"
-                >
-                  Register Now
-                </Button>
-              </a>
-            ) : (
+            <a
+              href={REGISTRATION_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1"
+            >
               <Button
                 size="lg"
-                className="flex-1 bg-orange-500 text-white hover:bg-orange-600"
-                disabled
+                className="w-full bg-orange-500 text-white hover:bg-orange-600"
               >
                 Register Now
               </Button>
-            )}
+            </a>
             <Button
               size="lg"
               variant="outline"
