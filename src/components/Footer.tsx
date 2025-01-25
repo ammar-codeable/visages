@@ -1,4 +1,4 @@
-import { Mail, MapPin, Users, Instagram } from "lucide-react";
+import { Code2, Github, Instagram, Mail, MapPin, Users } from "lucide-react";
 import { motion } from "motion/react";
 
 const Footer = () => {
@@ -15,23 +15,32 @@ const Footer = () => {
               Contact Us
             </h3>
             <div className="flex flex-col gap-4 text-secondary">
-              <div className="flex items-center gap-2">
+              <a
+                href="https://maps.google.com/?q=St+Joseph's+University+Bangalore"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 transition-colors hover:text-orange-300"
+              >
                 <MapPin className="h-5 w-5 shrink-0" />
                 <span>
-                  St Joseph's University, 36, Langford Rd, Langford Gardens, Bengaluru, Karnataka 560027
+                  St Joseph's University, 36, Langford Rd, Langford Gardens,
+                  Bengaluru, Karnataka 560027
                 </span>
-              </div>
-              <div className="flex items-center gap-2">
+              </a>
+              <a
+                href="mailto:studentcouncil@sju.edu.in"
+                className="flex items-center gap-2 transition-colors hover:text-orange-300"
+              >
                 <Mail className="h-5 w-5 shrink-0" />
                 <span>studentcouncil@sju.edu.in</span>
-              </div>
+              </a>
               <div className="flex items-center gap-2">
                 <Instagram className="h-5 w-5 shrink-0 text-orange-400" />
-                <a 
-                  href="https://www.instagram.com/sju.studentcouncil/" 
+                <a
+                  href="https://www.instagram.com/sju.studentcouncil/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-orange-300 transition-colors"
+                  className="transition-colors hover:text-orange-300"
                 >
                   @sju.studentcouncil
                 </a>
@@ -105,6 +114,98 @@ const Footer = () => {
               </div>
             </div>
           </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+          >
+            <h3 className="mb-4 text-xl font-semibold text-primary">
+              Development Credits
+            </h3>
+            <div className="flex flex-col gap-4 text-secondary">
+              <div className="rounded-lg border border-zinc-800 bg-zinc-800/50 p-4">
+                <div className="flex items-center gap-2 text-sm text-orange-300">
+                  <Code2 className="h-4 w-4" />
+                  <span className="font-medium">Shift-3 Project</span>
+                  <span className="text-zinc-600">•</span>
+                  <a
+                    href="https://github.com/shift-3/visages"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1.5 transition-colors hover:text-orange-200"
+                  >
+                    <Github className="h-4 w-4" />
+                    View Source
+                  </a>
+                </div>
+
+                <div className="mt-4 grid gap-3 text-sm">
+                  <a
+                    href="https://github.com/labbeyammar"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 rounded-md p-2 transition-all hover:bg-zinc-700"
+                  >
+                    <Github className="h-4 w-4 text-orange-400/80" />
+                    <span>Labbey Ammar Ahmed</span>
+                  </a>
+
+                  <a
+                    href="https://github.com/mohammedmadni"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 rounded-md p-2 transition-all hover:bg-zinc-700"
+                  >
+                    <Github className="h-4 w-4 text-orange-400/80" />
+                    <span>Mohammed Madni</span>
+                  </a>
+
+                  <div className="flex items-center gap-2 rounded-md p-2 transition-all hover:bg-zinc-700">
+                    <Github className="h-4 w-4 text-orange-400/80" />
+                    <a
+                      href="https://github.com/animeshshaw96"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="transition-colors hover:text-orange-300"
+                    >
+                      Animesh Shaw
+                    </a>
+                    <a
+                      href="https://instagram.com/animesh.shaw96"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-orange-400/80 transition-colors hover:text-orange-300"
+                    >
+                      <Instagram className="h-4 w-4" />
+                    </a>
+                  </div>
+
+                  <a
+                    href="https://github.com/nithish-r"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 rounded-md p-2 transition-all hover:bg-zinc-700"
+                  >
+                    <Github className="h-4 w-4 text-orange-400/80" />
+                    <span>R Nithish</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+      
+      {/* Copyright section */}
+      <div className="border-t border-zinc-800">
+        <div className="container mx-auto px-4 py-6">
+          <p className="text-center text-sm text-zinc-500">
+            © {new Date().getFullYear()} St Joseph's University. All rights reserved.
+            <span className="mx-2">|</span>
+            Made with ❤️ for Visages
+          </p>
         </div>
       </div>
     </footer>
