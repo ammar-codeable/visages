@@ -675,12 +675,15 @@ export const events: readonly Event[] = [
       "https://d8it4huxumps7.cloudfront.net/uploads/images/opportunity/mobile_banner/6540c1859cbc2_just-a-minute-competition.png",
     description: "",
     rating: 3,
-    rules: [],
+    rules: [
+      "There will be a series of games and tasks that are to be completed within a minute.",
+    ],
     registrationFee: 300,
     open: false,
     cashPrize: 2000,
     eventHeadName: "Suhotra",
     eventHeadNumber: "+91 94330 46441",
+    capacity: "Individual participation",
   },
   {
     title: "Photography",
