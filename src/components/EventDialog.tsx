@@ -1,17 +1,17 @@
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
-import {
-  Calendar,
-  MapPin,
-  Users,
-  IndianRupee,
-  Clock,
-  Gift,
-  Phone,
-} from "lucide-react";
-import StarRating from "./StarRating";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { comboOffers } from "@/constants/events";
+import {
+  Banknote,
+  Calendar,
+  Clock,
+  Gift,
+  MapPin,
+  Phone,
+  Users,
+} from "lucide-react";
+import StarRating from "./StarRating";
 
 const REGULAR_REGISTRATION_LINK = "https://forms.gle/hHrKFT98h25tpkV98";
 const PRO_NIGHT_REGISTRATION_LINK = "https://forms.gle/DoHTWrgqXAM2szLQA"; // Replace with actual pro night form link
@@ -121,7 +121,7 @@ const EventDialog = ({ open, onOpenChange, event }: EventDialogProps) => {
               )}
               {event.registrationFee >= 0 && (
                 <div className="flex items-center gap-3 rounded-lg bg-orange-50 p-3">
-                  <IndianRupee className="h-6 w-6 text-orange-600" />
+                  <Banknote className="h-6 w-6 text-orange-600" />
                   <div>
                     <p className="text-xs font-medium text-orange-600">
                       Registration Fee

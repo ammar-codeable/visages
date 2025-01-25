@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Event } from "@/constants/events";
-import { Calendar, Clock, IndianRupee, MapPin } from "lucide-react";
+import { Banknote, Calendar, Clock, MapPin } from "lucide-react";
 import { motion } from "motion/react";
 import { useState } from "react";
 import EventDialog from "./EventDialog";
@@ -71,7 +71,7 @@ const EventCard = ({
             )}
             {registrationFee > 0 && (
               <div className="flex items-center gap-2 text-orange-700">
-                <IndianRupee className="h-4 w-4" />
+                <Banknote className="h-4 w-4" />
                 <p className="text-sm font-medium">₹{registrationFee}</p>
               </div>
             )}
