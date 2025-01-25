@@ -121,7 +121,7 @@ const ContingentBanner = ({ variant }: ContingentBannerProps) => {
           <div className="flex flex-col gap-2">
             <PointsDialog />
             <a
-              href=""
+              href="https://forms.gle/hHrKFT98h25tpkV98"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto"
@@ -197,7 +197,7 @@ const ContingentBanner = ({ variant }: ContingentBannerProps) => {
         <div className="flex flex-wrap items-center gap-3">
           <PointsDialog />
           <a
-            href=""
+            href="https://forms.gle/hHrKFT98h25tpkV98"
             target="_blank"
             rel="noopener noreferrer"
             className="w-full sm:w-auto"

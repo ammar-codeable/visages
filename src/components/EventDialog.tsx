@@ -6,7 +6,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { comboOffers } from "@/constants/events";
 
 const REGULAR_REGISTRATION_LINK = "https://forms.gle/hHrKFT98h25tpkV98";
-const PRO_NIGHT_REGISTRATION_LINK = "https://forms.gle/different_link_here"; // Replace with actual pro night form link
+const PRO_NIGHT_REGISTRATION_LINK = "https://forms.gle/DoHTWrgqXAM2szLQA"; // Replace with actual pro night form link
 
 type EventDialogProps = {
   open: boolean;
