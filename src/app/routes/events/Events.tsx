@@ -16,7 +16,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { Event, events } from "@/constants/events";
-import { Info, ScrollText } from "lucide-react";
+import { Info, ScrollText, QrCode } from "lucide-react";
 import { motion } from "motion/react";
 import { GeneralGuidelinesDialog } from "@/components/GeneralGuidelinesDialog";
 import { useState } from "react";
@@ -182,8 +182,8 @@ const EventsList = () => (
 );
 
 const RegistrationProcess = () => (
-  <div className="relative  bg-orange-50 py-12 px-4">
-    <div className="container mx-auto max-w-[90rem] text-center">
+  <div className="relative bg-orange-50 py-12 px-4">
+    <div className="container mx-auto max-w-[90rem]">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -197,51 +197,97 @@ const RegistrationProcess = () => (
           Follow these simple steps to participate in our events.
         </p>
       </motion.div>
-      <motion.div
-        className="mt-6 grid grid-cols-1 gap-8 md:grid-cols-3"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        viewport={{ once: true }}
-      >
-        {[
-          {
-            step: "1",
-            title: "Explore Events",
-            description:
-              "Browse through our list of cultural events and choose the one you’re most excited about.",
-          },
-          {
-            step: "2",
-            title: "Complete Registration",
-            description:
-              "Fill out the registration form with your details and pay the registration fee."
-          },
-          {
-            step: "3",
-            title: "Confirm Participation",
-            description:
-              "HOORAH!! You can now partcipate and expeience the fantabulous event.",
-          },
-        ].map((item, idx) => (
-          <Card
-            key={idx}
-            className="rounded-2xl bg-white p-6 shadow-md transition-transform hover:scale-105"
-          >
-            <div className="flex flex-col items-center">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-orange-100 text-2xl font-bold text-orange-900">
-                {item.step}
+
+      <div className="mt-16 flex flex-col items-center justify-center gap-8 md:flex-row md:gap-16">
+        {/* Registration steps grid */}
+        <motion.div
+          className="grid w-full grid-cols-1 gap-8 md:w-2/3 md:grid-cols-3"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
+          {[
+            {
+              step: "1",
+              title: "Explore Events",
+              description:
+                "Browse through our list of cultural events and choose the one you’re most excited about.",
+            },
+            {
+              step: "2",
+              title: "Complete Registration",
+              description:
+                "Fill out the registration form with your details and pay the registration fee."
+            },
+            {
+              step: "3",
+              title: "Confirm Participation",
+              description:
+                "HOORAH!! You can now partcipate and expeience the fantabulous event.",
+            },
+          ].map((item, idx) => (
+            <Card
+              key={idx}
+              className="rounded-2xl bg-white p-6 shadow-md transition-transform hover:scale-105"
+            >
+              <div className="flex flex-col items-center">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-orange-100 text-2xl font-bold text-orange-900">
+                  {item.step}
+                </div>
+                <h3 className="text-xl font-semibold text-orange-800">
+                  {item.title}
+                </h3>
+                <p className="mt-2 text-base text-orange-600">
+                  {item.description}
+                </p>
               </div>
-              <h3 className="text-xl font-semibold text-orange-800">
-                {item.title}
-              </h3>
-              <p className="mt-2 text-base text-orange-600">
-                {item.description}
+            </Card>
+          ))}
+        </motion.div>
+
+        {/* QR Code Section */}
+        <motion.div
+          className="w-full md:w-1/3"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          viewport={{ once: true }}
+        >
+          <Card className="overflow-hidden">
+            <div className="bg-gradient-to-r from-orange-500 to-orange-600 p-4">
+              <div className="flex items-center gap-2 text-white">
+                <QrCode className="h-5 w-5" />
+                <h3 className="text-lg font-semibold">Payment Details</h3>
+              </div>
+            </div>
+            <div className="flex flex-col items-center gap-4 p-6">
+              <div className="relative aspect-square w-48">
+                <img
+                  src="" // Add your QR code image to public folder
+                  alt="Payment QR Code"
+                  className="rounded-lg border-2 border-orange-100 p-2"
+                />
+                <motion.div
+                  className="absolute inset-0 rounded-lg bg-orange-500/10"
+                  animate={{
+                    opacity: [0, 0.5, 0],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    repeatType: "loop",
+                  }}
+                />
+              </div>
+              
+              <p className="mt-2 text-xs text-orange-500">
+                * Screenshot your payment for verification
               </p>
             </div>
           </Card>
-        ))}
-      </motion.div>
+        </motion.div>
+      </div>
     </div>
   </div>
 );
