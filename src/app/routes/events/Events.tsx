@@ -16,8 +16,10 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { Event, events } from "@/constants/events";
-import { Info } from "lucide-react";
+import { Info, ScrollText } from "lucide-react";
 import { motion } from "motion/react";
+import { GeneralGuidelinesDialog } from "@/components/GeneralGuidelinesDialog";
+import { useState } from "react";
 
 // Add this new component for DJ Night section
 const DJNightSection = ({ events, index }: { events: readonly Event[]; index: number }) => (
@@ -244,76 +246,96 @@ const RegistrationProcess = () => (
   </div>
 );
 
-const Events = () => (
-  <div className="relative min-h-screen">
-    <div className="fixed inset-0 bg-gradient-to-br from-orange-50 via-orange-100/50 to-orange-50">
-      <AnimatedBackground />
+const Events = () => {
+  const [guidelinesOpen, setGuidelinesOpen] = useState(false);
+
+  return (
+    <div className="relative min-h-screen">
+      <div className="fixed inset-0 bg-gradient-to-br from-orange-50 via-orange-100/50 to-orange-50">
+        <AnimatedBackground />
+      </div>
+
+      <div className="relative z-10">
+        {/* Page heading */}
+        <div className="px-4 pb-8 pt-24">
+          <div className="container relative mx-auto max-w-[90rem]">
+            <motion.div
+              className="text-center"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <h1 className="relative mb-4 inline-block text-5xl font-bold text-orange-900">
+                Cultural Events
+                <motion.div
+                  className="absolute -bottom-2 left-0 right-0 h-1 rounded-full bg-orange-400"
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{ delay: 0.5 }}
+                />
+              </h1>
+              <p className="mt-6 text-lg text-orange-700">
+                Discover and participate in our exciting cultural events and
+                competitions
+              </p>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Mobile Banner (non-sticky) */}
+        <div className="px-4 md:hidden">
+          <div className="container mx-auto max-w-[90rem]">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+            >
+              <ContingentBanner variant="mobile" />
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Desktop Sticky Banner */}
+        <div className="sticky top-20 z-20 hidden px-4 md:block">
+          <div className="container mx-auto max-w-[90rem]">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+            >
+              <ContingentBanner variant="desktop" />
+            </motion.div>
+          </div>
+        </div>
+        {/* Events content */}
+        <div className="px-4 py-8">
+          <div className="container relative mx-auto max-w-[90rem]">
+            <EventsList />
+          </div>
+        </div>
+
+        {/* Registration Process Section */}
+        <RegistrationProcess />
+
+        <motion.button
+          onClick={() => setGuidelinesOpen(true)}
+          className="fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 px-6 py-3 font-semibold text-white shadow-lg transition-all hover:shadow-orange-500/25 hover:scale-105"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          whileHover={{ y: -2 }}
+          whileTap={{ scale: 0.98 }}
+        >
+          <ScrollText className="h-5 w-5" />
+          General Guidelines
+        </motion.button>
+
+        <GeneralGuidelinesDialog
+          open={guidelinesOpen}
+          onClose={() => setGuidelinesOpen(false)}
+        />
+      </div>
     </div>
-
-    <div className="relative z-10">
-      {/* Page heading */}
-      <div className="px-4 pb-8 pt-24">
-        <div className="container relative mx-auto max-w-[90rem]">
-          <motion.div
-            className="text-center"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <h1 className="relative mb-4 inline-block text-5xl font-bold text-orange-900">
-              Cultural Events
-              <motion.div
-                className="absolute -bottom-2 left-0 right-0 h-1 rounded-full bg-orange-400"
-                initial={{ scaleX: 0 }}
-                animate={{ scaleX: 1 }}
-                transition={{ delay: 0.5 }}
-              />
-            </h1>
-            <p className="mt-6 text-lg text-orange-700">
-              Discover and participate in our exciting cultural events and
-              competitions
-            </p>
-          </motion.div>
-        </div>
-      </div>
-
-      {/* Mobile Banner (non-sticky) */}
-      <div className="px-4 md:hidden">
-        <div className="container mx-auto max-w-[90rem]">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-          >
-            <ContingentBanner variant="mobile" />
-          </motion.div>
-        </div>
-      </div>
-
-      {/* Desktop Sticky Banner */}
-      <div className="sticky top-20 z-20 hidden px-4 md:block">
-        <div className="container mx-auto max-w-[90rem]">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-          >
-            <ContingentBanner variant="desktop" />
-          </motion.div>
-        </div>
-      </div>
-      {/* Events content */}
-      <div className="px-4 py-8">
-        <div className="container relative mx-auto max-w-[90rem]">
-          <EventsList />
-        </div>
-      </div>
-
-      {/* Registration Process Section */}
-      <RegistrationProcess />
-
-    </div>
-  </div>
-);
+  );
+};
 
 export default Events;
