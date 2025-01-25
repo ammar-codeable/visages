@@ -165,7 +165,7 @@ const Footer = () => {
                   <div className="flex items-center gap-2 rounded-md p-2 transition-all hover:bg-zinc-700">
                     <Github className="h-4 w-4 text-orange-400/80" />
                     <a
-                      href="https://github.com/animeshshaw96"
+                      href="https://github.com/animeshog"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="transition-colors hover:text-orange-300"
@@ -173,7 +173,7 @@ const Footer = () => {
                       Animesh Shaw
                     </a>
                     <a
-                      href="https://instagram.com/animesh.shaw96"
+                      href="https://instagram.com/animesh.wav"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-orange-400/80 transition-colors hover:text-orange-300"
