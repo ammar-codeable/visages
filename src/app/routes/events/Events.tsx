@@ -264,7 +264,7 @@ const RegistrationProcess = () => (
             <div className="flex flex-col items-center gap-4 p-6">
               <div className="relative aspect-square w-48">
                 <img
-                  src="" // Add your QR code image to public folder
+                  src="/visages-qr-code.jpg" // Add your QR code image to public folder
                   alt="Payment QR Code"
                   className="rounded-lg border-2 border-orange-100 p-2"
                 />
