@@ -40,6 +40,7 @@ const DecorativeBorder = () => (
 
 const MobileDropdown = ({
   isOpen,
+  onClose,
 }: {
   isOpen: boolean;
   onClose: () => void;
@@ -68,6 +69,7 @@ const MobileDropdown = ({
               <Link
                 key={to}
                 to={to}
+                onClick={onClose} // Add this onClick handler
                 className="flex items-center gap-2 text-base font-bold text-orange-950 hover:text-orange-700"
               >
                 <Icon className="h-5 w-5" />
@@ -78,6 +80,7 @@ const MobileDropdown = ({
               variant="outline"
               className="flex items-center justify-center gap-2 border-2 border-orange-400 font-bold text-orange-600 hover:bg-orange-200/60"
               asChild
+              onClick={onClose} // Add this onClick handler
             >
               <a href="" target="_blank" rel="noopener noreferrer">
                 <SparkleIcon />
@@ -93,6 +96,8 @@ const MobileDropdown = ({
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  
+  const handleClose = () => setIsOpen(false);
 
   return (
     <motion.div
@@ -174,7 +179,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        <MobileDropdown isOpen={isOpen} onClose={() => setIsOpen(false)} />
+        <MobileDropdown isOpen={isOpen} onClose={handleClose} />
       </nav>
     </motion.div>
   );
