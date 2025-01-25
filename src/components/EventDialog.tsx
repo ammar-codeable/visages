@@ -3,6 +3,7 @@ import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Calendar, MapPin, Users, IndianRupee, Clock, Gift } from "lucide-react";
 import StarRating from "./StarRating";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { comboOffers } from "@/constants/events";
 
 const REGISTRATION_LINK = "";
 
@@ -20,12 +21,19 @@ type EventDialogProps = {
     capacity?: string;
     registrationFee: number;
     timeLimit?: string;
-    paymentLink: string; 
     cashPrize: number;
   };
 };
 
 const EventDialog = ({ open, onOpenChange, event }: EventDialogProps) => {
+  const hasComboOffer = comboOffers.some(offer => 
+    offer.events.includes(event.title)
+  );
+  
+  const comboOffer = comboOffers.find(offer => 
+    offer.events.includes(event.title)
+  );
+
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-4xl h-[95vh] flex flex-col overflow-hidden p-0">
@@ -65,6 +73,31 @@ const EventDialog = ({ open, onOpenChange, event }: EventDialogProps) => {
                     <p className="text-xs font-medium text-orange-600">Venue</p>
                     <p className="text-sm text-orange-900">{event.venue}</p>
                   </div>
+                </div>
+              )}
+              {hasComboOffer && (
+                <div className="mt-4 rounded-lg bg-orange-100 p-4">
+                  <h4 className="font-medium text-orange-900">Special Combo Offer!</h4>
+                  <p className="mt-1 text-sm text-orange-700">
+                    {comboOffer?.description}
+                  </p>
+                  <div className="mt-2 flex items-center gap-2">
+                    <span className="text-lg font-bold text-orange-900">
+                      ₹{comboOffer?.offerPrice}
+                    </span>
+                    <span className="text-sm text-orange-700 line-through">
+                      ₹{comboOffer?.originalPrice}
+                    </span>
+                    <span className="ml-1 rounded-full bg-orange-200 px-2 py-0.5 text-xs font-medium text-orange-900">
+                      Save ₹{comboOffer?.originalPrice - comboOffer?.offerPrice}
+                    </span>
+                  </div>
+                  <Button
+                    className="mt-3 w-full bg-orange-500 hover:bg-orange-600"
+                    onClick={() => {/* Handle combo registration */}}
+                  >
+                    Book Combo Pass
+                  </Button>
                 </div>
               )}
               {event.registrationFee >= 0 && (

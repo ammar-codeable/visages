@@ -382,7 +382,6 @@ export const events: readonly Event[] = [
     open: false,
     cashPrize: 0,
   },
-
   {
     title: "Battle of Bands",
     date: "",
@@ -679,5 +678,61 @@ export const events: readonly Event[] = [
     capacity: "6-8 members",
     open: false,
     cashPrize: 0,
+  },
+  {
+    title: "DJ Night - Day 1",
+    description: "Experience an electrifying night of music and dance on Day 1 of Visages. Special student DJ performances and professional DJ set.",
+    image: "/events/dj-night.jpg",
+    registrationFee: 500,
+    venue: "College Ground",
+    timeLimit: "6:00 PM - 10:00 PM",
+    date: "February 20, 2025",
+    capacity: "500",
+    rating: 0,
+    open: true,
+    rules: [
+      "Valid college ID card is mandatory",
+      "Entry restricted to 18+ only",
+      "No unauthorized photography",
+      "Special discount available when booking both days"
+    ],
+    cashPrize: 0,
+  },
+  {
+    title: "DJ Night - Day 2",
+    description: "The grand finale night of Visages 2025! Join us for an unforgettable evening of music, dance, and celebration.",
+    image: "/events/dj-night-2.jpg",
+    registrationFee: 500,
+    venue: "College Ground",
+    timeLimit: "6:00 PM - 10:00 PM",
+    date: "February 21, 2025",
+    capacity: "500",
+    rating: 0,
+    open: true,
+    rules: [
+      "Valid college ID card is mandatory",
+      "Entry restricted to 18+ only",
+      "No unauthorized photography",
+      "Special discount available when booking both days"
+    ],
+    cashPrize: 0,
+  },
+];
+
+export type ComboOffer = {
+  events: string[];
+  originalPrice: number;
+  offerPrice: number;
+  title: string;
+  description: string;
+};
+
+export const comboOffers: ComboOffer[] = [
+  {
+    title: "DJ Night Combo Pass",
+    description: "Access to DJ Night on both days of Visages 2025",
+    events: ["DJ Night - Day 1", "DJ Night - Day 2"],
+    originalPrice: 1000,
+    offerPrice: 800,
   },
 ];
