@@ -12,7 +12,7 @@ export type Event = {
   registrationFee: number;
   timeLimit?: string;
   open: boolean;
-  cashPrize: number;
+  cashPrize?: number;
 };
 
 export const events: readonly Event[] = [
@@ -686,8 +686,7 @@ export const events: readonly Event[] = [
     registrationFee: 500,
     venue: "University Ground",
     timeLimit: "5:00 PM - 07:30 PM",
-    date: "February 20, 2025",
-    capacity: "500",
+    date: "February 21 2025",
     rating: 0,
     open: true,
     rules: [
@@ -696,7 +695,6 @@ export const events: readonly Event[] = [
       "No unauthorized photography",
       "Special discount available when booking both days"
     ],
-    cashPrize: 0,
   },
   {
     title: "Pro Night - Day 2",
@@ -705,8 +703,7 @@ export const events: readonly Event[] = [
     registrationFee: 500,
     venue: "University Ground",
     timeLimit: "5:00 PM - 07:30 PM",
-    date: "February 21, 2025",
-    capacity: "500",
+    date: "February 22, 2025",
     rating: 0,
     open: true,
     rules: [
@@ -715,7 +712,6 @@ export const events: readonly Event[] = [
       "No unauthorized photography",
       "Special discount available when booking both days"
     ],
-    cashPrize: 0,
   },
 ];
 

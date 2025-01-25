@@ -33,7 +33,7 @@ const Home = () => (
                 <FancyText />
               </div>
               <p className="mt-4 text-base text-orange-700 sm:text-2xl">
-                February 20-21, 2025
+                February 21-22, 2025
               </p>
             </div>
 

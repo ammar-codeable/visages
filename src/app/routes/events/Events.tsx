@@ -213,7 +213,7 @@ const RegistrationProcess = () => (
             step: "2",
             title: "Complete Registration",
             description:
-              "Fill out the registration form with your details and pay the entry fee, if applicable.The form is linked to the corresponding event on the website",
+              "Fill out the registration form with your details and pay the registration fee."
           },
           {
             step: "3",
