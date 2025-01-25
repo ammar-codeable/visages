@@ -33,7 +33,7 @@ const FancyText = () => (
         animate={{ strokeDashoffset: 0 }}
         transition={{ duration: 2, ease: "easeInOut" }}
       >
-        Around the World in Two Days
+        Around the World
       </motion.text>
 
       <motion.text
@@ -50,7 +50,7 @@ const FancyText = () => (
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 1 }}
       >
-        Around the World in Two Days
+        Around the World
       </motion.text>
       
       {/* Bottom decorative swash with more curves */}
