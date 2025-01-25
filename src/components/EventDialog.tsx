@@ -21,7 +21,7 @@ type EventDialogProps = {
     capacity?: string;
     registrationFee: number;
     timeLimit?: string;
-    cashPrize: number;
+    cashPrize?: number;
   };
 };
 

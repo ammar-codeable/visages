@@ -5,7 +5,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { ScrollText } from "lucide-react";
 import { useState } from "react";
 
