@@ -109,24 +109,24 @@ const EventsSection = ({
                             {rating === 5
                               ? "1000"
                               : rating === 4
-                                ? "800"
-                                : "600"}
+                              ? "800"
+                              : "600"}
                           </li>
                           <li>
                             2nd Place:{" "}
                             {rating === 5
                               ? "800"
                               : rating === 4
-                                ? "600"
-                                : "400"}
+                              ? "600"
+                              : "400"}
                           </li>
                           <li>
                             3rd Place:{" "}
                             {rating === 5
                               ? "600"
                               : rating === 4
-                                ? "400"
-                                : "200"}
+                              ? "400"
+                              : "200"}
                           </li>
                         </ul>
                       </TooltipContent>
@@ -177,6 +177,71 @@ const EventsList = () => (
       />
     ))}
   </Accordion>
+);
+
+const RegistrationProcess = () => (
+  <div className="relative  bg-orange-50 py-12 px-4">
+    <div className="container mx-auto max-w-[90rem] text-center">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        <h2 className="text-4xl font-bold text-orange-900">
+          How to Register for Events
+        </h2>
+        <p className="mt-2 text-lg text-orange-700">
+          Follow these simple steps to participate in our events.
+        </p>
+      </motion.div>
+      <motion.div
+        className="mt-6 grid grid-cols-1 gap-8 md:grid-cols-3"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        viewport={{ once: true }}
+      >
+        {[
+          {
+            step: "1",
+            title: "Explore Events",
+            description:
+              "Browse through our list of cultural events and choose the one you’re most excited about.",
+          },
+          {
+            step: "2",
+            title: "Complete Registration",
+            description:
+              "Fill out the registration form with your details and pay the entry fee, if applicable.The form is linked to the corresponding event on the website",
+          },
+          {
+            step: "3",
+            title: "Confirm Participation",
+            description:
+              "HOORAH!! You can now partcipate and expeience the fantabulous event.",
+          },
+        ].map((item, idx) => (
+          <Card
+            key={idx}
+            className="rounded-2xl bg-white p-6 shadow-md transition-transform hover:scale-105"
+          >
+            <div className="flex flex-col items-center">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-orange-100 text-2xl font-bold text-orange-900">
+                {item.step}
+              </div>
+              <h3 className="text-xl font-semibold text-orange-800">
+                {item.title}
+              </h3>
+              <p className="mt-2 text-base text-orange-600">
+                {item.description}
+              </p>
+            </div>
+          </Card>
+        ))}
+      </motion.div>
+    </div>
+  </div>
 );
 
 const Events = () => (
@@ -237,13 +302,16 @@ const Events = () => (
           </motion.div>
         </div>
       </div>
-
       {/* Events content */}
       <div className="px-4 py-8">
         <div className="container relative mx-auto max-w-[90rem]">
           <EventsList />
         </div>
       </div>
+
+      {/* Registration Process Section */}
+      <RegistrationProcess />
+
     </div>
   </div>
 );
