@@ -131,7 +131,7 @@ const Footer = () => {
                   <span className="font-medium">Shift-3 Project</span>
                   <span className="text-zinc-600">•</span>
                   <a
-                    href="https://github.com/shift-3/visages"
+                    href="https://github.com/ammar-codeable/visages"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-1.5 transition-colors hover:text-orange-200"
@@ -143,7 +143,7 @@ const Footer = () => {
 
                 <div className="mt-4 grid gap-3 text-sm">
                   <a
-                    href="https://github.com/labbeyammar"
+                    href="https://github.com/ammar-codeable"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 rounded-md p-2 transition-all hover:bg-zinc-700"
@@ -153,7 +153,7 @@ const Footer = () => {
                   </a>
 
                   <a
-                    href="https://github.com/mohammedmadni"
+                    href="https://github.com/mohammedmadni2004"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 rounded-md p-2 transition-all hover:bg-zinc-700"
@@ -183,7 +183,7 @@ const Footer = () => {
                   </div>
 
                   <a
-                    href="https://github.com/nithish-r"
+                    href="https://github.com/iamnit hishraja"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 rounded-md p-2 transition-all hover:bg-zinc-700"
