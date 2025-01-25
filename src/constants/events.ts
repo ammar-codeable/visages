@@ -13,6 +13,7 @@ export type Event = {
   timeLimit?: string;
   open: boolean;
   cashPrize?: number;
+  // eventHeadNumber: string;
 };
 
 export const events: readonly Event[] = [
@@ -34,7 +35,7 @@ export const events: readonly Event[] = [
     capacity: "8-14 members",
     timeLimit: "5+1 minutes",
     open: false,
-    cashPrize: 0,
+    cashPrize: 8000,
   },
   {
     title: "Western Group Dance",
@@ -55,7 +56,7 @@ export const events: readonly Event[] = [
     capacity: "5-20 members",
     timeLimit: "3+2 minutes",
     open: false,
-    cashPrize: 0,
+    cashPrize: 8000,
   },
   {
     title: "Fashion Walk",
@@ -78,7 +79,7 @@ export const events: readonly Event[] = [
     capacity: "8-10 members",
     timeLimit: "6+2 minutes",
     open: false,
-    cashPrize: 0,
+    cashPrize: 8000,
   },
   {
     title: "Indian Group Singing",
@@ -100,7 +101,7 @@ export const events: readonly Event[] = [
     capacity: "3-8 members",
     timeLimit: "5+2 minutes",
     open: false,
-    cashPrize: 0,
+    cashPrize: 5000,
   },
   {
     title: "Western Group Singing",
@@ -125,7 +126,7 @@ export const events: readonly Event[] = [
     capacity: "6-10 members, 2 team per college. Cap at 15 teams",
     timeLimit: "6+2 minutes (6 minutes performance + 2 minute soundcheck)",
     open: false,
-    cashPrize: 0,
+    cashPrize: 5000,
   },
   {
     title: "Mad Ads",
@@ -139,7 +140,7 @@ export const events: readonly Event[] = [
     capacity: "6-8 members",
     timeLimit: "3+1 minutes",
     open: false,
-    cashPrize: 0,
+    cashPrize: 5000,
   },
   {
     title: "Personality",
@@ -157,7 +158,7 @@ export const events: readonly Event[] = [
     ],
     capacity: undefined,
     open: false,
-    cashPrize: 0,
+    cashPrize: 3000,
   },
   {
     title: "Street Play",
@@ -181,7 +182,7 @@ export const events: readonly Event[] = [
     capacity: "12-15 members",
     timeLimit: "8+2 minutes",
     open: false,
-    cashPrize: 0,
+    cashPrize: 4000,
   },
   {
     title: "Mock Rock",
@@ -201,7 +202,7 @@ export const events: readonly Event[] = [
     capacity: "6-8 members",
     timeLimit: "4+2 minutes",
     open: false,
-    cashPrize: 0,
+    cashPrize: 4000,
   },
   {
     title: "Air Crash",
@@ -212,7 +213,7 @@ export const events: readonly Event[] = [
     description:
       "On-the-spot characters and creative scenarios to test your imagination.",
     rating: 4,
-    registrationFee: 350,
+    registrationFee: 400,
     rules: [
       "No prior preparations are required, as characters will be assigned by the judges to participants on the spot.",
       "Each round will include multiple segments, which will be announced by the judges.",
@@ -220,7 +221,7 @@ export const events: readonly Event[] = [
     ],
     capacity: undefined,
     open: false,
-    cashPrize: 0,
+    cashPrize: 3000,
   },
   {
     title: "Indian Solo Dance",
@@ -231,7 +232,7 @@ export const events: readonly Event[] = [
     description:
       "Show your skills in Indian dance styles and captivate the audience.",
     rating: 4,
-    registrationFee: 350,
+    registrationFee: 400,
     rules: [
       "Only Indian styles and Indian music are allowed (Contemporary, Bollywood, Classical, Semi-Classical, Folk or any other Indian style).",
       "Two contingent participants per College /University are allowed.",
@@ -242,7 +243,7 @@ export const events: readonly Event[] = [
     capacity: "individual",
     timeLimit: "3+1 minutes (Inclusive of entry, stage set up and exit)",
     open: false,
-    cashPrize: 0,
+    cashPrize: 3000,
   },
   {
     title: "Reel Making",
@@ -253,7 +254,7 @@ export const events: readonly Event[] = [
     description:
       "Create captivating reels to showcase your creativity and win hearts.",
     rating: 4,
-    registrationFee: 350,
+    registrationFee: 400,
     rules: [
       "Max length 2 minutes.",
       "Exceeding the time limit would lead to disqualification.",
@@ -265,7 +266,7 @@ export const events: readonly Event[] = [
     ],
     capacity: "Individual",
     open: false,
-    cashPrize: 0,
+    cashPrize: 3000,
   },
   {
     title: "Stand-up Comedy",
@@ -276,7 +277,7 @@ export const events: readonly Event[] = [
     description:
       "An opportunity to showcase your comedic talent in front of an audience.",
     rating: 3,
-    registrationFee: 250,
+    registrationFee: 300,
     rules: [
       "Only original material is allowed.",
       "Participants are not allowed to use profanity or offensive content.",
@@ -286,7 +287,7 @@ export const events: readonly Event[] = [
     capacity: "Individual",
     timeLimit: "3+1 minutes",
     open: false,
-    cashPrize: 0,
+    cashPrize: 2000,
   },
   {
     title: "Treasure Hunt",
@@ -306,7 +307,7 @@ export const events: readonly Event[] = [
     capacity: "3 members",
     timeLimit: undefined,
     open: false,
-    cashPrize: 0,
+    cashPrize: 2000,
   },
   {
     title: "Rap and Beatbox",
@@ -316,7 +317,7 @@ export const events: readonly Event[] = [
     description:
       "A high-energy event featuring rappers and beatboxers competing in dynamic tag teams.",
     rating: 3,
-    registrationFee: 250,
+    registrationFee: 300,
     rules: [
       "No of Participants: 2 in a team.",
       "Rappers and beatboxers will compete in tag teams.",
@@ -329,7 +330,7 @@ export const events: readonly Event[] = [
     capacity: "2 members per team",
     timeLimit: "3+1 minutes (Showcase round)",
     open: false,
-    cashPrize: 0,
+    cashPrize: 2000,
   },
   {
     title: "BGMI",
@@ -340,7 +341,7 @@ export const events: readonly Event[] = [
     description:
       "An exhilarating online gaming tournament for BGMI enthusiasts, testing teamwork and strategy.",
     rating: 0,
-    registrationFee: 250,
+    registrationFee: 300,
     rules: [
       "No of Participants: 4+1 (Substitution - Optional).",
       "All participants must be from the same college.",
@@ -356,7 +357,7 @@ export const events: readonly Event[] = [
     capacity: "4+1 members per team",
     timeLimit: "As per BGMI tournament guidelines",
     open: true,
-    cashPrize: 1000,
+    cashPrize: 2000,
   },
   {
     title: "Meme Making",
@@ -366,7 +367,7 @@ export const events: readonly Event[] = [
     description:
       "A fun and creative event where participants design memes based on on-the-spot themes within a limited time frame.",
     rating: 3,
-    registrationFee: 250,
+    registrationFee: 300,
     rules: [
       "No of Participants: Individual Event (1 registration per college).",
       "Total Entries Allowed: Max 1 participant per college; a maximum of 15 participants overall.",
@@ -380,7 +381,7 @@ export const events: readonly Event[] = [
     capacity: "15 participants overall (1 participant per college)",
     timeLimit: "15 minutes",
     open: false,
-    cashPrize: 0,
+    cashPrize: 2000,
   },
   {
     title: "Battle of Bands",
@@ -391,7 +392,7 @@ export const events: readonly Event[] = [
     description:
       "A thrilling musical competition where college bands battle it out with electrifying performances.",
     rating: 0,
-    registrationFee: 0,
+    registrationFee: 2000,
     rules: [
       "Total entry: 15 (first come, first serve basis).",
       "It is not an open event. Entry is restricted to college students, including SJU.",
@@ -408,7 +409,7 @@ export const events: readonly Event[] = [
     capacity: "15 bands (4-8 members per band)",
     timeLimit: "8 minutes stage performance + 2 minutes setup",
     open: true,
-    cashPrize: 0,
+    cashPrize: 15000,
   },
   {
     title: "Improv",
@@ -419,7 +420,7 @@ export const events: readonly Event[] = [
     description:
       "A dynamic and spontaneous event where teams create entertaining and unpredictable skits based on random prompts.",
     rating: 3,
-    registrationFee: 250,
+    registrationFee: 300,
     rules: [
       "No of Participants: Two Members Per Team.",
       "Participants will receive random scenarios, characters, or themes with only a few moments to prepare, resulting in anything from hilarious skits to thought-provoking scenes.",
@@ -429,7 +430,7 @@ export const events: readonly Event[] = [
     capacity: "Two members per team",
     timeLimit: "As per event structure",
     open: false,
-    cashPrize: 0,
+    cashPrize: 2000,
   },
   {
     title: "Face Painting",
@@ -440,7 +441,7 @@ export const events: readonly Event[] = [
     description:
       "A creative event where participants showcase their artistic skills by painting faces inspired by cultural elements, traditions, or landmarks worldwide.",
     rating: 3,
-    registrationFee: 250,
+    registrationFee: 300,
     rules: [
       "No of Participants: Individual event (The participant should bring along a model with them).",
       "Time Limit: 90 minutes for face painting and 30 minutes for presentation and judging (Total 2 hours).",
@@ -454,7 +455,7 @@ export const events: readonly Event[] = [
     capacity: "Individual event (1 participant with a model)",
     timeLimit: "2 hours (90 minutes for painting + 30 minutes for judging)",
     open: false,
-    cashPrize: 0,
+    cashPrize: 2000,
   },
   {
     title: "Murder Mystery",
@@ -464,7 +465,7 @@ export const events: readonly Event[] = [
     description:
       "An engaging trio event where teams solve ciphers, compete in a treasure hunt, and use detective skills to unravel mysteries.",
     rating: 3,
-    registrationFee: 250,
+    registrationFee: 300,
     rules: [
       "No of Participants: Trio Event (1 registration per college).",
       "Total Teams Allowed: Maximum 1 team per college, 10 teams in total.",
@@ -475,7 +476,7 @@ export const events: readonly Event[] = [
     capacity: "3 members per team, 10 teams in total",
     timeLimit: "As per event structure",
     open: false,
-    cashPrize: 0,
+    cashPrize: 2000,
   },
   {
     title: "Solo Instrumental",
@@ -486,7 +487,7 @@ export const events: readonly Event[] = [
     description:
       "A platform for solo musicians to showcase their technical skills and creativity through live instrumental performances.",
     rating: 3,
-    registrationFee: 250,
+    registrationFee: 300,
     rules: [
       "No of Participants: Individual event.",
       "Time Limit: 3+1 minutes.",
@@ -501,7 +502,7 @@ export const events: readonly Event[] = [
     capacity: "Individual event",
     timeLimit: "3+1 minutes",
     open: false,
-    cashPrize: 0,
+    cashPrize: 2000,
   },
   {
     title: "DJ Wars",
@@ -512,7 +513,7 @@ export const events: readonly Event[] = [
     description:
       "A thrilling competition where DJs showcase their original mixes and battle for the ultimate title.",
     rating: 4,
-    registrationFee: 350,
+    registrationFee: 400,
     rules: [
       "Number of Participants: Individual Participation.",
       "Time Limit: 10+2 minutes.",
@@ -523,7 +524,7 @@ export const events: readonly Event[] = [
     capacity: "Individual participation",
     timeLimit: "10+2 minutes",
     open: false,
-    cashPrize: 0,
+    cashPrize: 3000,
   },
   {
     title: "Solo Classical Singing",
@@ -534,7 +535,7 @@ export const events: readonly Event[] = [
     description:
       "A classical music event where participants showcase their vocal skills in Hindustani or Carnatic music.",
     rating: 4,
-    registrationFee: 350,
+    registrationFee: 400,
     rules: [
       "No of Participants: Individual Participation.",
       "Time Limit: 3+1 minutes.",
@@ -546,7 +547,7 @@ export const events: readonly Event[] = [
     capacity: "Individual participation",
     timeLimit: "3+1 minutes",
     open: false,
-    cashPrize: 0,
+    cashPrize: 3000,
   },
   {
     title: "Western Solo Music",
@@ -557,7 +558,7 @@ export const events: readonly Event[] = [
     description:
       "A solo singing competition where participants perform English songs, showcasing their vocal prowess.",
     rating: 4,
-    registrationFee: 350,
+    registrationFee: 400,
     rules: [
       "No of Participants: Individual Participation.",
       "Time Limit: 3+1 minutes.",
@@ -570,7 +571,7 @@ export const events: readonly Event[] = [
     capacity: "Individual participation",
     timeLimit: "3+1 minutes",
     open: false,
-    cashPrize: 0,
+    cashPrize: 3000,
   },
   {
     title: "Indian Solo Singing",
@@ -581,7 +582,7 @@ export const events: readonly Event[] = [
     description:
       "A solo singing competition where participants perform Indian songs based on specific themes, showcasing their vocal talent and creativity.",
     rating: 4,
-    registrationFee: 350,
+    registrationFee: 400,
     rules: [
       "No of Participants: Individual Participation.",
       "Time Limit: 3+1 minutes.",
@@ -598,7 +599,7 @@ export const events: readonly Event[] = [
     capacity: "Individual participation",
     timeLimit: "3+1 minutes",
     open: false,
-    cashPrize: 0,
+    cashPrize: 3000,
   },
   {
     title: "Art",
@@ -630,9 +631,9 @@ export const events: readonly Event[] = [
     description: "",
     rating: 3,
     rules: [],
-    registrationFee: 250,
+    registrationFee: 300,
     open: false,
-    cashPrize: 0,
+    cashPrize: 2000,
   },
   {
     title: "Photography",
@@ -642,9 +643,9 @@ export const events: readonly Event[] = [
     description: "",
     rating: 3,
     rules: [],
-    registrationFee: 250,
+    registrationFee: 300,
     open: false,
-    cashPrize: 0,
+    cashPrize: 2000,
   },
   {
     title: "Western Solo Dance",
@@ -654,9 +655,9 @@ export const events: readonly Event[] = [
     description: "",
     rating: 4,
     rules: [],
-    registrationFee: 350,
+    registrationFee: 400,
     open: false,
-    cashPrize: 0,
+    cashPrize: 3000,
   },
   {
     title: "Council Wars",
@@ -677,7 +678,7 @@ export const events: readonly Event[] = [
     registrationFee: 1000,
     capacity: "6-8 members",
     open: false,
-    cashPrize: 0,
+    cashPrize: 5000,
   },
   {
     title: "Pro Night - Day 1",
