@@ -13,7 +13,8 @@ export type Event = {
   timeLimit?: string;
   open: boolean;
   cashPrize?: number;
-  // eventHeadNumber: string;
+  eventHeadName: string;
+  eventHeadNumber: string;
 };
 
 export const events: readonly Event[] = [
@@ -36,6 +37,8 @@ export const events: readonly Event[] = [
     timeLimit: "5+1 minutes",
     open: false,
     cashPrize: 8000,
+    eventHeadName: "Vismaya",
+    eventHeadNumber: "+91 88671 13115",
   },
   {
     title: "Western Group Dance",
@@ -57,6 +60,8 @@ export const events: readonly Event[] = [
     timeLimit: "3+2 minutes",
     open: false,
     cashPrize: 8000,
+    eventHeadName: "Mahek",
+    eventHeadNumber: "+91 80003 03199",
   },
   {
     title: "Fashion Walk",
@@ -80,6 +85,8 @@ export const events: readonly Event[] = [
     timeLimit: "6+2 minutes",
     open: false,
     cashPrize: 8000,
+    eventHeadName: "Pratham",
+    eventHeadNumber: "+91 91135 11958",
   },
   {
     title: "Indian Group Singing",
@@ -102,6 +109,8 @@ export const events: readonly Event[] = [
     timeLimit: "5+2 minutes",
     open: false,
     cashPrize: 5000,
+    eventHeadName: "Supriya",
+    eventHeadNumber: "+91 86603 50610",
   },
   {
     title: "Western Group Singing",
@@ -127,6 +136,8 @@ export const events: readonly Event[] = [
     timeLimit: "6+2 minutes (6 minutes performance + 2 minute soundcheck)",
     open: false,
     cashPrize: 5000,
+    eventHeadName: "Gareth",
+    eventHeadNumber: "+91 77603 45707",
   },
   {
     title: "Mad Ads",
@@ -141,6 +152,8 @@ export const events: readonly Event[] = [
     timeLimit: "3+1 minutes",
     open: false,
     cashPrize: 5000,
+    eventHeadName: "Sachin",
+    eventHeadNumber: "+91 97393 64613",
   },
   {
     title: "Personality",
@@ -159,6 +172,8 @@ export const events: readonly Event[] = [
     capacity: undefined,
     open: false,
     cashPrize: 3000,
+    eventHeadName: "Aishwarya",
+    eventHeadNumber: "+91 99625 22299",
   },
   {
     title: "Street Play",
@@ -183,6 +198,8 @@ export const events: readonly Event[] = [
     timeLimit: "8+2 minutes",
     open: false,
     cashPrize: 4000,
+    eventHeadName: "Benny",
+    eventHeadNumber: "+91 98445 20704",
   },
   {
     title: "Mock Rock",
@@ -203,6 +220,8 @@ export const events: readonly Event[] = [
     timeLimit: "4+2 minutes",
     open: false,
     cashPrize: 4000,
+    eventHeadName: "Aloysious",
+    eventHeadNumber: "+91 73385 55271",
   },
   {
     title: "Air Crash",
@@ -222,6 +241,8 @@ export const events: readonly Event[] = [
     capacity: undefined,
     open: false,
     cashPrize: 3000,
+    eventHeadName: "Naomi",
+    eventHeadNumber: "+91 99024 77648",
   },
   {
     title: "Indian Solo Dance",
@@ -244,6 +265,8 @@ export const events: readonly Event[] = [
     timeLimit: "3+1 minutes (Inclusive of entry, stage set up and exit)",
     open: false,
     cashPrize: 3000,
+    eventHeadName: "Angelina",
+    eventHeadNumber: "+91 88269 16458",
   },
   {
     title: "Reel Making",
@@ -267,6 +290,8 @@ export const events: readonly Event[] = [
     capacity: "Individual",
     open: false,
     cashPrize: 3000,
+    eventHeadName: "M. Gayathry",
+    eventHeadNumber: "+91 77367 40185",
   },
   {
     title: "Stand-up Comedy",
@@ -288,6 +313,8 @@ export const events: readonly Event[] = [
     timeLimit: "3+1 minutes",
     open: false,
     cashPrize: 2000,
+    eventHeadName: "Alwin",
+    eventHeadNumber: "+91 99861 49499",
   },
   {
     title: "Treasure Hunt",
@@ -308,6 +335,8 @@ export const events: readonly Event[] = [
     timeLimit: undefined,
     open: false,
     cashPrize: 2000,
+    eventHeadName: "Fathima Fasna",
+    eventHeadNumber: "+91 99959 63767",
   },
   {
     title: "Rap and Beatbox",
@@ -331,6 +360,8 @@ export const events: readonly Event[] = [
     timeLimit: "3+1 minutes (Showcase round)",
     open: false,
     cashPrize: 2000,
+    eventHeadName: "Varish",
+    eventHeadNumber: "+91 99868 59666",
   },
   {
     title: "BGMI",
@@ -358,6 +389,8 @@ export const events: readonly Event[] = [
     timeLimit: "As per BGMI tournament guidelines",
     open: true,
     cashPrize: 2000,
+    eventHeadName: "Astle",
+    eventHeadNumber: "+91 85908 67797",
   },
   {
     title: "Meme Making",
@@ -382,6 +415,8 @@ export const events: readonly Event[] = [
     timeLimit: "15 minutes",
     open: false,
     cashPrize: 2000,
+    eventHeadName: "Satyam",
+    eventHeadNumber: "+91 96634 69507",
   },
   {
     title: "Battle of Bands",
@@ -410,6 +445,8 @@ export const events: readonly Event[] = [
     timeLimit: "8 minutes stage performance + 2 minutes setup",
     open: true,
     cashPrize: 15000,
+    eventHeadName: "Karim",
+    eventHeadNumber: "+91 81470 12753",
   },
   {
     title: "Improv",
@@ -431,6 +468,8 @@ export const events: readonly Event[] = [
     timeLimit: "As per event structure",
     open: false,
     cashPrize: 2000,
+    eventHeadName: "Gnana",
+    eventHeadNumber: "+91 94486 15863",
   },
   {
     title: "Face Painting",
@@ -456,6 +495,8 @@ export const events: readonly Event[] = [
     timeLimit: "2 hours (90 minutes for painting + 30 minutes for judging)",
     open: false,
     cashPrize: 2000,
+    eventHeadName: "Surabhi",
+    eventHeadNumber: "+91 96204 55780",
   },
   {
     title: "Murder Mystery",
@@ -477,6 +518,8 @@ export const events: readonly Event[] = [
     timeLimit: "As per event structure",
     open: false,
     cashPrize: 2000,
+    eventHeadName: "Isha",
+    eventHeadNumber: "+91 95918 59161",
   },
   {
     title: "Solo Instrumental",
@@ -503,6 +546,8 @@ export const events: readonly Event[] = [
     timeLimit: "3+1 minutes",
     open: false,
     cashPrize: 2000,
+    eventHeadName: "Ricky",
+    eventHeadNumber: "+91 97257 58959",
   },
   {
     title: "DJ Wars",
@@ -525,9 +570,11 @@ export const events: readonly Event[] = [
     timeLimit: "10+2 minutes",
     open: false,
     cashPrize: 3000,
+    eventHeadName: "Meghna",
+    eventHeadNumber: "+91 63640 56622",
   },
   {
-    title: "Solo Classical Singing",
+    title: "Indian Classical Solo Singing",
     date: "",
     venue: "",
     image:
@@ -548,6 +595,8 @@ export const events: readonly Event[] = [
     timeLimit: "3+1 minutes",
     open: false,
     cashPrize: 3000,
+    eventHeadName: "Anagha",
+    eventHeadNumber: "+91 91082 20057",
   },
   {
     title: "Western Solo Music",
@@ -572,6 +621,8 @@ export const events: readonly Event[] = [
     timeLimit: "3+1 minutes",
     open: false,
     cashPrize: 3000,
+    eventHeadName: "Rose",
+    eventHeadNumber: "+91 86606 24338",
   },
   {
     title: "Indian Solo Singing",
@@ -600,6 +651,8 @@ export const events: readonly Event[] = [
     timeLimit: "3+1 minutes",
     open: false,
     cashPrize: 3000,
+    eventHeadName: "Niha",
+    eventHeadNumber: "+91 73496 27355",
   },
   {
     title: "Art",
@@ -621,6 +674,8 @@ export const events: readonly Event[] = [
     open: false,
     cashPrize: 2000,
     capacity: "Individual participation",
+    eventHeadName: "Ved",
+    eventHeadNumber: "+91 86980 62091",
   },
   {
     title: "Minute to Win It",
@@ -634,6 +689,8 @@ export const events: readonly Event[] = [
     registrationFee: 300,
     open: false,
     cashPrize: 2000,
+    eventHeadName: "Suhotra",
+    eventHeadNumber: "+91 94330 46441",
   },
   {
     title: "Photography",
@@ -646,6 +703,8 @@ export const events: readonly Event[] = [
     registrationFee: 300,
     open: false,
     cashPrize: 2000,
+    eventHeadName: "Dhanush",
+    eventHeadNumber: "+91 88670 52135",
   },
   {
     title: "Western Solo Dance",
@@ -658,6 +717,8 @@ export const events: readonly Event[] = [
     registrationFee: 400,
     open: false,
     cashPrize: 3000,
+    eventHeadName: "Ananya",
+    eventHeadNumber: "+91 99167 85410",
   },
   {
     title: "Council Wars",
@@ -679,10 +740,13 @@ export const events: readonly Event[] = [
     capacity: "6-8 members",
     open: false,
     cashPrize: 5000,
+    eventHeadName: "Ajay",
+    eventHeadNumber: "+91 94803 19848",
   },
   {
     title: "Pro Night - Day 1",
-    description: "Experience an electrifying night of music and dance on Day 1 of Visages. Special student DJ performances and professional DJ set.",
+    description:
+      "Experience an electrifying night of music and dance on Day 1 of Visages. Special student DJ performances and professional DJ set.",
     image: "/events/dj-night.jpg",
     registrationFee: 500,
     venue: "University Ground",
@@ -694,12 +758,15 @@ export const events: readonly Event[] = [
       "Valid college ID card is mandatory",
       "Entry restricted to 18+ only",
       "No unauthorized photography",
-      "Special discount available when booking both days"
+      "Special discount available when booking both days",
     ],
+    eventHeadName: "Anjali",
+    eventHeadNumber: "+91 96566 47656",
   },
   {
     title: "Pro Night - Day 2",
-    description: "The grand finale night of Visages 2025! Join us for an unforgettable evening of music, dance, and celebration.",
+    description:
+      "The grand finale night of Visages 2025! Join us for an unforgettable evening of music, dance, and celebration.",
     image: "/events/dj-night-2.jpg",
     registrationFee: 500,
     venue: "University Ground",
@@ -711,8 +778,10 @@ export const events: readonly Event[] = [
       "Valid college ID card is mandatory",
       "Entry restricted to 18+ only",
       "No unauthorized photography",
-      "Special discount available when booking both days"
+      "Special discount available when booking both days",
     ],
+    eventHeadName: "Anjali",
+    eventHeadNumber: "+91 96566 47656",
   },
 ];
 

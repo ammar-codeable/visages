@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { Calendar, MapPin, Users, IndianRupee, Clock, Gift } from "lucide-react";
+import { Calendar, MapPin, Users, IndianRupee, Clock, Gift, Phone } from "lucide-react";
 import StarRating from "./StarRating";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { comboOffers } from "@/constants/events";
@@ -22,6 +22,8 @@ type EventDialogProps = {
     registrationFee: number;
     timeLimit?: string;
     cashPrize?: number;
+    eventHeadName: string;
+    eventHeadNumber: string;
   };
 };
 
@@ -142,6 +144,24 @@ const EventDialog = ({ open, onOpenChange, event }: EventDialogProps) => {
                   </div>
                 </div>
               )}
+              <div className="flex items-start gap-3 rounded-lg bg-orange-50 p-3 col-span-2 lg:col-span-3">
+                <Users className="h-6 w-6 shrink-0 text-orange-600 mt-1" />
+                <div className="flex flex-col gap-1">
+                  <p className="text-xs font-medium text-orange-600">Event Head</p>
+                  <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
+                    <p className="text-sm font-medium text-orange-900">
+                      {event.eventHeadName}
+                    </p>
+                    <a
+                      href={`tel:${event.eventHeadNumber}`}
+                      className="flex items-center gap-1.5 text-sm text-orange-600 hover:text-orange-700"
+                    >
+                      <Phone className="h-3.5 w-3.5" />
+                      {event.eventHeadNumber}
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* Content Sections with Optimized Spacing */}

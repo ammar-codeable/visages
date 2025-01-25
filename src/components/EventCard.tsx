@@ -18,6 +18,8 @@ const EventCard = ({
   registrationFee,
   timeLimit,
   cashPrize,
+  eventHeadName,
+  eventHeadNumber,
 }: Event) => {
   const [dialogOpen, setDialogOpen] = useState(false);
 
@@ -99,6 +101,8 @@ const EventCard = ({
           registrationFee,
           timeLimit,
           cashPrize,
+          eventHeadName,
+          eventHeadNumber,
         }}
       />
     </>
