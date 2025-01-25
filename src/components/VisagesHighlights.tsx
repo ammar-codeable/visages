@@ -44,7 +44,7 @@ const VisagesHighlights = () => {
           <h2 className="text-4xl font-extrabold text-orange-900 sm:text-5xl">
             VISAGES: Beyond a Festival
           </h2>
-          <p className="text-lg text-orange-700 sm:text-xl"> 
+          <p className="text-lg text-orange-700 sm:text-xl text-justify"> 
             Visages is an annual cultural festival that celebrates the diversity
             and creativity of young talents. This two-day extravaganza brings
             together students from across the region to showcase their artistic

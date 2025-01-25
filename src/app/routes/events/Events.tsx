@@ -33,7 +33,7 @@ const DJNightSection = ({ events, index }: { events: readonly Event[]; index: nu
           <div className="flex w-full flex-col gap-2 sm:flex-row sm:items-center sm:gap-4">
             <div className="flex items-center gap-2">
               <h2 className="text-3xl font-bold text-white transition-colors group-hover:text-orange-200">
-                DJ Nights
+                Pro Nights
               </h2>
               <span className="rounded-full bg-orange-500/20 px-3 py-1 text-sm font-medium text-orange-200">
                 Special Event
@@ -44,7 +44,7 @@ const DJNightSection = ({ events, index }: { events: readonly Event[]; index: nu
         <AccordionContent>
           <div className="grid grid-cols-1 gap-8 p-8 pt-2 md:grid-cols-2">
             {events
-              .filter((e) => e.title.includes("DJ Night"))
+              .filter((e) => e.title.includes("Pro Night"))
               .map((event, idx) => (
                 <motion.div
                   key={idx}
@@ -143,7 +143,7 @@ const EventsSection = ({
             {events
               .filter((e) =>
                 isOpenSection 
-                  ? e.open && !e.title.includes("DJ Night") // Add this condition
+                  ? e.open && !e.title.includes("Pro Night") // Add this condition
                   : !e.open && e.rating === rating,
               )
               .map((event, idx) => (

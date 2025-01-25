@@ -54,7 +54,7 @@ const Home = () => (
           <h2 className="mb-8 text-center text-4xl font-extrabold text-orange-900 sm:text-5xl">
             About St Joseph's University
           </h2>
-          <p className="text-center text-lg text-orange-700 sm:text-xl">
+          <p className="text-justify text-lg text-orange-700 sm:text-xl ">
             St Joseph’s University is a Jesuit university at the heart of
             Bengaluru, the silicon city of India. Established in 1882 by Paris
             Foreign Mission Fathers, the management of the college was handed
