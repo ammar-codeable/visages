@@ -5,7 +5,8 @@ import StarRating from "./StarRating";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { comboOffers } from "@/constants/events";
 
-const REGISTRATION_LINK = "https://forms.gle/hHrKFT98h25tpkV98";
+const REGULAR_REGISTRATION_LINK = "https://forms.gle/hHrKFT98h25tpkV98";
+const PRO_NIGHT_REGISTRATION_LINK = "https://forms.gle/different_link_here"; // Replace with actual pro night form link
 
 type EventDialogProps = {
   open: boolean;
@@ -35,6 +36,9 @@ const EventDialog = ({ open, onOpenChange, event }: EventDialogProps) => {
   const comboOffer = comboOffers.find(offer => 
     offer.events.includes(event.title)
   );
+
+  const isProNight = event.title.includes("Pro Night");
+  const registrationLink = isProNight ? PRO_NIGHT_REGISTRATION_LINK : REGULAR_REGISTRATION_LINK;
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -199,7 +203,7 @@ const EventDialog = ({ open, onOpenChange, event }: EventDialogProps) => {
         <div className="border-t border-orange-100 bg-white p-4 shrink-0">
           <div className="flex gap-3">
             <a
-              href={REGISTRATION_LINK}
+              href={registrationLink}
               target="_blank"
               rel="noopener noreferrer"
               className="flex-1"
@@ -208,7 +212,7 @@ const EventDialog = ({ open, onOpenChange, event }: EventDialogProps) => {
                 size="lg"
                 className="w-full bg-orange-500 text-white hover:bg-orange-600"
               >
-                Register Now
+                {isProNight ? "Book Pro Night Pass" : "Register Now"}
               </Button>
             </a>
             <Button

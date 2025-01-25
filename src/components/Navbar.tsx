@@ -82,7 +82,7 @@ const MobileDropdown = ({
               asChild
               onClick={onClose} // Add this onClick handler
             >
-              <a href="" target="_blank" rel="noopener noreferrer">
+              <a href="https://forms.gle/DoHTWrgqXAM2szLQA" target="_blank" rel="noopener noreferrer">
                 <SparkleIcon />
                 Cheer Squad
               </a> 
@@ -169,7 +169,7 @@ const Navbar = () => {
                 className="relative flex items-center gap-1 border-2 border-orange-400 px-2 text-sm font-medium text-orange-600 hover:border-orange-500 hover:bg-orange-200/60 sm:gap-2 sm:px-4 sm:text-base"
                 asChild
               >
-                <a href="" target="_blank" rel="noopener noreferrer">
+                <a href="https://forms.gle/DoHTWrgqXAM2szLQA" target="_blank" rel="noopener noreferrer">
                   <SparkleIcon />
                   <span className="hidden sm:block">Cheer Squad</span>
                   <span className="absolute inset-0 rounded-lg ring-2 ring-orange-400/50 group-hover:ring-orange-500/60"></span>
