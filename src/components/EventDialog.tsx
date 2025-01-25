@@ -5,7 +5,7 @@ import StarRating from "./StarRating";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { comboOffers } from "@/constants/events";
 
-const REGISTRATION_LINK = "";
+const REGISTRATION_LINK = "https://forms.gle/hHrKFT98h25tpkV98";
 
 type EventDialogProps = {
   open: boolean;
