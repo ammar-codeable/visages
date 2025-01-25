@@ -89,7 +89,7 @@ const EventDialog = ({ open, onOpenChange, event }: EventDialogProps) => {
                       ₹{comboOffer?.originalPrice}
                     </span>
                     <span className="ml-1 rounded-full bg-orange-200 px-2 py-0.5 text-xs font-medium text-orange-900">
-                      Save ₹{comboOffer?.originalPrice - comboOffer?.offerPrice}
+                      Save ₹{comboOffer!.originalPrice - comboOffer!.offerPrice}
                     </span>
                   </div>
                   <Button
