@@ -167,7 +167,7 @@ const EventsSection = ({
 );
 
 const EventsList = () => (
-  <Accordion type="single" collapsible defaultValue="dj-nights"> {/* Optional: auto-expand DJ nights */}
+  <Accordion type="single" collapsible>
     <DJNightSection events={events} index={0} />
     <EventsSection rating={0} events={events} index={1} isOpenSection={true} />
     {[5, 4, 3].map((rating, index) => (
