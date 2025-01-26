@@ -40,18 +40,36 @@ const VisagesHighlights = () => {
       className="bg-gradient-to-b from-orange-50 to-orange-200 py-16"
     >
       <div className="container mx-auto px-4">
-        <div className="mx-auto mb-16 max-w-3xl space-y-8 text-center">
+        <div className="mx-auto mb-16 max-w-fullxl space-y-8 text-center"> {/* Adjusted max-width */}
           <h2 className="text-4xl font-extrabold text-orange-900 sm:text-5xl">
             VISAGES: Beyond a Festival
           </h2>
-          <p className="text-lg text-orange-700 sm:text-xl text-justify"> 
-            Visages is an annual cultural festival that celebrates the diversity
-            and creativity of young talents. This two-day extravaganza brings
-            together students from across the region to showcase their artistic
-            abilities through various competitions, workshops, and performances.
-            Organized with passion by the students and faculty of St. Joseph's
-            University, Bengaluru, Visages exemplifies the spirit of cultural
-            exchange and artistic expression.
+          <p className="text-justify text-lg text-orange-700 sm:text-xl">
+            Visages, the flagship inter-collegiate fest of St. Joseph's
+            University, is a grand celebration where culture and academia unite
+            in a spectacular showcase of talent, creativity, and camaraderie.
+            Featuring around 30 vibrant events and activities, Visages is more
+            than a competition—it’s a transformative journey of self-expression,
+            discovery, and growth. It is a stage where students from diverse
+            institutions come together to inspire, excel, and leave their mark.
+            At Visages, we believe in the power of creating opportunities and
+            breaking boundaries.
+          </p>
+          <p className="text-justify text-lg text-orange-700 sm:text-xl">
+            This year, Visages invites you to stamp your passports and embark on
+            an exhilarating journey "Around the World”, transforming our campus
+            into a global carnival of cultures. From the bustling streets of
+            Tokyo to the vibrant carnivals of Rio, experience a whirlwind of
+            traditions, music, and flavours from every corner of the globe—all
+            without leaving campus. Groove to international beats, savour the
+            tastes of faraway lands and embrace the diversity that unites us.
+            It’s not just an event; it’s a cultural celebration and a
+            transformative experience. Every step is a new destination, every
+            event a story waiting to unfold, and every laugh a universal
+            language. So, pack your sense of adventure, unleash your inner
+            globetrotter, and join us as we turn dreams into reality, talent
+            into triumph, and our campus into a stage where the world comes to
+            life!
           </p>
         </div>
 
