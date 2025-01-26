@@ -212,19 +212,19 @@ const RegistrationProcess = () => (
               step: "1",
               title: "Explore Events",
               description:
-                "Browse through our list of cultural events and choose the one you’re most excited about.",
+                "Browse through our list of cultural events and choose the one you're most excited about.",
             },
             {
               step: "2",
               title: "Complete Registration",
               description:
-                "Fill out the registration form with your details and pay the registration fee."
+                "Pay the registration fee, take a screenshot of your payment information, and fill out the registration form with your details."
             },
             {
               step: "3",
               title: "Confirm Participation",
               description:
-                "HOORAH!! You can now partcipate and expeience the fantabulous event.",
+                "HOORAH!! You can now participate and experience the fantabulous event.",
             },
           ].map((item, idx) => (
             <Card
