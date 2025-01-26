@@ -98,7 +98,7 @@ export const events: readonly Event[] = [
     rating: 5,
     registrationFee: 1000,
     rules: [
-      "No of Participants: 3 to 8 members (including instrumentalists)",
+      "No of Participants: 4 to 18 members (including instrumentalists)",
       "Teams must strictly adhere to the time limit.",
       "All Indian languages and genres are allowed.",
       "Usage of karaoke is NOT allowed.",
@@ -747,7 +747,7 @@ export const events: readonly Event[] = [
     title: "Pro Night - Day 1",
     description:
       "Experience an electrifying night of music and dance on Day 1 of Visages. Special student DJ performances and professional DJ set.",
-    image: "/events/dj-night.jpg",
+    image: "https://img.freepik.com/premium-photo/dj-club-with-party-peopleai-generative_46383-955.jpg",
     registrationFee: 500,
     venue: "University Ground",
     timeLimit: "5:00 PM - 07:30 PM",
@@ -767,7 +767,7 @@ export const events: readonly Event[] = [
     title: "Pro Night - Day 2",
     description:
       "The grand finale night of Visages 2025! Join us for an unforgettable evening of music, dance, and celebration.",
-    image: "/events/dj-night-2.jpg",
+    image: "https://img.freepik.com/premium-photo/dj-playing-mixing-music-nightclub-party-night-edm-dance-music-club-with-crowd_457222-1500.jpg",
     registrationFee: 500,
     venue: "University Ground",
     timeLimit: "5:00 PM - 07:30 PM",
