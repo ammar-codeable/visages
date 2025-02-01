@@ -112,7 +112,7 @@ const EventDialog = ({ open, onOpenChange, event }: EventDialogProps) => {
                       Save ₹{comboOffer!.originalPrice - comboOffer!.offerPrice}
                     </span>
                   </div>
-                  <a href="https://forms.gle/DoHTWrgqXAM2szLQA">
+                  <a href="https://forms.gle/DoHTWrgqXAM2szLQA" target="_blank" rel="noopener noreferrer">
                     <Button className="mt-3 w-full bg-orange-500 hover:bg-orange-600">
                       Book Combo Pass
                     </Button>
@@ -177,6 +177,7 @@ const EventDialog = ({ open, onOpenChange, event }: EventDialogProps) => {
                     </p>
                     <a
                       href={`tel:${event.eventHeadNumber}`}
+                       target="_blank" rel="noopener noreferrer"
                       className="flex items-center gap-1.5 text-sm text-orange-600 hover:text-orange-700"
                     >
                       <Phone className="h-3.5 w-3.5" />
