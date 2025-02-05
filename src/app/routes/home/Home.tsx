@@ -19,7 +19,7 @@ const Home = () => (
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="relative flex h-screen items-center"
+        className="relative flex min-h-screen items-center py-20"
       >
         <div className="container mx-auto px-4 text-center">
           <motion.div
