@@ -13,25 +13,25 @@ const PointsDialog = () => {
     { 
       stars: 5, 
       positions: [
-        { position: 1, points: 1000 },
-        { position: 2, points: 800 },
-        { position: 3, points: 600 },
+        { position: 1, points: 100 },
+        { position: 2, points: 80 },
+        { position: 3, points: 60 },
       ]
     },
     { 
       stars: 4, 
       positions: [
-        { position: 1, points: 800 },
-        { position: 2, points: 600 },
-        { position: 3, points: 400 },
+        { position: 1, points: 80 },
+        { position: 2, points: 60 },
+        { position: 3, points: 40 },
       ]
     },
     { 
       stars: 3, 
       positions: [
-        { position: 1, points: 600 },
-        { position: 2, points: 400 },
-        { position: 3, points: 200 },
+        { position: 1, points: 60 },
+        { position: 2, points: 40 },
+        { position: 3, points: 20 },
       ]
     },
   ];

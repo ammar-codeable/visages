@@ -109,26 +109,26 @@ const EventsSection = ({
                           <li>
                             1st Place:{" "}
                             {rating === 5
-                              ? "1000"
+                              ? "100"
                               : rating === 4
-                              ? "800"
-                              : "600"}
+                              ? "80"
+                              : "60"}
                           </li>
                           <li>
                             2nd Place:{" "}
                             {rating === 5
-                              ? "800"
+                              ? "80"
                               : rating === 4
-                              ? "600"
-                              : "400"}
+                              ? "60"
+                              : "40"}
                           </li>
                           <li>
                             3rd Place:{" "}
                             {rating === 5
-                              ? "600"
+                              ? "60"
                               : rating === 4
-                              ? "400"
-                              : "200"}
+                              ? "40"
+                              : "20"}
                           </li>
                         </ul>
                       </TooltipContent>
