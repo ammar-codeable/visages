@@ -8,6 +8,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Info, Trophy } from "lucide-react";
 
+// TODO - Brownie Points
 const PointsDialog = () => {
   const pointsByRating = [
     { 
