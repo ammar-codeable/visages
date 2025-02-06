@@ -630,7 +630,7 @@ export const events: readonly Event[] = [
   },
   {
     title: "Art",
-    date: "",
+    date: " ",
     venue: "",
     image: "https://th.bing.com/th/id/OIP.ZB6Icf7u5qEgVZfkWwZyiQHaE7?rs=1&pid=ImgDetMain",
     description: "An exciting art competition using traditional mediums, where participants showcase their creativity based on a theme given on the spot.",
