@@ -77,7 +77,7 @@ const Home = () => (
       </motion.div>
 
       {/* Explore Events Button */}
-      <motion.div
+      {/* <motion.div
         whileHover={{ scale: 1.05 }}
         className="fixed bottom-8 right-8 z-50"
       >
@@ -87,7 +87,7 @@ const Home = () => (
         >
           Explore Events
         </Link>
-      </motion.div>
+      </motion.div> */}
     </div>
   </div>
 );

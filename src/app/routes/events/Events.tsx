@@ -18,7 +18,6 @@ import {
 import { Event, events } from "@/constants/events";
 import { Info, ScrollText, QrCode } from "lucide-react";
 import { motion } from "motion/react";
-import { GeneralGuidelinesDialog } from "@/components/GeneralGuidelinesDialog";
 import { useState } from "react";
 
 // Add this new component for DJ Night section
@@ -293,8 +292,6 @@ const RegistrationProcess = () => (
 );
 
 const Events = () => {
-  const [guidelinesOpen, setGuidelinesOpen] = useState(false);
-
   return (
     <div className="relative min-h-screen">
       <div className="fixed inset-0 bg-gradient-to-br from-orange-50 via-orange-100/50 to-orange-50">
@@ -362,23 +359,6 @@ const Events = () => {
 
         {/* Registration Process Section */}
         <RegistrationProcess />
-
-        <motion.button
-          onClick={() => setGuidelinesOpen(true)}
-          className="fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 px-6 py-3 font-semibold text-white shadow-lg transition-all hover:shadow-orange-500/25 hover:scale-105"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          whileHover={{ y: -2 }}
-          whileTap={{ scale: 0.98 }}
-        >
-          <ScrollText className="h-5 w-5" />
-          General Guidelines
-        </motion.button>
-
-        <GeneralGuidelinesDialog
-          open={guidelinesOpen}
-          onClose={() => setGuidelinesOpen(false)}
-        />
       </div>
     </div>
   );
