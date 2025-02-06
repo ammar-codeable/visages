@@ -19,15 +19,14 @@ import PointsDialog from "./PointsDialog";
 const features = [
   { icon: Users, text: "One Team Per Event" },
   { icon: Trophy, text: "Overall Prize Eligible" },
-  { icon: CheckCircle, text: "All Events Access" },
-  { icon: IndianRupee, text: "Best Value Package" },
+  { icon: CheckCircle, text: "All Events Access*" },
 ] as const;
 
 const PackageTitle = () => (
   <div className="flex items-center gap-2">
     <Sparkles className="h-6 w-6 text-orange-500" />
     <h2 className="text-2xl font-bold text-orange-950">
-      Premium Contingent Package
+      Contingent Package
     </h2>
   </div>
 );
@@ -72,6 +71,13 @@ const ContingentTooltip = () => (
   </TooltipProvider>
 );
 
+// Add this note component
+const OpenEventsNote = () => (
+  <div className="text-xs font-semibold text-orange-600 italic pt-2 pl-1">
+    *Open events require separate registration
+  </div>
+);
+
 type ContingentBannerProps = {
   variant: "mobile" | "desktop";
 };
@@ -97,7 +103,7 @@ const ContingentBanner = ({ variant }: ContingentBannerProps) => {
             <div className="flex items-center gap-2">
               <Sparkles className="h-5 w-5 text-orange-500" />
               <h2 className="font-bold text-orange-950 text-xl">
-                Premium Contingent Package
+                Contingent Package
               </h2>
             </div>
             <div className="text-right">
@@ -134,6 +140,7 @@ const ContingentBanner = ({ variant }: ContingentBannerProps) => {
                 Register Contingent
               </Button>
             </a>
+            <OpenEventsNote />
           </div>
         </div>
       </div>
@@ -155,7 +162,7 @@ const ContingentBanner = ({ variant }: ContingentBannerProps) => {
           <div>
             <div className="flex items-center gap-2">
               <h2 className="font-bold text-orange-950">
-                Premium Contingent Package
+                Contingent Package
               </h2>
               <ContingentTooltip />
             </div>
@@ -186,7 +193,10 @@ const ContingentBanner = ({ variant }: ContingentBannerProps) => {
                 prize.
               </span>
             </div>
-            <FeatureList />
+            <div>
+              <FeatureList />
+              <OpenEventsNote />
+            </div>
           </div>
           <PriceDisplay />
         </div>
