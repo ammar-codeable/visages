@@ -97,7 +97,21 @@ const EventsSection = ({
               <h2 className="text-3xl font-bold text-orange-900 transition-colors group-hover:text-orange-700">
                 {isOpenSection ? "Open Events" : `${rating}-Star Events`}
               </h2>
-              {!isOpenSection && (
+              {isOpenSection ? (
+                <TooltipProvider delayDuration={100}>
+                  <Tooltip>
+                    <TooltipTrigger>
+                      <Info className="h-5 w-5 text-orange-500 hover:text-orange-600" />
+                    </TooltipTrigger>
+                    <TooltipContent
+                      className="border-orange-200 bg-gradient-to-r from-orange-50/95 via-orange-100/95 to-orange-50/95 text-base text-orange-950"
+                      sideOffset={4}
+                    >
+                      Only for students with a valid college ID Card
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
+              ) : (
                 <>
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>

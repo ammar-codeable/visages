@@ -374,6 +374,7 @@ export const events: readonly Event[] = [
     rating: 0,
     registrationFee: 300,
     rules: [
+      "Valid college ID card is mandatory for participation",
       "No of Participants: 4+1 (Substitution - Optional).",
       "All participants must be from the same college.",
       "The event will be completely online.",
@@ -429,6 +430,7 @@ export const events: readonly Event[] = [
     rating: 0,
     registrationFee: 2000,
     rules: [
+      "Valid college ID card is mandatory for participation",
       "Total entry: 15 (first come, first serve basis).",
       "It is not an open event. Entry is restricted to college students, including SJU.",
       "SJU Bands: Maximum of 3 bands only (first come, first serve basis).",
