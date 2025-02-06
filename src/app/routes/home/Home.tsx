@@ -3,7 +3,6 @@ import CountdownTimer from "@/components/CountdownTimer";
 import FancyText from "@/components/FancyText";
 import VisagesHighlights from "@/components/VisagesHighlights";
 import { motion } from "motion/react";
-import { Link } from "react-router";
 import VisagesLogo from "/visages-logo.png";
 
 const Home = () => (
@@ -54,7 +53,7 @@ const Home = () => (
           <h2 className="mb-8 text-center text-4xl font-extrabold text-orange-900 sm:text-5xl">
             About St Joseph's University
           </h2>
-          <p className="text-justify text-lg text-orange-700 sm:text-xl ">
+          <p className="text-justify text-lg text-orange-700 sm:text-xl">
             St Joseph’s University is a Jesuit university at the heart of
             Bengaluru, the silicon city of India. Established in 1882 by Paris
             Foreign Mission Fathers, the management of the college was handed
@@ -75,19 +74,6 @@ const Home = () => (
           </p>
         </div>
       </motion.div>
-
-      {/* Explore Events Button */}
-      {/* <motion.div
-        whileHover={{ scale: 1.05 }}
-        className="fixed bottom-8 right-8 z-50"
-      >
-        <Link
-          to="/events"
-          className="rounded-full bg-gradient-to-r from-orange-500 to-amber-500 px-8 py-3 font-bold text-white shadow-lg transition-all hover:brightness-110"
-        >
-          Explore Events
-        </Link>
-      </motion.div> */}
     </div>
   </div>
 );

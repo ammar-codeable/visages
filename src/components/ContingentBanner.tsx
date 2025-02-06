@@ -5,14 +5,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import {
-  CheckCircle,
-  IndianRupee,
-  Info,
-  Sparkles,
-  Trophy,
-  Users,
-} from "lucide-react";
+import { CheckCircle, Info, Sparkles, Trophy, Users } from "lucide-react";
 import { motion, useScroll, useTransform } from "motion/react";
 import PointsDialog from "./PointsDialog";
 
@@ -25,9 +18,7 @@ const features = [
 const PackageTitle = () => (
   <div className="flex items-center gap-2">
     <Sparkles className="h-6 w-6 text-orange-500" />
-    <h2 className="text-2xl font-bold text-orange-950">
-      Contingent Package
-    </h2>
+    <h2 className="text-2xl font-bold text-orange-950">Contingent Package</h2>
   </div>
 );
 
@@ -73,7 +64,7 @@ const ContingentTooltip = () => (
 
 // Add this note component
 const OpenEventsNote = () => (
-  <div className="text-xs font-semibold text-orange-600 italic pt-2 pl-1">
+  <div className="pl-1 pt-2 text-xs font-semibold italic text-orange-600">
     *Open events require separate registration
   </div>
 );
@@ -102,7 +93,7 @@ const ContingentBanner = ({ variant }: ContingentBannerProps) => {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <Sparkles className="h-5 w-5 text-orange-500" />
-              <h2 className="font-bold text-orange-950 text-xl">
+              <h2 className="text-xl font-bold text-orange-950">
                 Contingent Package
               </h2>
             </div>
@@ -161,9 +152,7 @@ const ContingentBanner = ({ variant }: ContingentBannerProps) => {
           <Sparkles className="h-5 w-5 text-orange-500" />
           <div>
             <div className="flex items-center gap-2">
-              <h2 className="font-bold text-orange-950">
-                Contingent Package
-              </h2>
+              <h2 className="font-bold text-orange-950">Contingent Package</h2>
               <ContingentTooltip />
             </div>
             <p className="text-sm font-semibold text-orange-800">

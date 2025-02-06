@@ -16,12 +16,17 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { Event, events } from "@/constants/events";
-import { Info, ScrollText, QrCode } from "lucide-react";
+import { Info, QrCode } from "lucide-react";
 import { motion } from "motion/react";
-import { useState } from "react";
 
 // Add this new component for DJ Night section
-const DJNightSection = ({ events, index }: { events: readonly Event[]; index: number }) => (
+const DJNightSection = ({
+  events,
+  index,
+}: {
+  events: readonly Event[];
+  index: number;
+}) => (
   <motion.div
     initial={{ opacity: 0, y: 30 }}
     whileInView={{ opacity: 1, y: 0 }}
@@ -107,27 +112,15 @@ const EventsSection = ({
                         <ul className="mt-1 list-disc pl-4">
                           <li>
                             1st Place:{" "}
-                            {rating === 5
-                              ? "100"
-                              : rating === 4
-                              ? "80"
-                              : "60"}
+                            {rating === 5 ? "100" : rating === 4 ? "80" : "60"}
                           </li>
                           <li>
                             2nd Place:{" "}
-                            {rating === 5
-                              ? "80"
-                              : rating === 4
-                              ? "60"
-                              : "40"}
+                            {rating === 5 ? "80" : rating === 4 ? "60" : "40"}
                           </li>
                           <li>
                             3rd Place:{" "}
-                            {rating === 5
-                              ? "60"
-                              : rating === 4
-                              ? "40"
-                              : "20"}
+                            {rating === 5 ? "60" : rating === 4 ? "40" : "20"}
                           </li>
                         </ul>
                       </TooltipContent>
@@ -143,7 +136,7 @@ const EventsSection = ({
           <div className="grid grid-cols-1 gap-8 p-8 pt-2 md:grid-cols-2 lg:grid-cols-4">
             {events
               .filter((e) =>
-                isOpenSection 
+                isOpenSection
                   ? e.open && !e.title.includes("Pro Night") // Add this condition
                   : !e.open && e.rating === rating,
               )
@@ -181,7 +174,7 @@ const EventsList = () => (
 );
 
 const RegistrationProcess = () => (
-  <div className="relative bg-orange-50 py-12 px-4">
+  <div className="relative bg-orange-50 px-4 py-12">
     <div className="container mx-auto max-w-[90rem]">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -217,7 +210,7 @@ const RegistrationProcess = () => (
               step: "2",
               title: "Complete Registration",
               description:
-                "Pay the registration fee, take a screenshot of your payment information, and fill out the registration form with your details."
+                "Pay the registration fee, take a screenshot of your payment information, and fill out the registration form with your details.",
             },
             {
               step: "3",
@@ -279,7 +272,7 @@ const RegistrationProcess = () => (
                   }}
                 />
               </div>
-              
+
               <p className="mt-2 text-xs text-orange-500">
                 * Screenshot your payment for verification
               </p>
