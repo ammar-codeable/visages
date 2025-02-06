@@ -12,11 +12,29 @@ import { useState } from "react";
 const generalGuidelines = [
   "The contingent fee for participation is Rs. 15000/ including all events",
   "All paricipants must carry a valid ID card of their respective college/university",
-  "Participants must register under non-contingent must pay the registration fee for the respective event",
+  "Participants registering under non-contingent must pay the registration fee for their respective event.",
   "All performing participants must carry a backup of their audio tracks",
   "Timings for each event will be informed by the event heads in their respective whatsapp groups",
   "Any form of vulgarity, misbehaviour, or mention sex, religion, politics, profanity, or humiliation directed at a specific community of college will not be tolerated and will result in immediate disqualification.",
   "There is a zero tolerance policy towards to possession, distribution, or consumption of any unauthorized substances. Sharp objects , inflammable substances, lasers or any other harmful objects is not allowed in the campus.",
+  "Participants are required to submit any audios a day prior on the google forms provided.",
+  "Participants are required to be present at the venue an hour before the event starts.",
+  "There will be on spot registration for individual events till 9.30 am.",
+  "Judges’ decision will be final and binding."
+];
+
+const prohibitedItems = [
+  "Illicit substances including alcohol, cigarettes, vapes, e-cigarettes, drugs, and unauthorised medication.",
+  "Edibles, beverages(including water)",
+  "Sharp objects or weapons",
+  "Flammable objects such as perfumes, sanitisers, etc",
+  "Cosmetics (only allowed for dance and fashion walk)",
+  "Medicines without prescription and contraceptives",
+];
+
+const dressCode = [
+  "For girls: No sleeveless, deep necked, sheer, off – shoulder or cropped tops. No ripped jeans or anything above the knee.",
+  "For boys: No sleeveless or tank tops. No shorts, three – fourth pants or ripped jeans.",
 ];
 
 interface GeneralGuidelinesDialogProps {
@@ -58,34 +76,106 @@ export const GeneralGuidelinesDialog = ({
         </DialogHeader>
 
         <ScrollArea className="h-full max-h-[60vh] p-6" onScroll={handleScroll}>
-          <motion.ul
-            className="grid gap-4 pr-6"
-            initial="hidden"
-            animate="visible"
-            variants={{
-              hidden: { opacity: 0 },
-              visible: {
-                opacity: 1,
-                transition: {
-                  staggerChildren: 0.1,
+          <section className="mb-4">
+            <h3 className="mb-2 text-lg font-semibold">General Guidelines</h3>
+            <motion.ul
+              className="grid gap-4 pr-6"
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: { opacity: 0 },
+                visible: {
+                  opacity: 1,
+                  transition: {
+                    staggerChildren: 0.1,
+                  },
                 },
-              },
-            }}
-          >
-            {generalGuidelines.map((guideline, index) => (
-              <motion.li
-                key={index}
-                variants={{
-                  hidden: { opacity: 0, x: -20 },
-                  visible: { opacity: 1, x: 0 },
-                }}
-                className="group flex items-start gap-3 rounded-lg p-2 transition-colors hover:bg-orange-100/50"
-              >
-                <span className="mt-1.5 flex h-2 w-2 shrink-0 rounded-full bg-orange-500 transition-transform group-hover:scale-125" />
-                <span className="text-pretty leading-relaxed">{guideline}</span>
-              </motion.li>
-            ))}
-          </motion.ul>
+              }}
+            >
+              {generalGuidelines.map((guideline, index) => (
+                <motion.li
+                  key={index}
+                  variants={{
+                    hidden: { opacity: 0, x: -20 },
+                    visible: { opacity: 1, x: 0 },
+                  }}
+                  className="group flex items-start gap-3 rounded-lg p-2 transition-colors hover:bg-orange-100/50"
+                >
+                  <span className="mt-1.5 flex h-2 w-2 shrink-0 rounded-full bg-orange-500 transition-transform group-hover:scale-125" />
+                  <span className="text-pretty leading-relaxed">
+                    {guideline}
+                  </span>
+
+                </motion.li>
+              ))}
+            </motion.ul>
+          </section>
+
+          {/* Prohibited Items Section */}
+          <section className="mb-4">
+            <h3 className="mb-2 text-lg font-semibold">Prohibited Items</h3>
+            <motion.ul
+              className="grid gap-4 pr-6"
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: { opacity: 0 },
+                visible: {
+                  opacity: 1,
+                  transition: {
+                    staggerChildren: 0.1,
+                  },
+                },
+              }}
+            >
+              {prohibitedItems.map((item, index) => (
+                <motion.li
+                  key={index}
+                  variants={{
+                    hidden: { opacity: 0, x: -20 },
+                    visible: { opacity: 1, x: 0 },
+                  }}
+                  className="group flex items-start gap-3 rounded-lg p-2 transition-colors hover:bg-orange-100/50"
+                >
+                  <span className="mt-1.5 flex h-2 w-2 shrink-0 rounded-full bg-orange-500 transition-transform group-hover:scale-125" />
+                  <span className="text-pretty leading-relaxed">{item}</span>
+                </motion.li>
+              ))}
+            </motion.ul>
+          </section>
+
+          {/* Dress Code Section */}
+          <section>
+            <h3 className="mb-2 text-lg font-semibold">Dress Code</h3>
+            <motion.ul
+              className="grid gap-4 pr-6"
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: { opacity: 0 },
+                visible: {
+                  opacity: 1,
+                  transition: {
+                    staggerChildren: 0.1,
+                  },
+                },
+              }}
+            >
+              {dressCode.map((code, index) => (
+                <motion.li
+                  key={index}
+                  variants={{
+                    hidden: { opacity: 0, x: -20 },
+                    visible: { opacity: 1, x: 0 },
+                  }}
+                  className="group flex items-start gap-3 rounded-lg p-2 transition-colors hover:bg-orange-100/50"
+                >
+                  <span className="mt-1.5 flex h-2 w-2 shrink-0 rounded-full bg-orange-500 transition-transform group-hover:scale-125" />
+                  <span className="text-pretty leading-relaxed">{code}</span>
+                </motion.li>
+              ))}
+            </motion.ul>
+          </section>
         </ScrollArea>
 
         {/* Scroll Progress Indicator */}
