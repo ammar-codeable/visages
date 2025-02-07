@@ -100,7 +100,7 @@ const EventsSection = ({
               {isOpenSection ? (
                 <TooltipProvider delayDuration={100}>
                   <Tooltip>
-                    <TooltipTrigger>
+                    <TooltipTrigger className="hidden md:inline-flex">
                       <Info className="h-5 w-5 text-orange-500 hover:text-orange-600" />
                     </TooltipTrigger>
                     <TooltipContent
