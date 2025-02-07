@@ -100,7 +100,7 @@ const MobileDropdown = ({
                 isRoute ? (
                   <Link
                     key={label}
-                    to={to}
+                    to={to!}
                     onClick={onClose} // Add this onClick handler
                     className="flex items-center gap-2 text-base font-bold text-orange-950 hover:text-orange-700"
                   >
@@ -112,7 +112,7 @@ const MobileDropdown = ({
                     key={label}
                     variant="ghost"
                     onClick={onClick}
-                    className="flex items-center gap-2 text-base font-bold text-orange-950 hover:text-orange-700"
+                    className="flex items-center gap-2 text-base font-bold text-orange-950 transition-all hover:text-orange-700 sm:text-lg"
                   >
                     <Icon className="h-5 w-5" />
                     {label}
@@ -177,41 +177,49 @@ const Navbar = () => {
           </button>
 
           {/* Desktop Navigation */}
-          <div className="hidden items-center space-x-8 lg:flex">
-            {" "}
-            {/* Keep lg:flex */}
+          <div className="hidden items-center gap-6 lg:flex">
             <SearchDialog />
-            {navItems.map(({ to, icon: Icon, label, isRoute, onClick }) =>
-              isRoute ? (
-                <Link
-                  key={label}
-                  to={to}
-                  className="relative flex items-center gap-2 text-base font-bold text-orange-950 transition-all hover:text-orange-700 sm:text-lg"
-                >
-                  <Icon className="h-5 w-5" />
-                  <span className="relative">
-                    {label}
-                    <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-orange-400 transition-all group-hover:w-full" />
-                  </span>
-                </Link>
-              ) : (
-                <Button
-                  key={label}
-                  variant="ghost"
-                  onClick={onClick}
-                  className="relative flex items-center gap-2 text-base font-bold text-orange-950 transition-all hover:text-orange-700 sm:text-lg"
-                >
-                  <Icon className="h-5 w-5" />
-                  <span className="relative">{label}</span>
-                </Button>
-              ),
-            )}
+            <div className="flex items-center gap-6">
+              {navItems.map(
+                ({
+                  to,
+                  icon: Icon,
+                  label,
+                  isRoute,
+                  onClick,
+                }) =>
+                  isRoute ? (
+                    <Link
+                      key={label}
+                      to={to!}
+                      className="relative flex items-center gap-2 text-base font-bold text-orange-950 transition-all hover:text-orange-700 sm:text-lg"
+                    >
+                      <Icon className="h-5 w-5" />
+                      <span className="relative">
+                        {label}
+                        <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-orange-400 transition-all group-hover:w-full" />
+                      </span>
+                    </Link>
+                  ) : (
+                    <Button
+                      key={label}
+                      variant="ghost"
+                      onClick={onClick}
+                      className="relative flex items-center gap-2 p-0 text-base font-bold text-orange-950 transition-all hover:bg-transparent hover:text-orange-700 sm:text-lg"
+                    >
+                      <Icon className="h-5 w-5" />
+                      {label}
+                      <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-orange-400 transition-all group-hover:w-full" />
+                    </Button>
+                  ),
+              )}
+            </div>
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="group relative"
+              className="group relative ml-2" // Added ml-2 for spacing
             >
-              <div className="absolute -inset-0.5 rounded-lg bg-gradient-to-r from-orange-400 to-yellow-300 opacity-30 blur transition duration-200 group-hover:opacity-100"></div>
+              <div className="absolute -inset-0.5 rounded-lg bg-gradient-to-r from-orange-400 to-yellow-300 opacity-30 blur transition duration-200 group-hover:opacity-100" />
               <CheerSquadDialog />
             </motion.div>
           </div>
