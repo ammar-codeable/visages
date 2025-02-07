@@ -1,15 +1,31 @@
-import SparkleIcon from "@/components/SparkleIcon";
+import CheerSquadDialog from "@/components/CheerSquadDialog";
+import SearchDialog from "@/components/SearchDialog";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { Home, Menu, Store, X } from "lucide-react";
+import { Bed, Calendar, Home, Menu, Store, X } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
 import { Link } from "react-router";
-import SearchDialog from "@/components/SearchDialog";
 
 const navItems = [
-  { to: "/", icon: Home, label: "Home" },
-  { to: "/events", icon: Store, label: "Events" },
+  { to: "/", icon: Home, label: "Home", isRoute: true },
+  { to: "/events", icon: Store, label: "Events", isRoute: true },
+  {
+    onClick: () => {
+      /* Add dialog logic later */
+    },
+    icon: Calendar,
+    label: "Schedule",
+    isRoute: false,
+  },
+  {
+    onClick: () => {
+      /* Add dialog logic later */
+    },
+    icon: Bed,
+    label: "Accommodation",
+    isRoute: false,
+  },
 ];
 
 const DecorativeBorder = () => (
@@ -45,58 +61,76 @@ const MobileDropdown = ({
   isOpen: boolean;
   onClose: () => void;
 }) => (
-  <AnimatePresence>
+  <AnimatePresence mode="wait">
     {isOpen && (
-      <motion.div
-        initial={{ opacity: 0, height: 0 }}
-        animate={{ opacity: 1, height: "auto" }}
-        exit={{ opacity: 0, height: 0 }}
-        className="border-t border-orange-200 sm:hidden"
-      >
-        <div className="p-4">
-          <div className="mb-4 rounded-lg bg-orange-100 p-3">
-            <div className="flex items-center gap-2">
-              <p className="text-sm font-medium text-orange-950">
-                Only contingent registrations are eligible for the overall prize
-              </p>
+      <div className="overflow-hidden border-t border-orange-200 lg:hidden">
+        <motion.div
+          initial={{ height: 0 }}
+          animate={{ height: "auto" }}
+          exit={{ height: 0 }}
+          transition={{
+            duration: 0.3,
+            delay: isOpen ? 0.15 : 0, // Delay expansion to wait for fade in
+          }}
+        >
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{
+              duration: 0.15,
+              // No delay on enter, delay container collapse on exit
+              exit: { duration: 0.15 },
+            }}
+            className="p-4"
+          >
+            <div className="mb-4 rounded-lg bg-orange-100 p-3">
+              <div className="flex items-center gap-2">
+                <p className="text-sm font-medium text-orange-950">
+                  Only contingent registrations are eligible for the overall
+                  prize
+                </p>
+              </div>
             </div>
-          </div>
 
-          <div className="flex flex-col space-y-4">
-            {/* Add search button at the top of mobile menu */}
-            <SearchDialog />
-            {navItems.map(({ to, icon: Icon, label }) => (
-              <Link
-                key={to}
-                to={to}
-                onClick={onClose} // Add this onClick handler
-                className="flex items-center gap-2 text-base font-bold text-orange-950 hover:text-orange-700"
-              >
-                <Icon className="h-5 w-5" />
-                {label}
-              </Link>
-            ))}
-            <Button
-              variant="outline"
-              className="flex items-center justify-center gap-2 border-2 border-orange-400 font-bold text-orange-600 hover:bg-orange-200/60"
-              asChild
-              onClick={onClose} // Add this onClick handler
-            >
-              <a href="https://forms.gle/DoHTWrgqXAM2szLQA" target="_blank" rel="noopener noreferrer">
-                <SparkleIcon />
-                Cheer Squad
-              </a> 
-            </Button>
-          </div>
-        </div>
-      </motion.div>
+            <div className="flex flex-col space-y-4">
+              {/* Add search button at the top of mobile menu */}
+              <SearchDialog />
+              {navItems.map(({ to, icon: Icon, label, isRoute, onClick }) =>
+                isRoute ? (
+                  <Link
+                    key={label}
+                    to={to}
+                    onClick={onClose} // Add this onClick handler
+                    className="flex items-center gap-2 text-base font-bold text-orange-950 hover:text-orange-700"
+                  >
+                    <Icon className="h-5 w-5" />
+                    {label}
+                  </Link>
+                ) : (
+                  <Button
+                    key={label}
+                    variant="ghost"
+                    onClick={onClick}
+                    className="flex items-center gap-2 text-base font-bold text-orange-950 hover:text-orange-700"
+                  >
+                    <Icon className="h-5 w-5" />
+                    {label}
+                  </Button>
+                ),
+              )}
+              <CheerSquadDialog />
+            </div>
+          </motion.div>
+        </motion.div>
+      </div>
     )}
   </AnimatePresence>
 );
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  
+
   const handleClose = () => setIsOpen(false);
 
   return (
@@ -104,7 +138,7 @@ const Navbar = () => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="fixed top-0 z-50 w-full"
+      className="fixed top-0 z-50 w-full" // Ensure high z-index
     >
       <DecorativeBorder />
 
@@ -136,45 +170,49 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="text-orange-950 sm:hidden"
+            onClick={() => setIsOpen(!isOpen)} // Verify state toggle
+            className="text-orange-950 lg:hidden" // Changed sm:hidden to md:hidden
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
 
           {/* Desktop Navigation */}
-          <div className="hidden items-center space-x-8 md:flex">
+          <div className="hidden items-center space-x-8 lg:flex">
+            {" "}
+            {/* Keep lg:flex */}
             <SearchDialog />
-            {navItems.map(({ to, icon: Icon, label }) => (
-              <Link
-                key={to}
-                to={to}
-                className="relative flex items-center gap-2 text-base font-bold text-orange-950 transition-all hover:text-orange-700 sm:text-lg"
-              >
-                <Icon className="h-5 w-5" />
-                <span className="relative">
-                  {label}
-                  <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-orange-400 transition-all group-hover:w-full" />
-                </span>
-              </Link>
-            ))}
+            {navItems.map(({ to, icon: Icon, label, isRoute, onClick }) =>
+              isRoute ? (
+                <Link
+                  key={label}
+                  to={to}
+                  className="relative flex items-center gap-2 text-base font-bold text-orange-950 transition-all hover:text-orange-700 sm:text-lg"
+                >
+                  <Icon className="h-5 w-5" />
+                  <span className="relative">
+                    {label}
+                    <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-orange-400 transition-all group-hover:w-full" />
+                  </span>
+                </Link>
+              ) : (
+                <Button
+                  key={label}
+                  variant="ghost"
+                  onClick={onClick}
+                  className="relative flex items-center gap-2 text-base font-bold text-orange-950 transition-all hover:text-orange-700 sm:text-lg"
+                >
+                  <Icon className="h-5 w-5" />
+                  <span className="relative">{label}</span>
+                </Button>
+              ),
+            )}
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="group relative"
             >
               <div className="absolute -inset-0.5 rounded-lg bg-gradient-to-r from-orange-400 to-yellow-300 opacity-30 blur transition duration-200 group-hover:opacity-100"></div>
-              <Button
-                variant="outline"
-                className="relative flex items-center gap-1 border-2 border-orange-400 px-2 text-sm font-medium text-orange-600 hover:border-orange-500 hover:bg-orange-200/60 sm:gap-2 sm:px-4 sm:text-base"
-                asChild
-              >
-                <a href="https://forms.gle/DoHTWrgqXAM2szLQA" target="_blank" rel="noopener noreferrer">
-                  <SparkleIcon />
-                  <span className="hidden sm:block">Cheer Squad</span>
-                  <span className="absolute inset-0 rounded-lg ring-2 ring-orange-400/50 group-hover:ring-orange-500/60"></span>
-                </a>
-              </Button>
+              <CheerSquadDialog />
             </motion.div>
           </div>
         </div>
