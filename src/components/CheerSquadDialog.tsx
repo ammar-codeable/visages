@@ -33,6 +33,9 @@ const CheerSquadDialog = () => {
             <p className="mt-2 text-sm font-medium text-orange-900">
               Note: Cheer Squad registration provides spectator access only.
             </p>
+            <p className="mt-2 text-sm text-orange-600 font-extrabold">
+              Bonus: Your university can earn 50 brownie points for having the best Cheer Squad!
+            </p>
           </div>
           
           <div className="space-y-3">
