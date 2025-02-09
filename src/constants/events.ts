@@ -521,7 +521,7 @@ export const events: readonly Event[] = [
     open: false,
     cashPrize: 2000,
     eventHeadName: "Ebenezer & Saira",
-    eventHeadNumber: "Ebenezer: 7406099809, Saira: 9036499222"
+    eventHeadNumber: "Ebenezer: 7406099809, Ricky: 9725758959"
   },
   {
     title: "DJ Wars",
@@ -545,7 +545,7 @@ export const events: readonly Event[] = [
     open: false,
     cashPrize: 3000,
     eventHeadName: "Karan & Meghana",
-    eventHeadNumber: "Karan: 9591005231, Meghana: 6364056622"
+    eventHeadNumber: "Karan: 9591005231, Karin: 8147012753"
   },
   {
     title: "Indian Classical Solo Singing",
