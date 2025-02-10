@@ -6,6 +6,7 @@ import { Bed, Calendar, Home, Menu, Store, X } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
 import { Link } from "react-router";
+import ScheduleDialog from "./ScheduleDialog";
 
 const navItems = [
   { to: "/", icon: Home, label: "Home", isRoute: true },
@@ -130,104 +131,127 @@ const MobileDropdown = ({
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scheduleOpen, setScheduleOpen] = useState(false);
 
   const handleClose = () => setIsOpen(false);
 
+  const navItems = [
+    { to: "/", icon: Home, label: "Home", isRoute: true },
+    { to: "/events", icon: Store, label: "Events", isRoute: true },
+    {
+      onClick: () => setScheduleOpen(true),
+      icon: Calendar,
+      label: "Schedule",
+      isRoute: false,
+    },
+    {
+      onClick: () => {
+        /* Add dialog logic later */
+      },
+      icon: Bed,
+      label: "Accommodation",
+      isRoute: false,
+    },
+  ];
+
   return (
-    <motion.div
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      className="fixed top-0 z-50 w-full" // Ensure high z-index
-    >
-      <DecorativeBorder />
+    <>
+      <motion.div
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className="fixed top-0 z-50 w-full" // Ensure high z-index
+      >
+        <DecorativeBorder />
 
-      <nav className="bg-gradient-to-r from-orange-100/95 via-orange-200/95 to-orange-100/95 shadow-sm backdrop-blur-md">
-        <div className="container mx-auto flex items-center justify-between p-4">
-          <div className="flex items-center gap-4">
-            <img
-              src="/university-logo.png"
-              alt="University Logo"
-              className="h-12 w-auto object-contain"
-            />
-            <a
-              href="https://sju.edu.in"
-              className="text-2xl font-bold text-orange-950 transition-all hover:text-orange-700"
+        <nav className="bg-gradient-to-r from-orange-100/95 via-orange-200/95 to-orange-100/95 shadow-sm backdrop-blur-md">
+          <div className="container mx-auto flex items-center justify-between p-4">
+            <div className="flex items-center gap-4">
+              <img
+                src="/university-logo.png"
+                alt="University Logo"
+                className="h-12 w-auto object-contain"
+              />
+              <a
+                href="https://sju.edu.in"
+                className="text-2xl font-bold text-orange-950 transition-all hover:text-orange-700"
+              >
+                SJU
+              </a>
+              <Separator
+                orientation="vertical"
+                className="h-8 bg-orange-300/80"
+              />
+              <Link
+                to="/"
+                className="text-2xl font-bold text-orange-950 transition-all hover:text-orange-700"
+              >
+                Visages
+              </Link>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsOpen(!isOpen)} // Verify state toggle
+              className="text-orange-950 lg:hidden" // Changed sm:hidden to md:hidden
             >
-              SJU
-            </a>
-            <Separator
-              orientation="vertical"
-              className="h-8 bg-orange-300/80"
-            />
-            <Link
-              to="/"
-              className="text-2xl font-bold text-orange-950 transition-all hover:text-orange-700"
-            >
-              Visages
-            </Link>
-          </div>
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)} // Verify state toggle
-            className="text-orange-950 lg:hidden" // Changed sm:hidden to md:hidden
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-
-          {/* Desktop Navigation */}
-          <div className="hidden items-center gap-6 lg:flex">
-            <SearchDialog />
-            <div className="flex items-center gap-6">
-              {navItems.map(
-                ({
-                  to,
-                  icon: Icon,
-                  label,
-                  isRoute,
-                  onClick,
-                }) =>
-                  isRoute ? (
-                    <Link
-                      key={label}
-                      to={to!}
-                      className="relative flex items-center gap-2 text-base font-bold text-orange-950 transition-all hover:text-orange-700 sm:text-lg"
-                    >
-                      <Icon className="h-5 w-5" />
-                      <span className="relative">
+            {/* Desktop Navigation */}
+            <div className="hidden items-center gap-6 lg:flex">
+              <SearchDialog />
+              <div className="flex items-center gap-6">
+                {navItems.map(
+                  ({
+                    to,
+                    icon: Icon,
+                    label,
+                    isRoute,
+                    onClick,
+                  }) =>
+                    isRoute ? (
+                      <Link
+                        key={label}
+                        to={to!}
+                        className="relative flex items-center gap-2 text-base font-bold text-orange-950 transition-all hover:text-orange-700 sm:text-lg"
+                      >
+                        <Icon className="h-5 w-5" />
+                        <span className="relative">
+                          {label}
+                          <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-orange-400 transition-all group-hover:w-full" />
+                        </span>
+                      </Link>
+                    ) : (
+                      <Button
+                        key={label}
+                        variant="ghost"
+                        onClick={onClick}
+                        className="relative flex items-center gap-2 p-0 text-base font-bold text-orange-950 transition-all hover:bg-transparent hover:text-orange-700 sm:text-lg"
+                      >
+                        <Icon className="h-5 w-5" />
                         {label}
                         <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-orange-400 transition-all group-hover:w-full" />
-                      </span>
-                    </Link>
-                  ) : (
-                    <Button
-                      key={label}
-                      variant="ghost"
-                      onClick={onClick}
-                      className="relative flex items-center gap-2 p-0 text-base font-bold text-orange-950 transition-all hover:bg-transparent hover:text-orange-700 sm:text-lg"
-                    >
-                      <Icon className="h-5 w-5" />
-                      {label}
-                      <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-orange-400 transition-all group-hover:w-full" />
-                    </Button>
-                  ),
-              )}
+                      </Button>
+                    ),
+                )}
+              </div>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="group relative ml-2" // Added ml-2 for spacing
+              >
+                <div className="absolute -inset-0.5 rounded-lg bg-gradient-to-r from-orange-400 to-yellow-300 opacity-30 blur transition duration-200 group-hover:opacity-100" />
+                <CheerSquadDialog />
+              </motion.div>
             </div>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="group relative ml-2" // Added ml-2 for spacing
-            >
-              <div className="absolute -inset-0.5 rounded-lg bg-gradient-to-r from-orange-400 to-yellow-300 opacity-30 blur transition duration-200 group-hover:opacity-100" />
-              <CheerSquadDialog />
-            </motion.div>
           </div>
-        </div>
 
-        <MobileDropdown isOpen={isOpen} onClose={handleClose} />
-      </nav>
-    </motion.div>
+          <MobileDropdown isOpen={isOpen} onClose={handleClose} />
+        </nav>
+      </motion.div>
+      <ScheduleDialog open={scheduleOpen} onOpenChange={setScheduleOpen} />
+    </>
   );
 };
 
