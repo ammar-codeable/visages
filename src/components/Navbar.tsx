@@ -39,7 +39,7 @@ type MobileDropdownProps = {
   onClose: () => void;
   navItems: Array<{
     to?: string;
-    icon: React.ComponentType;
+    icon: React.ComponentType<{ className?: string }>;  // Add className to icon type
     label: string;
     isRoute: boolean;
     onClick?: () => void;
