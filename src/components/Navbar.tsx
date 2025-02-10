@@ -8,27 +8,6 @@ import { useState } from "react";
 import { Link } from "react-router";
 import ScheduleDialog from "./ScheduleDialog";
 
-const navItems = [
-  { to: "/", icon: Home, label: "Home", isRoute: true },
-  { to: "/events", icon: Store, label: "Events", isRoute: true },
-  {
-    onClick: () => {
-      /* Add dialog logic later */
-    },
-    icon: Calendar,
-    label: "Schedule",
-    isRoute: false,
-  },
-  {
-    onClick: () => {
-      /* Add dialog logic later */
-    },
-    icon: Bed,
-    label: "Accommodation",
-    isRoute: false,
-  },
-];
-
 const DecorativeBorder = () => (
   <div className="absolute bottom-0 left-0 right-0 translate-y-full">
     <svg
@@ -55,13 +34,19 @@ const DecorativeBorder = () => (
   </div>
 );
 
-const MobileDropdown = ({
-  isOpen,
-  onClose,
-}: {
+type MobileDropdownProps = {
   isOpen: boolean;
   onClose: () => void;
-}) => (
+  navItems: Array<{
+    to?: string;
+    icon: React.ComponentType;
+    label: string;
+    isRoute: boolean;
+    onClick?: () => void;
+  }>;
+};
+
+const MobileDropdown = ({ isOpen, onClose, navItems }: MobileDropdownProps) => (
   <AnimatePresence mode="wait">
     {isOpen && (
       <div className="overflow-hidden border-t border-orange-200 lg:hidden">
@@ -139,7 +124,10 @@ const Navbar = () => {
     { to: "/", icon: Home, label: "Home", isRoute: true },
     { to: "/events", icon: Store, label: "Events", isRoute: true },
     {
-      onClick: () => setScheduleOpen(true),
+      onClick: () => {
+        setScheduleOpen(true);
+        handleClose(); // Close mobile menu when opening schedule
+      },
       icon: Calendar,
       label: "Schedule",
       isRoute: false,
@@ -202,38 +190,31 @@ const Navbar = () => {
             <div className="hidden items-center gap-6 lg:flex">
               <SearchDialog />
               <div className="flex items-center gap-6">
-                {navItems.map(
-                  ({
-                    to,
-                    icon: Icon,
-                    label,
-                    isRoute,
-                    onClick,
-                  }) =>
-                    isRoute ? (
-                      <Link
-                        key={label}
-                        to={to!}
-                        className="relative flex items-center gap-2 text-base font-bold text-orange-950 transition-all hover:text-orange-700 sm:text-lg"
-                      >
-                        <Icon className="h-5 w-5" />
-                        <span className="relative">
-                          {label}
-                          <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-orange-400 transition-all group-hover:w-full" />
-                        </span>
-                      </Link>
-                    ) : (
-                      <Button
-                        key={label}
-                        variant="ghost"
-                        onClick={onClick}
-                        className="relative flex items-center gap-2 p-0 text-base font-bold text-orange-950 transition-all hover:bg-transparent hover:text-orange-700 sm:text-lg"
-                      >
-                        <Icon className="h-5 w-5" />
+                {navItems.map(({ to, icon: Icon, label, isRoute, onClick }) =>
+                  isRoute ? (
+                    <Link
+                      key={label}
+                      to={to!}
+                      className="relative flex items-center gap-2 text-base font-bold text-orange-950 transition-all hover:text-orange-700 sm:text-lg"
+                    >
+                      <Icon className="h-5 w-5" />
+                      <span className="relative">
                         {label}
                         <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-orange-400 transition-all group-hover:w-full" />
-                      </Button>
-                    ),
+                      </span>
+                    </Link>
+                  ) : (
+                    <Button
+                      key={label}
+                      variant="ghost"
+                      onClick={onClick}
+                      className="relative flex items-center gap-2 p-0 text-base font-bold text-orange-950 transition-all hover:bg-transparent hover:text-orange-700 sm:text-lg"
+                    >
+                      <Icon className="h-5 w-5" />
+                      {label}
+                      <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-orange-400 transition-all group-hover:w-full" />
+                    </Button>
+                  ),
                 )}
               </div>
               <motion.div
@@ -247,7 +228,11 @@ const Navbar = () => {
             </div>
           </div>
 
-          <MobileDropdown isOpen={isOpen} onClose={handleClose} />
+          <MobileDropdown
+            isOpen={isOpen}
+            onClose={handleClose}
+            navItems={navItems}
+          />
         </nav>
       </motion.div>
       <ScheduleDialog open={scheduleOpen} onOpenChange={setScheduleOpen} />
