@@ -20,6 +20,7 @@ const EventCard = ({
   cashPrize,
   eventHeadName,
   eventHeadNumber,
+  time,
 }: Event) => {
   const [dialogOpen, setDialogOpen] = useState(false);
 
@@ -63,6 +64,12 @@ const EventCard = ({
               <MapPin className="h-4 w-4" />
               <p className="line-clamp-1 text-sm font-medium">{venue}</p>
             </div>
+            {time && (
+              <div className="flex items-center gap-2 text-orange-700">
+                <Clock className="h-4 w-4" />
+                <p className="text-sm font-medium">{time}</p>
+              </div>
+            )}
             {timeLimit && (
               <div className="flex items-center gap-2 text-orange-700">
                 <Clock className="h-4 w-4" />
@@ -103,6 +110,7 @@ const EventCard = ({
           cashPrize,
           eventHeadName,
           eventHeadNumber,
+          time,
         }}
       />
     </>

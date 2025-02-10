@@ -6,6 +6,7 @@ import {
   Banknote,
   Calendar,
   Clock,
+  Clock as ClockIcon,
   Gift,
   MapPin,
   Phone,
@@ -33,6 +34,7 @@ type EventDialogProps = {
     cashPrize?: number;
     eventHeadName: string;
     eventHeadNumber: string;
+    time: string; // Changed from optional to required
   };
 };
 
@@ -84,6 +86,15 @@ const EventDialog = ({ open, onOpenChange, event }: EventDialogProps) => {
                   </div>
                 </div>
               )}
+              {event.time && (
+                <div className="flex items-center gap-3 rounded-lg bg-orange-50 p-3">
+                  <ClockIcon className="h-6 w-6 text-orange-600" />
+                  <div>
+                    <p className="text-xs font-medium text-orange-600">Time</p>
+                    <p className="text-sm text-orange-900">{event.time}</p>
+                  </div>
+                </div>
+              )}
               {event.venue && (
                 <div className="flex items-center gap-3 rounded-lg bg-orange-50 p-3">
                   <MapPin className="h-6 w-6 text-orange-600" />
@@ -112,7 +123,11 @@ const EventDialog = ({ open, onOpenChange, event }: EventDialogProps) => {
                       Save ₹{comboOffer!.originalPrice - comboOffer!.offerPrice}
                     </span>
                   </div>
-                  <a href="https://forms.gle/DoHTWrgqXAM2szLQA" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="https://forms.gle/DoHTWrgqXAM2szLQA"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Button className="mt-3 w-full bg-orange-500 hover:bg-orange-600">
                       Book Combo Pass
                     </Button>
@@ -177,7 +192,8 @@ const EventDialog = ({ open, onOpenChange, event }: EventDialogProps) => {
                     </p>
                     <a
                       href={`tel:${event.eventHeadNumber}`}
-                       target="_blank" rel="noopener noreferrer"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="flex items-center gap-1.5 text-sm text-orange-600 hover:text-orange-700"
                     >
                       <Phone className="h-3.5 w-3.5" />

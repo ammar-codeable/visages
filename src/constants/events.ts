@@ -15,6 +15,7 @@ export type Event = {
   cashPrize?: number;
   eventHeadName: string;
   eventHeadNumber: string;
+  time: string;
 };
 
 export const events: readonly Event[] = [
@@ -22,7 +23,8 @@ export const events: readonly Event[] = [
     title: "Indian Group Dance",
     date: "",
     venue: "Main Stage",
-    image: "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/07/36/66/09.jpg",
+    image:
+      "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/07/36/66/09.jpg",
     description: "A vibrant showcase of Indian dance styles and music.",
     rating: 5,
     registrationFee: 1500,
@@ -30,20 +32,22 @@ export const events: readonly Event[] = [
       "Only Indian styles and Indian music are allowed (Contemporary, Bollywood, Classical, Semi-Classical, Folk or any other Indian style).",
       "Any act of vulgarity in the costume or dance/indiscipline behaviour will lead to disqualification.",
       "Usage of props is allowed considering it is not harmful. (Usage of fire, water or any flammable objects will not be allowed.)",
-      "Exceeding the time limit will lead to a reduction in the score"
+      "Exceeding the time limit will lead to a reduction in the score",
     ],
     capacity: "8-14 members",
     timeLimit: "5+1 minutes",
     open: false,
     cashPrize: 8000,
     eventHeadName: "Vismaya & Susan",
-    eventHeadNumber: "Vismaya: 8867113115, Susan: 7306851373"
+    eventHeadNumber: "Vismaya: 8867113115, Susan: 7306851373",
+    time: "",
   },
   {
     title: "Western Group Dance",
     date: "",
     venue: "Main Stage",
-    image: "https://static.wixstatic.com/media/d90ac3_63db656ddfa8483bbd89dd3f926df712~mv2.jpg/v1/fill/w_1469,h_828,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01,enc_auto/d90ac3_63db656ddfa8483bbd89dd3f926df712~mv2.jpg",
+    image:
+      "https://static.wixstatic.com/media/d90ac3_63db656ddfa8483bbd89dd3f926df712~mv2.jpg/v1/fill/w_1469,h_828,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01,enc_auto/d90ac3_63db656ddfa8483bbd89dd3f926df712~mv2.jpg",
     description: "A dynamic fusion of Western dance styles and music.",
     rating: 5,
     registrationFee: 1500,
@@ -52,21 +56,24 @@ export const events: readonly Event[] = [
       "Usage of props is allowed. Fire or liquid substances are not permitted.",
       "University dress code to be strictly adhered to.",
       "Any genre of music is allowed but the dance style must be strictly western.",
-      "Participants are requested to submit their audio through the google form that will be provided prior to the day of the event."
+      "Participants are requested to submit their audio through the google form that will be provided prior to the day of the event.",
     ],
     capacity: "5-20 members",
     timeLimit: "3+2 minutes",
     open: false,
     cashPrize: 8000,
     eventHeadName: "Keerthana & Dhanush",
-    eventHeadNumber: "Keerthana: 7022492263, Dhanush: 7899750475"
+    eventHeadNumber: "Keerthana: 7022492263, Dhanush: 7899750475",
+    time: "",
   },
   {
     title: "Fashion Walk",
     date: "",
     venue: "Main Stage",
-    image: "https://img.freepik.com/premium-photo/model-walks-ramp-indian-fashion-show_997657-42418.jpg?w=1060",
-    description: "Showcase your style, creativity, and confidence on the runway.",
+    image:
+      "https://img.freepik.com/premium-photo/model-walks-ramp-indian-fashion-show_997657-42418.jpg?w=1060",
+    description:
+      "Showcase your style, creativity, and confidence on the runway.",
     rating: 5,
     registrationFee: 1500,
     rules: [
@@ -75,20 +82,22 @@ export const events: readonly Event[] = [
       "No vulgarity.",
       "Dress Code: Inappropriate outfits are not allowed—college norms are to be followed (e.g., no crop tops, sleeveless tops, off-shoulder tops, deep neck tops, backless tops, sheer tops, ripped jeans).",
       "Stockings to be worn (no sheer stockings).",
-      "Violation of dress code/any rules will lead to disqualification."
+      "Violation of dress code/any rules will lead to disqualification.",
     ],
     capacity: "8-10 members",
     timeLimit: "6+2 minutes",
     open: false,
     cashPrize: 8000,
     eventHeadName: "Pratham & Balraj",
-    eventHeadNumber: "Pratham: 9113511958, Balraj: 7975160759"
+    eventHeadNumber: "Pratham: 9113511958, Balraj: 7975160759",
+    time: "",
   },
   {
     title: "Indian Group Singing",
     date: "",
     venue: "University Auditorium",
-    image: "https://th.bing.com/th/id/OIP.4a9lPOihbXzAAJK_w8WHFQHaE7?rs=1&pid=ImgDetMain",
+    image:
+      "https://th.bing.com/th/id/OIP.4a9lPOihbXzAAJK_w8WHFQHaE7?rs=1&pid=ImgDetMain",
     description: "A melodious journey through Indian languages and genres.",
     rating: 5,
     registrationFee: 1000,
@@ -98,20 +107,22 @@ export const events: readonly Event[] = [
       "All Indian languages and genres are allowed.",
       "Usage of karaoke is NOT allowed.",
       "Participants have to carry their own instruments (a drum kit will be provided).",
-      "Any kind of vulgarity will lead to immediate disqualification."
+      "Any kind of vulgarity will lead to immediate disqualification.",
     ],
     capacity: "4-18 members (including instrumentalists)",
     timeLimit: "5+2 minutes",
     open: false,
     cashPrize: 5000,
     eventHeadName: "Supriya & Swathi",
-    eventHeadNumber: "Supriya: 8660350610, Swathi: 7022807808"
+    eventHeadNumber: "Supriya: 8660350610, Swathi: 7022807808",
+    time: "",
   },
   {
     title: "Western Group Singing",
     date: "",
     venue: "University Auditorium",
-    image: "https://3.files.edl.io/a851/23/05/16/051433-e30c7c6b-2ac3-4f3a-9079-df55c40e0a08.jpg",
+    image:
+      "https://3.files.edl.io/a851/23/05/16/051433-e30c7c6b-2ac3-4f3a-9079-df55c40e0a08.jpg",
     description: "A celebration of vocal harmony and live Western music.",
     rating: 5,
     registrationFee: 1000,
@@ -124,14 +135,15 @@ export const events: readonly Event[] = [
       "Teams must bring their own instruments.",
       "Stage setup and soundcheck must be completed within the allotted time",
       "Exceeding the time limit may result in a penalty or disqualification.",
-      "Use of vulgar language is prohibited."
+      "Use of vulgar language is prohibited.",
     ],
     capacity: "6-10 members, 2 team per college. Cap at 15 teams",
     timeLimit: "6+2 minutes (6 minutes performance + 2 minute soundcheck)",
     open: false,
     cashPrize: 5000,
     eventHeadName: "Gareth & Angel",
-    eventHeadNumber: "Gareth: 7760345707, Angel: 9380337608"
+    eventHeadNumber: "Gareth: 7760345707, Angel: 9380337608",
+    time: "",
   },
   {
     title: "Mad Ads",
@@ -147,7 +159,8 @@ export const events: readonly Event[] = [
     open: false,
     cashPrize: 5000,
     eventHeadName: "Sachin & Lohit",
-    eventHeadNumber: "Sachin: 9739364613, Lohit: 7411211988"
+    eventHeadNumber: "Sachin: 9739364613, Lohit: 7411211988",
+    time: "",
   },
   {
     title: "Personality",
@@ -161,19 +174,21 @@ export const events: readonly Event[] = [
       "No of Participants: Individual event",
       "Vulgarity, obscenity and offensive content are strictly prohibited.",
       "Props will be allowed at the Judge's discretion.",
-      "There could be multiple rounds left to the Judges."
+      "There could be multiple rounds left to the Judges.",
     ],
     capacity: undefined,
     open: false,
     cashPrize: 3000,
     eventHeadName: "Melwin & Abhay",
-    eventHeadNumber: "Melwin: 7349396204, Abhay: 9742987683"
+    eventHeadNumber: "Melwin: 7349396204, Abhay: 9742987683",
+    time: "",
   },
   {
     title: "Street Play",
     date: "",
     venue: "Hostel Block",
-    image: "https://im.indiatimes.in/content/2016/Dec/002_inside_1480572106.jpg?w=725&h=483&cc=1&webp=1&q=75",
+    image:
+      "https://im.indiatimes.in/content/2016/Dec/002_inside_1480572106.jpg?w=725&h=483&cc=1&webp=1&q=75",
     description: "Expressive performances on open themes with live sound.",
     rating: 4,
     registrationFee: 500,
@@ -185,61 +200,69 @@ export const events: readonly Event[] = [
       "Vulgarity in language, gestures, and costumes will not be entertained and can lead to disqualification.",
       "The sound and music should be live.",
       "Audio tracks, digital sound or electronic instruments will not be allowed.",
-      "Original and fresh scripts will be entertained."
+      "Original and fresh scripts will be entertained.",
     ],
     capacity: "12-15 members",
     timeLimit: "8+2 minutes",
     open: false,
     cashPrize: 4000,
     eventHeadName: "Benny & Adarsh",
-    eventHeadNumber: "Benny: 9844520704, Adarsh: 7022715411"
+    eventHeadNumber: "Benny: 9844520704, Adarsh: 7022715411",
+    time: "",
   },
   {
     title: "Mock Rock",
     date: "",
     venue: "University Auditorium",
     image: "https://images3.alphacoders.com/134/1347639.png",
-    description: "A hilarious performance combining music, memes, and creativity.",
+    description:
+      "A hilarious performance combining music, memes, and creativity.",
     rating: 4,
     registrationFee: 500,
     rules: [
       "Participants form teams to convey a story with the help of music and MEME references, adding their own comedic twists, exaggerated acting, and ridiculous props.",
       "Any language can be used in audio.",
       "Any vulgarity, profanity, or offensive actions regarding caste, religion, politics, or discrimination will lead to disqualification.",
-      "Choreography, composition, costume, and audience reaction will be considered as well."
+      "Choreography, composition, costume, and audience reaction will be considered as well.",
     ],
     capacity: "6-8 members",
     timeLimit: "4+2 minutes",
     open: false,
     cashPrize: 4000,
     eventHeadName: "Aloysius & Carlein",
-    eventHeadNumber: "Aloysius: 7338555271, Carlein: 7204288674"
+    eventHeadNumber: "Aloysius: 7338555271, Carlein: 7204288674",
+    time: "",
   },
   {
     title: "Air Crash",
     date: "",
     venue: "",
-    image: "https://th.bing.com/th/id/OIF.4qYNGRGkJO7rLeG1ftmbaw?rs=1&pid=ImgDetMain",
-    description: "On-the-spot characters and creative scenarios to test your imagination.",
+    image:
+      "https://th.bing.com/th/id/OIF.4qYNGRGkJO7rLeG1ftmbaw?rs=1&pid=ImgDetMain",
+    description:
+      "On-the-spot characters and creative scenarios to test your imagination.",
     rating: 4,
     registrationFee: 400,
     rules: [
       "No prior preparations are required, as characters will be assigned by the judges to participants on the spot.",
       "Each round will include multiple segments, which will be announced by the judges.",
-      "Any display of vulgarity, foul language, or obscene, or offensive content will result in immediate disqualification."
+      "Any display of vulgarity, foul language, or obscene, or offensive content will result in immediate disqualification.",
     ],
     capacity: "Individual",
     open: false,
     cashPrize: 3000,
     eventHeadName: "Loyal & Naomi",
-    eventHeadNumber: "Loyal: 9945482428, Naomi: 9902477648"
+    eventHeadNumber: "Loyal: 9945482428, Naomi: 9902477648",
+    time: "",
   },
   {
     title: "Indian Solo Dance",
     date: "",
     venue: "Aloysius Hall",
-    image: "https://cdn.groupmuse.com/b186beaa-467c-45d1-b858-6b472ea8b3d8/-/scale_crop/1800x960/center/-/max_icc_size/10/-/format/auto/-/quality/lighter/-/progressive/yes/",
-    description: "Show your skills in Indian dance styles and captivate the audience.",
+    image:
+      "https://cdn.groupmuse.com/b186beaa-467c-45d1-b858-6b472ea8b3d8/-/scale_crop/1800x960/center/-/max_icc_size/10/-/format/auto/-/quality/lighter/-/progressive/yes/",
+    description:
+      "Show your skills in Indian dance styles and captivate the audience.",
     rating: 4,
     registrationFee: 400,
     rules: [
@@ -247,21 +270,24 @@ export const events: readonly Event[] = [
       "Two contingent participants per College / University are allowed.",
       "Any act of vulgarity in the costume or dance/indiscipline behaviour during the event will lead to disqualification.",
       "Usage of props is allowed, considering it is not harmful (Usage of fire, water, or any flammable object will not be allowed).",
-      "Exceeding the time limit will lead to a reduction in score."
+      "Exceeding the time limit will lead to a reduction in score.",
     ],
     capacity: "individual",
     timeLimit: "3+1 minutes (Inclusive of entry, stage set up and exit)",
     open: false,
     cashPrize: 3000,
     eventHeadName: "Norah & Kabani",
-    eventHeadNumber: "Norah: 9995572516, Kabani: 9496244119"
+    eventHeadNumber: "Norah: 9995572516, Kabani: 9496244119",
+    time: "",
   },
   {
     title: "Reel Making",
     date: "",
     venue: "",
-    image: "https://www.maketecheasier.com/assets/uploads/2022/08/best-apps-to-make-instagram-reels-featured-image-800x400.jpg",
-    description: "Create captivating reels to showcase your creativity and win hearts.",
+    image:
+      "https://www.maketecheasier.com/assets/uploads/2022/08/best-apps-to-make-instagram-reels-featured-image-800x400.jpg",
+    description:
+      "Create captivating reels to showcase your creativity and win hearts.",
     rating: 4,
     registrationFee: 400,
     rules: [
@@ -271,40 +297,45 @@ export const events: readonly Event[] = [
       "Results will be graded based on the judge's decision under the amount of engagement (likes, shares, views).",
       "Each university/college can have up to 3 registrations.",
       "Each team must submit their original content.",
-      "Teams must focus on the theme of Visages and promote it."
+      "Teams must focus on the theme of Visages and promote it.",
     ],
     capacity: "Individual participation",
     open: false,
     cashPrize: 3000,
     eventHeadName: "Aayesha & Gayathry",
-    eventHeadNumber: "Aayesha: 9101213609, Gayathry: 7736740185"
+    eventHeadNumber: "Aayesha: 9101213609, Gayathry: 7736740185",
+    time: "",
   },
   {
     title: "Stand-up Comedy",
     date: "",
     venue: "Arrupe",
-    image: "https://media.gqindia.com/wp-content/uploads/2020/02/standup-comedy-specials.jpg",
-    description: "Showcase your comedic talent and entertain the crowd with original jokes.",
+    image:
+      "https://media.gqindia.com/wp-content/uploads/2020/02/standup-comedy-specials.jpg",
+    description:
+      "Showcase your comedic talent and entertain the crowd with original jokes.",
     rating: 3,
     registrationFee: 300,
     rules: [
       "Only original material is allowed.",
       "No profanity or offensive content.",
       "Strict time limit adherence.",
-      "Two rounds: R1 - Scheduled performance, R2 - Surprise round."
+      "Two rounds: R1 - Scheduled performance, R2 - Surprise round.",
     ],
     capacity: "Individual participation",
     timeLimit: "3+1 minutes",
     open: false,
     cashPrize: 2000,
     eventHeadName: "Alwin",
-    eventHeadNumber: "Alwin: 9986149499, Divanshi: 6232782362"
+    eventHeadNumber: "Alwin: 9986149499, Divanshi: 6232782362",
+    time: "",
   },
   {
     title: "Treasure Hunt",
     date: "",
     venue: "Campus-wide",
-    image: "https://pluspng.com/img-png/treasure-hunt-png-hd-treasure-hunt-1920.jpg",
+    image:
+      "https://pluspng.com/img-png/treasure-hunt-png-hd-treasure-hunt-1920.jpg",
     description: "Follow clues and solve riddles to find the hidden treasure.",
     rating: 3,
     registrationFee: 500,
@@ -312,14 +343,15 @@ export const events: readonly Event[] = [
       "Teams of 3 members.",
       "The clues will be scattered across the campus.",
       "Any act of cheating, misbehavior, discussion with other teams or outside individuals, or the use of gadgets (unless explicitly instructed) is strictly prohibited and will result in instant disqualification.",
-      "The first team to find the treasure wins."
+      "The first team to find the treasure wins.",
     ],
     capacity: "3 members",
     timeLimit: undefined,
     open: false,
     cashPrize: 2000,
     eventHeadName: "Fathima & Elizabeth",
-    eventHeadNumber: "Fathima: 9995963767, Elizabeth: 8138056003"
+    eventHeadNumber: "Fathima: 9995963767, Elizabeth: 8138056003",
+    time: "",
   },
   {
     title: "Rap and Beatbox",
@@ -337,21 +369,24 @@ export const events: readonly Event[] = [
       "Further rounds, if any, will be announced at the event based on the judge’s decision.",
       "There is no language barrier for participants.",
       "Participants will be disqualified for vulgarity and discrimination against contestants on any grounds.",
-      "Originality is encouraged."
+      "Originality is encouraged.",
     ],
     capacity: "2 members per team",
     timeLimit: "3+1 minutes (Showcase round)",
     open: false,
     cashPrize: 2000,
     eventHeadName: "Shawn & Denzel",
-    eventHeadNumber: "Shawn: 9769860609, Denzel: 9886781028"
+    eventHeadNumber: "Shawn: 9769860609, Denzel: 9886781028",
+    time: "",
   },
   {
     title: "BGMI",
     date: "",
     venue: "Online",
-    image: "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWRicmgxMGlnN3BzbGp1anZxMGJhdmN3ajFoeHdzNmd5MmQxYnV0eSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/vVwv7I87uB9gZ7avim/giphy.gif",
-    description: "An exhilarating online gaming tournament for BGMI enthusiasts, testing teamwork and strategy.",
+    image:
+      "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWRicmgxMGlnN3BzbGp1anZxMGJhdmN3ajFoeHdzNmd5MmQxYnV0eSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/vVwv7I87uB9gZ7avim/giphy.gif",
+    description:
+      "An exhilarating online gaming tournament for BGMI enthusiasts, testing teamwork and strategy.",
     rating: 0,
     registrationFee: 300,
     rules: [
@@ -365,21 +400,23 @@ export const events: readonly Event[] = [
       "Emulators/iPad players are not allowed.",
       "No third-party applications, Hacks, or Cheats are allowed. Any team accused of using such programs that fails to produce any sort of proof (POV) will be disqualified.",
       "Team-ups are not allowed.",
-      "In-game ID and player information must be submitted prior and no changes will be accepted after the commencement of the tournament."
+      "In-game ID and player information must be submitted prior and no changes will be accepted after the commencement of the tournament.",
     ],
     capacity: "4+1 members per team",
     timeLimit: "As per BGMI tournament guidelines",
     open: true,
     cashPrize: 2000,
     eventHeadName: "Astle & Adwaith",
-    eventHeadNumber: "Astle: 8590867797, Adwaith: 9895115798"
+    eventHeadNumber: "Astle: 8590867797, Adwaith: 9895115798",
+    time: "",
   },
   {
     title: "Meme Making",
     date: "",
     venue: "",
     image: "https://media.tenor.com/jWTOcH5trbIAAAAC/meow-im-dancing.gif",
-    description: "A fun and creative event where participants design memes based on on-the-spot themes within a limited time frame.",
+    description:
+      "A fun and creative event where participants design memes based on on-the-spot themes within a limited time frame.",
     rating: 3,
     registrationFee: 300,
     rules: [
@@ -390,70 +427,78 @@ export const events: readonly Event[] = [
       "Submission Guidelines: Memes must be submitted in image format (.jpg or .png).",
       "Content Restrictions: Memes must not contain any offensive, vulgar, dark humor, political, or inappropriate content. Adherence to university guidelines is mandatory.",
       "Judgment Criteria: Creativity, originality, humor, and relevance to the theme will be evaluated and scored by the judges.",
-      "Malpractice: Any form of plagiarism, pre-prepared memes, or use of unauthorized gadgets will result in instant disqualification."
+      "Malpractice: Any form of plagiarism, pre-prepared memes, or use of unauthorized gadgets will result in instant disqualification.",
     ],
     capacity: "15 participants overall (1 participant per college)",
     timeLimit: "15 minutes",
     open: false,
     cashPrize: 2000,
     eventHeadName: "Satyam & Adam",
-    eventHeadNumber: "Satyam: 9663469507, Adam: 9188182446"
+    eventHeadNumber: "Satyam: 9663469507, Adam: 9188182446",
+    time: "",
   },
   {
-  title: "Battle of Bands",
-  date: "",
-  venue: "",
-  image: "https://i.pinimg.com/originals/95/e3/ed/95e3ed74aa66610a2bea7c58245b6fdd.gif",
-  description: "A thrilling musical competition where college bands battle it out with electrifying performances.",
-  rating: 0,
-  rules: [
-    "Valid college ID card is mandatory for participation",
-    "Total entry: 15 (first come, first serve basis).",
-    "It is not an open event. Entry is restricted to college students, including SJU.",
-    "SJU Bands: Maximum of 3 bands only (first come, first serve basis).",
-    "Number of members in a team: 4 to 8.",
-    "Total time for performance: 8 minutes stage performance, 2 minutes setup.",
-    "Only drum kits will be provided. Participants should bring other instruments.",
-    "Both western and Indian songs can be performed.",
-    "Participants can represent only one band. If seen in multiple bands, the team will be disqualified.",
-    "No use of vulgar language; participants will be disqualified for violations.",
-    "Original music is appreciated.",
-    "Judges' decision will be final."
-  ],
-  registrationFee: 2000,
-  open: true,
-  cashPrize: 15000,
-  eventHeadName: "Neha & Ruth",
-  eventHeadNumber: "Neha: 7736182950, Ruth: 7090282338"
+    title: "Battle of Bands",
+    date: "",
+    venue: "",
+    image:
+      "https://i.pinimg.com/originals/95/e3/ed/95e3ed74aa66610a2bea7c58245b6fdd.gif",
+    description:
+      "A thrilling musical competition where college bands battle it out with electrifying performances.",
+    rating: 0,
+    rules: [
+      "Valid college ID card is mandatory for participation",
+      "Total entry: 15 (first come, first serve basis).",
+      "It is not an open event. Entry is restricted to college students, including SJU.",
+      "SJU Bands: Maximum of 3 bands only (first come, first serve basis).",
+      "Number of members in a team: 4 to 8.",
+      "Total time for performance: 8 minutes stage performance, 2 minutes setup.",
+      "Only drum kits will be provided. Participants should bring other instruments.",
+      "Both western and Indian songs can be performed.",
+      "Participants can represent only one band. If seen in multiple bands, the team will be disqualified.",
+      "No use of vulgar language; participants will be disqualified for violations.",
+      "Original music is appreciated.",
+      "Judges' decision will be final.",
+    ],
+    registrationFee: 2000,
+    open: true,
+    cashPrize: 15000,
+    eventHeadName: "Neha & Ruth",
+    eventHeadNumber: "Neha: 7736182950, Ruth: 7090282338",
+    time: "",
   },
-{
-  title: "Improv",
-  date: "",
-  venue: "",
-  image: "https://www.ere.net/_next/image?url=https%3A%2F%2Fapi.eremedia.com%2Fwp-content%2Fuploads%2F2018%2F06%2Fimprov.jpg&w=1200&q=75",
-  description: "A spontaneous event where teams create unpredictable skits based on random prompts.",
-  rating: 3,
-  registrationFee: 300,
-  rules: [
-    "No of Participants: Two members per team.",
-    "Participants will receive random scenarios, characters, or themes with minimal preparation.",
-    "Whether experienced or new, this event focuses on creativity, fun, and on-the-spot brilliance.",
-    "Audience participation adds an exciting twist to every performance."
-  ],
-  capacity: "Two members per team",
-  timeLimit: "As per event structure",
-  open: false,
-  cashPrize: 2000,
-  eventHeadName: "Gnana",
-  eventHeadNumber: "Gnana: 9448615863, Devikrishna: 8848055691"
-}
-,
+  {
+    title: "Improv",
+    date: "",
+    venue: "",
+    image:
+      "https://www.ere.net/_next/image?url=https%3A%2F%2Fapi.eremedia.com%2Fwp-content%2Fuploads%2F2018%2F06%2Fimprov.jpg&w=1200&q=75",
+    description:
+      "A spontaneous event where teams create unpredictable skits based on random prompts.",
+    rating: 3,
+    registrationFee: 300,
+    rules: [
+      "No of Participants: Two members per team.",
+      "Participants will receive random scenarios, characters, or themes with minimal preparation.",
+      "Whether experienced or new, this event focuses on creativity, fun, and on-the-spot brilliance.",
+      "Audience participation adds an exciting twist to every performance.",
+    ],
+    capacity: "Two members per team",
+    timeLimit: "As per event structure",
+    open: false,
+    cashPrize: 2000,
+    eventHeadName: "Gnana",
+    eventHeadNumber: "Gnana: 9448615863, Devikrishna: 8848055691",
+    time: "",
+  },
   {
     title: "Face Painting",
     date: "",
     venue: "",
-    image: "https://media.gettyimages.com/id/1419740490/video/happy-halloween-mother-paint-little-girls-face-makeup-applied-for-trick-or-treating-for.jpg?s=640x640&k=20&c=EuqSy19bgc_yGyZFXKR4CTIqEFYkfyrqCOK0Lz8vNZs=",
-    description: "A creative event where participants showcase their artistic skills by painting faces inspired by cultural elements, traditions, or landmarks worldwide.",
+    image:
+      "https://media.gettyimages.com/id/1419740490/video/happy-halloween-mother-paint-little-girls-face-makeup-applied-for-trick-or-treating-for.jpg?s=640x640&k=20&c=EuqSy19bgc_yGyZFXKR4CTIqEFYkfyrqCOK0Lz8vNZs=",
+    description:
+      "A creative event where participants showcase their artistic skills by painting faces inspired by cultural elements, traditions, or landmarks worldwide.",
     rating: 3,
     registrationFee: 300,
     rules: [
@@ -464,21 +509,23 @@ export const events: readonly Event[] = [
       "All materials must be brought by the participants.",
       "Non-compliance to the theme may result in disqualification.",
       "Only skin-safe, non-toxic paints should be used. Organisers are not responsible for any skin allergies or reactions.",
-      "Face paintings will be judged based on their creativity, detailing, and relevance to the theme and presentation."
+      "Face paintings will be judged based on their creativity, detailing, and relevance to the theme and presentation.",
     ],
     capacity: "Individual event (1 participant with a model)",
     timeLimit: "2 hours (90 minutes for painting + 30 minutes for judging)",
     open: false,
     cashPrize: 2000,
     eventHeadName: "Surabhi & Deepali",
-    eventHeadNumber: "Surabhi: 9620455780, Deepali: 9916547269"
+    eventHeadNumber: "Surabhi: 9620455780, Deepali: 9916547269",
+    time: "",
   },
   {
     title: "Murder Mystery",
     date: "",
     venue: "",
     image: "https://www.indigoextra.com/web/images/murder-mystery(1).webp",
-    description: "An engaging trio event where teams solve ciphers, compete in a treasure hunt, and use detective skills to unravel mysteries.",
+    description:
+      "An engaging trio event where teams solve ciphers, compete in a treasure hunt, and use detective skills to unravel mysteries.",
     rating: 3,
     registrationFee: 300,
     rules: [
@@ -486,14 +533,15 @@ export const events: readonly Event[] = [
       "Total Teams Allowed: Maximum 1 team per college, 10 teams in total.",
       "Teams will have to solve ciphers, compete in a treasure hunt, and use their detective skills to figure out clues and mysteries along the way.",
       "Teams will be eliminated round-wise.",
-      "Malpractice or any use of gadgets unless instructed will lead to instant disqualification."
+      "Malpractice or any use of gadgets unless instructed will lead to instant disqualification.",
     ],
     capacity: "3 members per team, 10 teams in total",
     timeLimit: "As per event structure",
     open: false,
     cashPrize: 2000,
     eventHeadName: "Isha",
-    eventHeadNumber: "Isha: 9591859161, Saanvi: 7470885176"
+    eventHeadNumber: "Isha: 9591859161, Saanvi: 7470885176",
+    time: "",
   },
   {
     title: "Solo Instrumental",
@@ -514,14 +562,15 @@ export const events: readonly Event[] = [
       "Loop pedals and effects are permitted if they are operated live by the participant.",
       "An original composition is welcomed.",
       "No profanities will be tolerated.",
-      "Contestants will be evaluated on Technical Skill, Creativity and Originality, Stage Presence, Musicality, and Time Management."
+      "Contestants will be evaluated on Technical Skill, Creativity and Originality, Stage Presence, Musicality, and Time Management.",
     ],
     capacity: "Individual event",
     timeLimit: "3+1 minutes",
     open: false,
     cashPrize: 2000,
     eventHeadName: "Ebenezer & Saira",
-    eventHeadNumber: "Ebenezer: 7406099809, Ricky: 9725758959"
+    eventHeadNumber: "Ebenezer: 7406099809, Ricky: 9725758959",
+    time: "",
   },
   {
     title: "DJ Wars",
@@ -538,14 +587,15 @@ export const events: readonly Event[] = [
       "Time Limit: 10+2 minutes.",
       "Original mixes only. No premixes allowed.",
       "No profanity in the samples.",
-      "Standard CDJ 3000 and DJM 900 mixers will be provided."
+      "Standard CDJ 3000 and DJM 900 mixers will be provided.",
     ],
     capacity: "Individual participation",
     timeLimit: "10+2 minutes",
     open: false,
     cashPrize: 3000,
     eventHeadName: "Karan & Meghana",
-    eventHeadNumber: "Karan: 9591005231, Karin: 8147012753"
+    eventHeadNumber: "Karan: 9591005231, Karin: 8147012753",
+    time: "",
   },
   {
     title: "Indian Classical Solo Singing",
@@ -563,14 +613,15 @@ export const events: readonly Event[] = [
       "Both Hindustani and Carnatic music are allowed.",
       "The use of electronic tanpura and electronic tabla is permitted (use of mobile applications for the same is allowed).",
       "Following the time limit is mandatory.",
-      "One accompanying classical instrumentalist is permitted (this will not be given any extra consideration or points)."
+      "One accompanying classical instrumentalist is permitted (this will not be given any extra consideration or points).",
     ],
     capacity: "Individual participation",
     timeLimit: "3+1 minutes",
     open: false,
     cashPrize: 3000,
     eventHeadName: "Sirikrishna & Anagha",
-    eventHeadNumber: "Sirikrishna: 9901549528, Anagha: 9108220057"
+    eventHeadNumber: "Sirikrishna: 9901549528, Anagha: 9108220057",
+    time: "",
   },
   {
     title: "Western Solo Singing",
@@ -589,14 +640,15 @@ export const events: readonly Event[] = [
       "Instrumental accompaniment is permitted.",
       "Use of backing tracks is strictly prohibited.",
       "The use of vulgar or inappropriate language is not allowed.",
-      "Contestants will be evaluated solely based on their vocal performance."
+      "Contestants will be evaluated solely based on their vocal performance.",
     ],
     capacity: "Individual participation",
     timeLimit: "3+1 minutes",
     open: false,
     cashPrize: 3000,
     eventHeadName: "Joanna & Rose",
-    eventHeadNumber: "Joanna: 9150443795, Rose: 8660624338"
+    eventHeadNumber: "Joanna: 9150443795, Rose: 8660624338",
+    time: "",
   },
   {
     title: "Indian Solo Singing",
@@ -619,21 +671,24 @@ export const events: readonly Event[] = [
       "Use of Karaoke is not permitted.",
       "Use of tanpura is allowed.",
       "Following the time limit is mandatory.",
-      "Pro-tip: A unique choice of song based on the theme may earn you brownie points!"
+      "Pro-tip: A unique choice of song based on the theme may earn you brownie points!",
     ],
     capacity: "Individual participation",
     timeLimit: "3+1 minutes",
     open: false,
     cashPrize: 3000,
     eventHeadName: "Girikrishnan & Nia",
-    eventHeadNumber: "Girikrishnan: 7587436579, Nia: 7349627355"
+    eventHeadNumber: "Girikrishnan: 7587436579, Nia: 7349627355",
+    time: "",
   },
   {
     title: "Art",
     date: " ",
     venue: "",
-    image: "https://th.bing.com/th/id/OIP.ZB6Icf7u5qEgVZfkWwZyiQHaE7?rs=1&pid=ImgDetMain",
-    description: "An exciting art competition using traditional mediums, where participants showcase their creativity based on a theme given on the spot.",
+    image:
+      "https://th.bing.com/th/id/OIP.ZB6Icf7u5qEgVZfkWwZyiQHaE7?rs=1&pid=ImgDetMain",
+    description:
+      "An exciting art competition using traditional mediums, where participants showcase their creativity based on a theme given on the spot.",
     rating: 3,
     rules: [
       "Traditional mediums only (i.e watercolours, pencils, paints)",
@@ -641,26 +696,29 @@ export const events: readonly Event[] = [
       "Bring your own material",
       "The topic will be given on the spot (be well prepared)",
       "References are permitted but should not be copied to the dot",
-      "Artworks judged on Overall creativity, Adherence to the topic given, Aesthetic value"
+      "Artworks judged on Overall creativity, Adherence to the topic given, Aesthetic value",
     ],
     registrationFee: 300,
     open: false,
     cashPrize: 2000,
     capacity: "Individual participation",
     eventHeadName: "Ved & Tanisha",
-    eventHeadNumber: "Ved: 8698062091, Tanisha: 8762468171"
+    eventHeadNumber: "Ved: 8698062091, Tanisha: 8762468171",
+    time: "",
   },
   {
     title: "Minute to Win It",
     date: "",
     venue: "Classroom",
-    image: "https://d8it4huxumps7.cloudfront.net/uploads/images/opportunity/mobile_banner/6540c1859cbc2_just-a-minute-competition.png",
-    description: "A fast-paced competition where participants must complete a series of fun challenges in under a minute.",
+    image:
+      "https://d8it4huxumps7.cloudfront.net/uploads/images/opportunity/mobile_banner/6540c1859cbc2_just-a-minute-competition.png",
+    description:
+      "A fast-paced competition where participants must complete a series of fun challenges in under a minute.",
     rating: 3,
     rules: [
       "There will be a series of games and tasks to complete within a minute.",
       "Rules for the rounds will be given on the spot.",
-      "Any kind of malpractice will lead to disqualification."
+      "Any kind of malpractice will lead to disqualification.",
     ],
     registrationFee: 300,
     open: false,
@@ -668,13 +726,15 @@ export const events: readonly Event[] = [
     eventHeadName: "Suhotra",
     eventHeadNumber: "Suhotra: 9433046441, Sania: 8825586625",
     capacity: "Individual participation",
+    time: "",
   },
   {
     title: "Photography",
     date: "",
     venue: "Campus-wide",
     image: "https://cdn.mos.cms.futurecdn.net/gvQ9NhQP8wbbM32jXy4V3j.jpg",
-    description: "Capture stunning moments around the campus in this on-the-spot photography competition.",
+    description:
+      "Capture stunning moments around the campus in this on-the-spot photography competition.",
     rating: 3,
     registrationFee: 300,
     rules: [
@@ -686,39 +746,43 @@ export const events: readonly Event[] = [
       "Only minimal editing is allowed; no cropping.",
       "Participants must ensure that the photo submitted is an original work.",
       "Only DSLR and mirrorless cameras are allowed (no smartphones).",
-      "Submission deviating from the theme or malpractice will result in disqualification."
+      "Submission deviating from the theme or malpractice will result in disqualification.",
     ],
     capacity: "Individual participation",
     timeLimit: "1 hour",
     open: false,
     cashPrize: 2000,
     eventHeadName: "Dhanush & Vignesh",
-    eventHeadNumber: "Dhanush: 8867052135, Vignesh: 7975984061"
+    eventHeadNumber: "Dhanush: 8867052135, Vignesh: 7975984061",
+    time: "",
   },
   {
     title: "Western Solo Dance",
     date: "",
     venue: "",
     image: westernSolo,
-    description: "Show off your best western dance moves in this exciting solo competition!",
+    description:
+      "Show off your best western dance moves in this exciting solo competition!",
     rating: 4,
     registrationFee: 400,
     rules: [
       "Any genre of music is allowed but the dance style must be strictly western.",
       "Profanity, vulgarity or obscenity will lead to disqualification.",
       "Usage of props is allowed. Fire or liquid substances are not permitted.",
-      "University dress code to be strictly adhered to."
+      "University dress code to be strictly adhered to.",
     ],
     open: false,
     cashPrize: 3000,
     eventHeadName: "Jennifer & Athena",
-    eventHeadNumber: "Jennifer: 9945519371, Athena: 9747981102"
+    eventHeadNumber: "Jennifer: 9945519371, Athena: 9747981102",
+    time: "",
   },
   {
     title: "Council Wars",
     date: "",
     venue: "Main Stage",
-    image: "https://www.careeraddict.com/uploads/article/60560/student-life-school-council-campaign.png",
+    image:
+      "https://www.careeraddict.com/uploads/article/60560/student-life-school-council-campaign.png",
     description: "",
     rating: 5,
     rules: [
@@ -727,20 +791,22 @@ export const events: readonly Event[] = [
       "The rounds will be given by the judges on spot.",
       "Props and musical instruments are allowed.",
       "If teams require any tracks to be played during their performances, it must be submitted to the event heads the day before the event.",
-      "Personal attacks, abusive language, vulgarity, and hurting religious and political controversies during the performance will lead to immediate disqualification."
+      "Personal attacks, abusive language, vulgarity, and hurting religious and political controversies during the performance will lead to immediate disqualification.",
     ],
     registrationFee: 1000,
     capacity: "6-8 members",
     open: false,
     cashPrize: 5000,
     eventHeadName: "Adhithya & Aishwarya",
-    eventHeadNumber: "Adhithya: 6361302660, Aishwarya: 9962522299"
+    eventHeadNumber: "Adhithya: 6361302660, Aishwarya: 9962522299",
+    time: "",
   },
   {
     title: "Pro Night - Day 1",
     description:
       "Experience an electrifying night of music and dance on Day 1 of Visages. Special student DJ performances and professional DJ set.",
-    image: "https://img.freepik.com/premium-photo/dj-club-with-party-peopleai-generative_46383-955.jpg",
+    image:
+      "https://img.freepik.com/premium-photo/dj-club-with-party-peopleai-generative_46383-955.jpg",
     registrationFee: 500,
     venue: "University Ground",
     timeLimit: "5:00 PM - 07:30 PM",
@@ -755,12 +821,14 @@ export const events: readonly Event[] = [
     ],
     eventHeadName: "Anjali",
     eventHeadNumber: "+91 96566 47656",
+    time: "",
   },
   {
     title: "Pro Night - Day 2",
     description:
       "The grand finale night of Visages 2025! Join us for an unforgettable evening of music, dance, and celebration.",
-    image: "https://img.freepik.com/premium-photo/dj-playing-mixing-music-nightclub-party-night-edm-dance-music-club-with-crowd_457222-1500.jpg",
+    image:
+      "https://img.freepik.com/premium-photo/dj-playing-mixing-music-nightclub-party-night-edm-dance-music-club-with-crowd_457222-1500.jpg",
     registrationFee: 500,
     venue: "University Ground",
     timeLimit: "5:00 PM - 07:30 PM",
@@ -775,6 +843,7 @@ export const events: readonly Event[] = [
     ],
     eventHeadName: "Anjali",
     eventHeadNumber: "+91 96566 47656",
+    time: "",
   },
 ];
 
