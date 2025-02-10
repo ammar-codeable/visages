@@ -21,6 +21,7 @@ export const dayOneEvents: ScheduleEvent[] = [
   { venue: "Classroom", time: "11:00 AM", event: "Meme Making" },
   { venue: "Hostel Block", time: "9:30 AM", event: "Street Play" },
   { venue: "Across Campus", time: "10:00 AM", event: "Reel Making" },
+  { venue: "Online", time: "Evening", event: "BGMI" },
 ];
 
 export const dayTwoEvents: ScheduleEvent[] = [
@@ -39,8 +40,4 @@ export const dayTwoEvents: ScheduleEvent[] = [
   { venue: "Classroom", time: "12:30 PM", event: "Treasure Hunt" },
   { venue: "UG Quadrangle", time: "11:00 AM", event: "Face Painting" },
   { venue: "Across Campus", time: "12:00 PM", event: "Photography" },
-];
-
-export const onlineEvents = [
-  { event: "BGMI", time: "Evening", day: "Day 1 - Feb 20th" },
 ];

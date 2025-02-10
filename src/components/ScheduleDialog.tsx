@@ -1,14 +1,27 @@
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { dayOneEvents, dayTwoEvents, onlineEvents } from "@/constants/schedule";
-import { Calendar, Clock, MapPin } from "lucide-react";
-import { motion } from "motion/react";
+import { dayOneEvents, dayTwoEvents } from "@/constants/schedule";
+import { Calendar, ArrowUpDown } from "lucide-react";
+import { useState } from "react";
+
+// Add this helper function for time conversion
+const convertTo24Hour = (timeStr: string) => {
+  if (!timeStr) return "23:59"; // Push empty times to the end
+  const [time, meridiem] = timeStr.split(" ");
+  if (!meridiem) return timeStr; // Return as is if no AM/PM
+
+  let [hours, minutes] = time.split(":").map(Number);
+  if (meridiem === "PM" && hours !== 12) hours += 12;
+  if (meridiem === "AM" && hours === 12) hours = 0;
+  
+  return `${hours.toString().padStart(2, "0")}:${minutes ? minutes.toString().padStart(2, "0") : "00"}`;
+};
+
+type SortConfig = {
+  key: "time" | "venue";
+  direction: "asc" | "desc";
+};
 
 type ScheduleDialogProps = {
   open: boolean;
@@ -16,18 +29,79 @@ type ScheduleDialogProps = {
 };
 
 const ScheduleDialog = ({ open, onOpenChange }: ScheduleDialogProps) => {
-  const groupEventsByVenue = (events: typeof dayOneEvents) => {
-    return events.reduce((acc, event) => {
-      if (!acc[event.venue]) {
-        acc[event.venue] = [];
+  const [sortConfig, setSortConfig] = useState<SortConfig>({ key: "time", direction: "asc" });
+
+  const sortEvents = (events: typeof dayOneEvents) => {
+    return [...events].sort((a, b) => {
+      if (sortConfig.key === "time") {
+        const timeA = convertTo24Hour(a.time);
+        const timeB = convertTo24Hour(b.time);
+        return sortConfig.direction === "asc" 
+          ? timeA.localeCompare(timeB)
+          : timeB.localeCompare(timeA);
       }
-      acc[event.venue].push({ time: event.time, event: event.event });
-      return acc;
-    }, {} as Record<string, { time: string; event: string }[]>);
+      return sortConfig.direction === "asc"
+        ? a[sortConfig.key].localeCompare(b[sortConfig.key])
+        : b[sortConfig.key].localeCompare(a[sortConfig.key]);
+    });
   };
 
-  const day1ByVenue = groupEventsByVenue(dayOneEvents);
-  const day2ByVenue = groupEventsByVenue(dayTwoEvents);
+  const toggleSort = (key: SortConfig["key"]) => {
+    setSortConfig(current => ({
+      key,
+      direction: current.key === key && current.direction === "asc" ? "desc" : "asc"
+    }));
+  };
+
+  const EventsTable = ({ events }: { events: typeof dayOneEvents }) => (
+    <div className="w-full">
+      <table className="w-full border-collapse">
+        <thead className="sticky top-0 bg-white">
+          <tr className="border-b-2 border-orange-200">
+            <th className="bg-orange-50/80">
+              <button
+                onClick={() => toggleSort("time")}
+                className="flex w-full items-center gap-2 px-6 py-4 text-left font-bold text-orange-950 hover:text-orange-600"
+              >
+                Time
+                <ArrowUpDown className="h-4 w-4" />
+              </button>
+            </th>
+            <th className="bg-orange-50/80">
+              <button
+                onClick={() => toggleSort("venue")}
+                className="flex w-full items-center gap-2 px-6 py-4 text-left font-bold text-orange-950 hover:text-orange-600"
+              >
+                Venue
+                <ArrowUpDown className="h-4 w-4" />
+              </button>
+            </th>
+            <th className="bg-orange-50/80 px-6 py-4 text-left font-bold text-orange-950">
+              Event
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {sortEvents(events).map((event, index) => (
+            <tr 
+              key={index}
+              className="border-b border-orange-100 transition-colors hover:bg-orange-50/50"
+            >
+              <td className="whitespace-nowrap px-6 py-4 font-medium text-orange-900">
+                {event.time || "TBA"}
+              </td>
+              <td className="px-6 py-4 text-orange-800">
+                {event.venue || "-"}
+              </td>
+              <td className="px-6 py-4 text-orange-800">
+                {event.event}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -58,80 +132,12 @@ const ScheduleDialog = ({ open, onOpenChange }: ScheduleDialogProps) => {
           </TabsList>
 
           <ScrollArea className="h-[60vh]">
-            <TabsContent value="day1" className="m-0 p-6">
-              {Object.entries(day1ByVenue).map(([venue, events]) => (
-                <motion.div
-                  key={venue}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="mb-6"
-                >
-                  <div className="mb-3 flex items-center gap-2 text-orange-950">
-                    <MapPin className="h-5 w-5" />
-                    <h3 className="text-lg font-semibold">{venue}</h3>
-                  </div>
-                  <div className="grid gap-3">
-                    {events.map((event, idx) => (
-                      <div
-                        key={idx}
-                        className="flex items-center gap-4 rounded-lg bg-orange-50/50 p-3"
-                      >
-                        <Clock className="h-5 w-5 text-orange-500" />
-                        <span className="font-medium text-orange-900">
-                          {event.time}
-                        </span>
-                        <span className="text-orange-700">{event.event}</span>
-                      </div>
-                    ))}
-                  </div>
-                </motion.div>
-              ))}
+            <TabsContent value="day1" className="m-0">
+              <EventsTable events={dayOneEvents} />
             </TabsContent>
 
-            <TabsContent value="day2" className="m-0 p-6">
-              {/* Online Events Notice */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="mb-6 rounded-lg bg-orange-100/50 p-4"
-              >
-                <h3 className="mb-2 font-semibold text-orange-900">
-                  Online Events
-                </h3>
-                {onlineEvents.map((event, idx) => (
-                  <div key={idx} className="text-orange-700">
-                    {event.event} - {event.time}
-                  </div>
-                ))}
-              </motion.div>
-
-              {Object.entries(day2ByVenue).map(([venue, events]) => (
-                <motion.div
-                  key={venue}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="mb-6"
-                >
-                  <div className="mb-3 flex items-center gap-2 text-orange-950">
-                    <MapPin className="h-5 w-5" />
-                    <h3 className="text-lg font-semibold">{venue}</h3>
-                  </div>
-                  <div className="grid gap-3">
-                    {events.map((event, idx) => (
-                      <div
-                        key={idx}
-                        className="flex items-center gap-4 rounded-lg bg-orange-50/50 p-3"
-                      >
-                        <Clock className="h-5 w-5 text-orange-500" />
-                        <span className="font-medium text-orange-900">
-                          {event.time}
-                        </span>
-                        <span className="text-orange-700">{event.event}</span>
-                      </div>
-                    ))}
-                  </div>
-                </motion.div>
-              ))}
+            <TabsContent value="day2" className="m-0">
+              <EventsTable events={dayTwoEvents} />
             </TabsContent>
           </ScrollArea>
         </Tabs>
