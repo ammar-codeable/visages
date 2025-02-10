@@ -183,7 +183,7 @@ const Footer = () => {
                   </div>
 
                   <a
-                    href="https://github.com/iamnit hishraja"
+                    href="https://github.com/iamnithishraja"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 rounded-md p-2 transition-all hover:bg-zinc-700"
