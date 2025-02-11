@@ -1,7 +1,7 @@
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { dayOneEvents, dayTwoEvents } from "@/constants/schedule";
+import { bgmiEvent, dayOneEvents, dayTwoEvents } from "@/constants/schedule";
 import { Calendar, ArrowUpDown } from "lucide-react";
 import { useState } from "react";
 
@@ -28,39 +28,36 @@ type ScheduleDialogProps = {
   onOpenChange: (open: boolean) => void;
 };
 
-const ScheduleDialog = ({ open, onOpenChange }: ScheduleDialogProps) => {
-  const [sortConfig, setSortConfig] = useState<SortConfig>({ key: "time", direction: "asc" });
+const EventsTable = ({ 
+  events,
+  sortConfig,
+  onSortChange
+}: { 
+  events: typeof dayOneEvents;
+  sortConfig: SortConfig;
+  onSortChange: (key: SortConfig["key"]) => void;
+}) => {
+  const sortedEvents = [...events].sort((a, b) => {
+    if (sortConfig.key === "time") {
+      const timeA = convertTo24Hour(a.time);
+      const timeB = convertTo24Hour(b.time);
+      return sortConfig.direction === "asc" 
+        ? timeA.localeCompare(timeB)
+        : timeB.localeCompare(timeA);
+    }
+    return sortConfig.direction === "asc"
+      ? a[sortConfig.key].localeCompare(b[sortConfig.key])
+      : b[sortConfig.key].localeCompare(a[sortConfig.key]);
+  });
 
-  const sortEvents = (events: typeof dayOneEvents) => {
-    return [...events].sort((a, b) => {
-      if (sortConfig.key === "time") {
-        const timeA = convertTo24Hour(a.time);
-        const timeB = convertTo24Hour(b.time);
-        return sortConfig.direction === "asc" 
-          ? timeA.localeCompare(timeB)
-          : timeB.localeCompare(timeA);
-      }
-      return sortConfig.direction === "asc"
-        ? a[sortConfig.key].localeCompare(b[sortConfig.key])
-        : b[sortConfig.key].localeCompare(a[sortConfig.key]);
-    });
-  };
-
-  const toggleSort = (key: SortConfig["key"]) => {
-    setSortConfig(current => ({
-      key,
-      direction: current.key === key && current.direction === "asc" ? "desc" : "asc"
-    }));
-  };
-
-  const EventsTable = ({ events }: { events: typeof dayOneEvents }) => (
+  return (
     <div className="w-full">
       <table className="w-full border-collapse">
         <thead className="sticky top-0 bg-white">
           <tr className="border-b-2 border-orange-200">
             <th className="bg-orange-50/80">
               <button
-                onClick={() => toggleSort("time")}
+                onClick={() => onSortChange("time")}
                 className="flex w-full items-center gap-2 px-6 py-4 text-left font-bold text-orange-950 hover:text-orange-600"
               >
                 Time
@@ -69,7 +66,7 @@ const ScheduleDialog = ({ open, onOpenChange }: ScheduleDialogProps) => {
             </th>
             <th className="bg-orange-50/80">
               <button
-                onClick={() => toggleSort("venue")}
+                onClick={() => onSortChange("venue")}
                 className="flex w-full items-center gap-2 px-6 py-4 text-left font-bold text-orange-950 hover:text-orange-600"
               >
                 Venue
@@ -82,7 +79,7 @@ const ScheduleDialog = ({ open, onOpenChange }: ScheduleDialogProps) => {
           </tr>
         </thead>
         <tbody>
-          {sortEvents(events).map((event, index) => (
+          {sortedEvents.map((event, index) => (
             <tr 
               key={index}
               className="border-b border-orange-100 transition-colors hover:bg-orange-50/50"
@@ -102,6 +99,17 @@ const ScheduleDialog = ({ open, onOpenChange }: ScheduleDialogProps) => {
       </table>
     </div>
   );
+};
+
+const ScheduleDialog = ({ open, onOpenChange }: ScheduleDialogProps) => {
+  const [sortConfig, setSortConfig] = useState<SortConfig>({ key: "time", direction: "asc" });
+
+  const handleSort = (key: SortConfig["key"]) => {
+    setSortConfig(current => ({
+      key,
+      direction: current.key === key && current.direction === "asc" ? "desc" : "asc"
+    }));
+  };
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -114,6 +122,25 @@ const ScheduleDialog = ({ open, onOpenChange }: ScheduleDialogProps) => {
             </DialogTitle>
           </div>
         </DialogHeader>
+
+        <div className="border-b border-orange-200 bg-orange-50/50 p-4">
+          <h3 className="mb-2 text-sm font-semibold text-orange-800">Pre-Events - February 20</h3>
+          <table className="w-full border-collapse">
+            <tbody>
+              <tr className="rounded-lg bg-orange-100/50">
+                <td className="whitespace-nowrap px-6 py-3 font-medium text-orange-900">
+                  {bgmiEvent.time}
+                </td>
+                <td className="px-6 py-3 text-orange-800">
+                  {bgmiEvent.venue}
+                </td>
+                <td className="px-6 py-3 text-orange-800">
+                  {bgmiEvent.event}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
         <Tabs defaultValue="day1" className="h-full">
           <TabsList className="w-full justify-start rounded-none border-b bg-orange-50/50 p-0">
@@ -131,13 +158,21 @@ const ScheduleDialog = ({ open, onOpenChange }: ScheduleDialogProps) => {
             </TabsTrigger>
           </TabsList>
 
-          <ScrollArea className="h-[60vh]">
+          <ScrollArea className="h-[calc(60vh-5rem)]">
             <TabsContent value="day1" className="m-0">
-              <EventsTable events={dayOneEvents} />
+              <EventsTable 
+                events={dayOneEvents} 
+                sortConfig={sortConfig}
+                onSortChange={handleSort}
+              />
             </TabsContent>
 
             <TabsContent value="day2" className="m-0">
-              <EventsTable events={dayTwoEvents} />
+              <EventsTable 
+                events={dayTwoEvents}
+                sortConfig={sortConfig}
+                onSortChange={handleSort}
+              />
             </TabsContent>
           </ScrollArea>
         </Tabs>
