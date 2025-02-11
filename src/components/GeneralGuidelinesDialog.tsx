@@ -10,17 +10,19 @@ import { ScrollText } from "lucide-react";
 import { useState } from "react";
 
 const generalGuidelines = [
-  "The contingent fee for participation is Rs. 15000/ including all events",
+  "The contingent fee for participation is Rs. 15,000/-. (This includes one participant/team for all events, excluding open events.) ",
+  "A college must participate as a contingent to be eligible for overalls.",
+  "The last date for registration is 19th February 2025.",
+  "There will be on spot registration for individual events from 8.30 am to 9.30 am. ",
   "All paricipants must carry a valid ID card of their respective college/university",
   "Participants registering under non-contingent must pay the registration fee for their respective event.",
+  "Participants are required to submit any audios a day prior on the google forms that will be provided.",
   "All performing participants must carry a backup of their audio tracks",
-  "Timings for each event will be informed by the event heads in their respective whatsapp groups",
-  "Any form of vulgarity, misbehaviour, or mention sex, religion, politics, profanity, or humiliation directed at a specific community of college will not be tolerated and will result in immediate disqualification.",
-  "There is a zero tolerance policy towards to possession, distribution, or consumption of any unauthorized substances. Sharp objects , inflammable substances, lasers or any other harmful objects is not allowed in the campus.",
-  "Participants are required to submit any audios a day prior on the google forms provided.",
-  "Participants are required to be present at the venue an hour before the event starts.",
-  "There will be on spot registration for individual events till 9.30 am.",
-  "Judges’ decision will be final and binding."
+  "Timings for each event will be informed by the event heads in the respective WhatsApp groups.",
+  "Participants are required to be present at the venue at least 30 mins before the event start",
+  "Judges' decision will be final and binding.",
+  "Any form of vulgarity, misbehaviour or mention of sex, religion, politics, profanity, or humiliation directed at a specific community or college will not be tolerated and will result in immediate disqualification.",
+  "There is a zero-tolerance policy towards the possession, distribution, or consumption of any illicit substances.",
 ];
 
 const prohibitedItems = [
@@ -33,8 +35,8 @@ const prohibitedItems = [
 ];
 
 const dressCode = [
-  "For girls: No sleeveless, deep necked, sheer, off – shoulder or cropped tops. No ripped jeans or anything above the knee.",
-  "For boys: No sleeveless or tank tops. No shorts, three – fourth pants or ripped jeans.",
+  "For girls: No sleeveless, deep necked, sheer, off - shoulder or cropped tops. No ripped jeans or anything above the knee.",
+  "For boys: No sleeveless or tank tops. No shorts, three - fourth pants or ripped jeans.",
 ];
 
 interface GeneralGuidelinesDialogProps {
