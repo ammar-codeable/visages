@@ -6,7 +6,7 @@ import { Bed, Calendar, Home, Menu, Store, X } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
 import { Link } from "react-router";
-import ScheduleDialog from "./ScheduleDialog";
+import ScheduleDialog from "../ScheduleDialog";
 
 const DecorativeBorder = () => (
   <div className="absolute bottom-0 left-0 right-0 translate-y-full">
@@ -39,7 +39,7 @@ type MobileDropdownProps = {
   onClose: () => void;
   navItems: Array<{
     to?: string;
-    icon: React.ComponentType<{ className?: string }>;  // Add className to icon type
+    icon: React.ComponentType<{ className?: string }>; // Add className to icon type
     label: string;
     isRoute: boolean;
     onClick?: () => void;
