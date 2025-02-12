@@ -1,3 +1,4 @@
+import airCrash from "@/assets/air-crash.jpeg";
 import westernSolo from "@/assets/western-solo.jpg";
 
 export type Event = {
@@ -232,8 +233,7 @@ export const events: readonly Event[] = [
     title: "Air Crash",
     date: "",
     venue: "",
-    image:
-      "https://th.bing.com/th/id/OIF.4qYNGRGkJO7rLeG1ftmbaw?rs=1&pid=ImgDetMain",
+    image: airCrash,
     description:
       "On-the-spot characters and creative scenarios to test your imagination.",
     rating: 4,
@@ -266,7 +266,7 @@ export const events: readonly Event[] = [
       "Usage of props is allowed, considering it is not harmful (Usage of fire, water, or any flammable object will not be allowed).",
       "Exceeding the time limit will lead to a reduction in score.",
     ],
-    capacity: "individual",
+    capacity: "Individual",
     timeLimit: "3+1 minutes (Inclusive of entry, stage set up and exit)",
     open: false,
     cashPrize: 3000,
