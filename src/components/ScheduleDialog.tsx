@@ -102,7 +102,7 @@ const EventsTable = ({
 };
 
 const ScheduleDialog = ({ open, onOpenChange }: ScheduleDialogProps) => {
-  const [sortConfig, setSortConfig] = useState<SortConfig>({ key: "time", direction: "asc" });
+  const [sortConfig, setSortConfig] = useState<SortConfig>({ key: "venue", direction: "asc" });
 
   const handleSort = (key: SortConfig["key"]) => {
     setSortConfig(current => ({
