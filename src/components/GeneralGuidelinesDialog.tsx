@@ -78,6 +78,18 @@ export const GeneralGuidelinesDialog = ({
         </DialogHeader>
 
         <ScrollArea className="h-full max-h-[60vh] p-6" onScroll={handleScroll}>
+          {/* Special Notice Section */}
+          <section className="mb-6">
+            <div className="rounded-lg border-2 border-orange-200 bg-orange-50 p-4">
+              <h3 className="mb-2 font-semibold text-orange-950">
+                Important Notice for St Joseph's University Students
+              </h3>
+              <p className="text-orange-800">
+                St Joseph's University students are not eligible to participate in any events except BGMI. This includes both individual and contingent registrations.
+              </p>
+            </div>
+          </section>
+
           <section className="mb-4">
             <h3 className="mb-2 text-lg font-semibold">General Guidelines</h3>
             <motion.ul
