@@ -78,6 +78,7 @@ export const events: readonly Event[] = [
     rating: 5,
     registrationFee: 1500,
     rules: [
+      "Theme: The culture of a country that will be alloted once the team is registered ",
       "Judging will be based on clothes, creativity, choreography, styling and walk.",
       "No vulgarity.",
       "Dress Code: Inappropriate outfits are not allowed—college norms are to be followed (e.g., no crop tops, sleeveless tops, off-shoulder tops, deep neck tops, backless tops, sheer tops, ripped jeans).",
@@ -351,7 +352,7 @@ export const events: readonly Event[] = [
     cashPrize: 2000,
     eventHeadName: "Fathima & Elizabeth",
     eventHeadNumber: "Fathima: 9995963767, Elizabeth: 8138056003",
-    time: "",
+    time: "Starts at 10:00 AM",
   },
   {
     title: "Rap and Beatbox",
@@ -756,7 +757,7 @@ export const events: readonly Event[] = [
     cashPrize: 3000,
     eventHeadName: "Jennifer & Athena",
     eventHeadNumber: "Jennifer: 9945519371, Athena: 9747981102",
-    time: "",
+    time: "Starts at 11:00 AM",
   },
   {
     title: "Council Wars",

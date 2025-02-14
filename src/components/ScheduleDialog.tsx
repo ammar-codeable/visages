@@ -1,8 +1,13 @@
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { bgmiEvent, dayOneEvents, dayTwoEvents } from "@/constants/schedule";
-import { Calendar, ArrowUpDown } from "lucide-react";
+import { ArrowUpDown, Calendar } from "lucide-react";
 import { useState } from "react";
 
 // Add this helper function for time conversion
@@ -14,7 +19,7 @@ const convertTo24Hour = (timeStr: string) => {
   let [hours, minutes] = time.split(":").map(Number);
   if (meridiem === "PM" && hours !== 12) hours += 12;
   if (meridiem === "AM" && hours === 12) hours = 0;
-  
+
   return `${hours.toString().padStart(2, "0")}:${minutes ? minutes.toString().padStart(2, "0") : "00"}`;
 };
 
@@ -28,11 +33,11 @@ type ScheduleDialogProps = {
   onOpenChange: (open: boolean) => void;
 };
 
-const EventsTable = ({ 
+const EventsTable = ({
   events,
   sortConfig,
-  onSortChange
-}: { 
+  onSortChange,
+}: {
   events: typeof dayOneEvents;
   sortConfig: SortConfig;
   onSortChange: (key: SortConfig["key"]) => void;
@@ -41,7 +46,7 @@ const EventsTable = ({
     if (sortConfig.key === "time") {
       const timeA = convertTo24Hour(a.time);
       const timeB = convertTo24Hour(b.time);
-      return sortConfig.direction === "asc" 
+      return sortConfig.direction === "asc"
         ? timeA.localeCompare(timeB)
         : timeB.localeCompare(timeA);
     }
@@ -80,7 +85,7 @@ const EventsTable = ({
         </thead>
         <tbody>
           {sortedEvents.map((event, index) => (
-            <tr 
+            <tr
               key={index}
               className="border-b border-orange-100 transition-colors hover:bg-orange-50/50"
             >
@@ -90,9 +95,7 @@ const EventsTable = ({
               <td className="px-6 py-4 text-orange-800">
                 {event.venue || "-"}
               </td>
-              <td className="px-6 py-4 text-orange-800">
-                {event.event}
-              </td>
+              <td className="px-6 py-4 text-orange-800">{event.event}</td>
             </tr>
           ))}
         </tbody>
@@ -102,12 +105,16 @@ const EventsTable = ({
 };
 
 const ScheduleDialog = ({ open, onOpenChange }: ScheduleDialogProps) => {
-  const [sortConfig, setSortConfig] = useState<SortConfig>({ key: "venue", direction: "asc" });
+  const [sortConfig, setSortConfig] = useState<SortConfig>({
+    key: "venue",
+    direction: "asc",
+  });
 
   const handleSort = (key: SortConfig["key"]) => {
-    setSortConfig(current => ({
+    setSortConfig((current) => ({
       key,
-      direction: current.key === key && current.direction === "asc" ? "desc" : "asc"
+      direction:
+        current.key === key && current.direction === "asc" ? "desc" : "asc",
     }));
   };
 
@@ -121,22 +128,26 @@ const ScheduleDialog = ({ open, onOpenChange }: ScheduleDialogProps) => {
               Event Schedule
             </DialogTitle>
           </div>
+          <div className="mt-4 rounded-lg bg-orange-400/30 p-3">
+            <p className="text-sm font-medium text-white">
+              ⚠️ Note: Schedule is subject to change based on number of
+              participants and technical requirements
+            </p>
+          </div>
         </DialogHeader>
 
         <div className="border-b border-orange-200 bg-orange-50/50 p-4">
-          <h3 className="mb-2 text-sm font-semibold text-orange-800">Pre-Events - February 20</h3>
+          <h3 className="mb-2 text-sm font-semibold text-orange-800">
+            Pre-Events - February 20
+          </h3>
           <table className="w-full border-collapse">
             <tbody>
               <tr className="rounded-lg bg-orange-100/50">
                 <td className="whitespace-nowrap px-6 py-3 font-medium text-orange-900">
                   {bgmiEvent.time}
                 </td>
-                <td className="px-6 py-3 text-orange-800">
-                  {bgmiEvent.venue}
-                </td>
-                <td className="px-6 py-3 text-orange-800">
-                  {bgmiEvent.event}
-                </td>
+                <td className="px-6 py-3 text-orange-800">{bgmiEvent.venue}</td>
+                <td className="px-6 py-3 text-orange-800">{bgmiEvent.event}</td>
               </tr>
             </tbody>
           </table>
@@ -160,15 +171,15 @@ const ScheduleDialog = ({ open, onOpenChange }: ScheduleDialogProps) => {
 
           <ScrollArea className="h-[calc(60vh-5rem)]">
             <TabsContent value="day1" className="m-0">
-              <EventsTable 
-                events={dayOneEvents} 
+              <EventsTable
+                events={dayOneEvents}
                 sortConfig={sortConfig}
                 onSortChange={handleSort}
               />
             </TabsContent>
 
             <TabsContent value="day2" className="m-0">
-              <EventsTable 
+              <EventsTable
                 events={dayTwoEvents}
                 sortConfig={sortConfig}
                 onSortChange={handleSort}
