@@ -23,6 +23,7 @@ const generalGuidelines = [
   "Judges' decision will be final and binding.",
   "Any form of vulgarity, misbehaviour or mention of sex, religion, politics, profanity, or humiliation directed at a specific community or college will not be tolerated and will result in immediate disqualification.",
   "There is a zero-tolerance policy towards the possession, distribution, or consumption of any illicit substances.",
+  "The organisers reserve the right to re-schedule, modify the prize money and cancel any event due to technical reasons or lack of participants. ",
 ];
 
 const prohibitedItems = [

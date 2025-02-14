@@ -78,6 +78,7 @@ export const events: readonly Event[] = [
     rating: 5,
     registrationFee: 1500,
     rules: [
+      "Theme: The culture of a country that will be alloted once the team is registered ",
       "Judging will be based on clothes, creativity, choreography, styling and walk.",
       "No vulgarity.",
       "Dress Code: Inappropriate outfits are not allowed—college norms are to be followed (e.g., no crop tops, sleeveless tops, off-shoulder tops, deep neck tops, backless tops, sheer tops, ripped jeans).",

@@ -121,6 +121,9 @@ const ScheduleDialog = ({ open, onOpenChange }: ScheduleDialogProps) => {
               Event Schedule
             </DialogTitle>
           </div>
+          <p className="mt-2 text-sm text-orange-100">
+            *Schedule is subject to change based on number of participants
+          </p>
         </DialogHeader>
 
         <div className="border-b border-orange-200 bg-orange-50/50 p-4">
