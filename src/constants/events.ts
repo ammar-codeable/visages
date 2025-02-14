@@ -352,7 +352,7 @@ export const events: readonly Event[] = [
     cashPrize: 2000,
     eventHeadName: "Fathima & Elizabeth",
     eventHeadNumber: "Fathima: 9995963767, Elizabeth: 8138056003",
-    time: "",
+    time: "Starts at 10:00 AM",
   },
   {
     title: "Rap and Beatbox",
@@ -757,7 +757,7 @@ export const events: readonly Event[] = [
     cashPrize: 3000,
     eventHeadName: "Jennifer & Athena",
     eventHeadNumber: "Jennifer: 9945519371, Athena: 9747981102",
-    time: "",
+    time: "Starts at 11:00 AM",
   },
   {
     title: "Council Wars",
