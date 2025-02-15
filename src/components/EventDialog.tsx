@@ -202,6 +202,22 @@ const EventDialog = ({ open, onOpenChange, event }: EventDialogProps) => {
                   </div>
                 </div>
               </div>
+              {/* Special Pro Night Notice - Add this right after the regular info cards */}
+              {isProNight && (
+                <div className="col-span-full rounded-lg border-2 border-green-200 bg-green-50 p-4">
+                  <div className="flex items-center gap-2">
+                    <span className="text-lg">⭐</span>
+                    <p className="font-semibold text-green-900">
+                      FREE ENTRY for Event Participants!
+                    </p>
+                  </div>
+                  <p className="mt-2 text-sm text-green-800">
+                    All registered participants of other events get free entry.
+                    Non-participants and cheer squad members need to purchase
+                    tickets.
+                  </p>
+                </div>
+              )}
             </div>
 
             {/* Content Sections with Optimized Spacing */}

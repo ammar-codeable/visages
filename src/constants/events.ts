@@ -796,6 +796,7 @@ export const events: readonly Event[] = [
     rating: 0,
     open: true,
     rules: [
+      "₹500 entry fee for non-participants and cheer squad members",
       "Valid college ID card is mandatory",
       "Entry restricted to 18+ only",
       "No unauthorized photography",
@@ -818,6 +819,7 @@ export const events: readonly Event[] = [
     rating: 0,
     open: true,
     rules: [
+      "₹500 entry fee for non-participants and cheer squad members",
       "Valid college ID card is mandatory",
       "Entry restricted to 18+ only",
       "No unauthorized photography",
