@@ -1,3 +1,4 @@
+import AccommodationDialog from "@/components/AccommodationDialog";
 import CheerSquadDialog from "@/components/CheerSquadDialog";
 import SearchDialog from "@/components/SearchDialog";
 import { Button } from "@/components/ui/button";
@@ -117,6 +118,7 @@ const MobileDropdown = ({ isOpen, onClose, navItems }: MobileDropdownProps) => (
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scheduleOpen, setScheduleOpen] = useState(false);
+  const [accommodationOpen, setAccommodationOpen] = useState(false);
 
   const handleClose = () => setIsOpen(false);
 
@@ -134,7 +136,8 @@ const Navbar = () => {
     },
     {
       onClick: () => {
-        /* Add dialog logic later */
+        setAccommodationOpen(true);
+        handleClose();
       },
       icon: Bed,
       label: "Accommodation",
@@ -236,6 +239,10 @@ const Navbar = () => {
         </nav>
       </motion.div>
       <ScheduleDialog open={scheduleOpen} onOpenChange={setScheduleOpen} />
+      <AccommodationDialog
+        open={accommodationOpen}
+        onOpenChange={setAccommodationOpen}
+      />
     </>
   );
 };
