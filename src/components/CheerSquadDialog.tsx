@@ -57,7 +57,7 @@ const CheerSquadDialog = () => {
             asChild
           >
             <a 
-              href="https://forms.gle/DoHTWrgqXAM2szLQA" 
+              href="https://docs.google.com/forms/d/1qkqFtVAXm3iUrTRVWFuT1sPbz4Pxh-ryT8vjWLM67lE/edit#settings" 
               target="_blank" 
               rel="noopener noreferrer"
             >
