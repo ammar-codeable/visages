@@ -8,27 +8,30 @@ import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { events } from "@/constants/events";
 import { cn } from "@/utils/cn";
-import { IndianRupee, MapPin, Search, Star, Users } from "lucide-react";
+import { IndianRupee, Search, Star, Users } from "lucide-react";
 import { useState } from "react";
-import { Button } from "./ui/button";
 import EventDialog from "./EventDialog";
+import { Button } from "./ui/button";
 
 const SearchDialog = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [open, setOpen] = useState(false);
-  const [selectedEvent, setSelectedEvent] = useState<typeof events[number] | null>(null);
+  const [selectedEvent, setSelectedEvent] = useState<
+    (typeof events)[number] | null
+  >(null);
 
   const filteredEvents = events.filter((event) => {
     const searchTerms = searchQuery.toLowerCase().split(" ");
     return searchTerms.every(
       (term) =>
         event.title.toLowerCase().includes(term) ||
-        event.description.toLowerCase().includes(term) ||
-        (event.venue && event.venue.toLowerCase().includes(term)),
+        event.description.toLowerCase().includes(term),
     );
   });
 
-  const groupedEvents = filteredEvents.reduce<Record<number, Array<typeof events[number]>>>((acc, event) => {
+  const groupedEvents = filteredEvents.reduce<
+    Record<number, Array<(typeof events)[number]>>
+  >((acc, event) => {
     const rating = event.rating;
     if (!acc[rating]) {
       acc[rating] = [];
@@ -58,7 +61,7 @@ const SearchDialog = () => {
             <div className="relative">
               <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-orange-400 transition-colors duration-200 group-focus-within:text-orange-600" />
               <Input
-                placeholder="Search events by name, description, or venue..."
+                placeholder="Search events by name or description..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full border-orange-200 pl-9 placeholder:text-orange-400 focus:border-orange-400 focus:ring-orange-400"
@@ -89,66 +92,62 @@ const SearchDialog = () => {
                       </div>
                     </div>
                     <div className="space-y-1">
-                      {groupedEvents[rating as unknown as number].map((event) => (
-                        <button
-                          key={event.title}
-                          onClick={() => {
-                            setSelectedEvent(event);
-                            setOpen(false);
-                          }}
-                          className="group flex w-full items-start gap-3 rounded-lg p-2 text-left transition-all hover:bg-orange-100/80"
-                        >
-                          <div className="relative h-16 w-16 flex-none overflow-hidden rounded-md">
-                            <img
-                              src={event.image}
-                              alt={event.title}
-                              className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
-                            />
-                            {event.rating > 0 && (
-                              <div className="absolute bottom-0 right-0 flex items-center gap-0.5 rounded-tl-md bg-black/60 px-1 py-0.5">
-                                <Star className="h-3 w-3 fill-yellow-400 text-yellow-400" />
-                                <span className="text-xs font-bold text-white">
-                                  {event.rating}
-                                </span>
-                              </div>
-                            )}
-                          </div>
-                          <div className="flex-1 space-y-1 overflow-hidden py-0.5">
-                            <div className="truncate font-medium text-orange-950 group-hover:text-orange-700">
-                              {event.title}
-                            </div>
-                            <div className="line-clamp-2 text-xs text-orange-600/90">
-                              {event.description}
-                            </div>
-                            <div className="flex flex-wrap gap-2 pt-1">
-                              {event.venue && (
-                                <div className="flex items-center gap-1 text-xs text-orange-600">
-                                  <MapPin className="h-3 w-3" />
-                                  <span>{event.venue}</span>
+                      {groupedEvents[rating as unknown as number].map(
+                        (event) => (
+                          <button
+                            key={event.title}
+                            onClick={() => {
+                              setSelectedEvent(event);
+                              setOpen(false);
+                            }}
+                            className="group flex w-full items-start gap-3 rounded-lg p-2 text-left transition-all hover:bg-orange-100/80"
+                          >
+                            <div className="relative h-16 w-16 flex-none overflow-hidden rounded-md">
+                              <img
+                                src={event.image}
+                                alt={event.title}
+                                className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
+                              />
+                              {event.rating > 0 && (
+                                <div className="absolute bottom-0 right-0 flex items-center gap-0.5 rounded-tl-md bg-black/60 px-1 py-0.5">
+                                  <Star className="h-3 w-3 fill-yellow-400 text-yellow-400" />
+                                  <span className="text-xs font-bold text-white">
+                                    {event.rating}
+                                  </span>
                                 </div>
                               )}
-                              {event.capacity && (
-                                <div className="flex items-center gap-1 text-xs text-orange-600">
-                                  <Users className="h-3 w-3" />
-                                  <span>{event.capacity}</span>
+                            </div>
+                            <div className="flex-1 space-y-1 overflow-hidden py-0.5">
+                              <div className="truncate font-medium text-orange-950 group-hover:text-orange-700">
+                                {event.title}
+                              </div>
+                              <div className="line-clamp-2 text-xs text-orange-600/90">
+                                {event.description}
+                              </div>
+                              <div className="flex flex-wrap gap-2 pt-1">
+                                {event.capacity && (
+                                  <div className="flex items-center gap-1 text-xs text-orange-600">
+                                    <Users className="h-3 w-3" />
+                                    <span>{event.capacity}</span>
+                                  </div>
+                                )}
+                                <div className="flex items-center gap-1 text-xs font-medium">
+                                  <IndianRupee className="h-3 w-3" />
+                                  <span
+                                    className={
+                                      event.registrationFee
+                                        ? "text-orange-600"
+                                        : "text-green-600"
+                                    }
+                                  >
+                                    {event.registrationFee || "Free Entry"}
+                                  </span>
                                 </div>
-                              )}
-                              <div className="flex items-center gap-1 text-xs font-medium">
-                                <IndianRupee className="h-3 w-3" />
-                                <span
-                                  className={
-                                    event.registrationFee
-                                      ? "text-orange-600"
-                                      : "text-green-600"
-                                  }
-                                >
-                                  {event.registrationFee || "Free Entry"}
-                                </span>
                               </div>
                             </div>
-                          </div>
-                        </button>
-                      ))}
+                          </button>
+                        ),
+                      )}
                     </div>
                   </div>
                 ))}
