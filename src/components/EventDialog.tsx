@@ -2,16 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { comboOffers } from "@/constants/events";
-import {
-  Banknote,
-  Calendar,
-  Clock,
-  Clock as ClockIcon,
-  Gift,
-  MapPin,
-  Phone,
-  Users,
-} from "lucide-react";
+import { Banknote, Clock, Gift, Phone, Users } from "lucide-react";
 import StarRating from "./StarRating";
 
 const REGULAR_REGISTRATION_LINK = "https://forms.gle/hHrKFT98h25tpkV98";
@@ -22,8 +13,6 @@ type EventDialogProps = {
   onOpenChange: (open: boolean) => void;
   event: {
     title: string;
-    date: string;
-    venue: string;
     image: string;
     description: string;
     rating: number;
@@ -34,7 +23,6 @@ type EventDialogProps = {
     cashPrize?: number;
     eventHeadName: string;
     eventHeadNumber: string;
-    time: string; // Changed from optional to required
   };
 };
 
@@ -75,35 +63,6 @@ const EventDialog = ({ open, onOpenChange, event }: EventDialogProps) => {
           <div className="space-y-6 p-6">
             {/* Info Cards - Optimized Grid */}
             <div className="grid grid-cols-2 gap-3 lg:grid-cols-3">
-              {event.date && (
-                <div className="flex items-center gap-3 rounded-lg bg-orange-50 p-3">
-                  <Calendar className="h-6 w-6 text-orange-600" />
-                  <div>
-                    <p className="text-xs font-medium text-orange-600">Date</p>
-                    <p className="text-sm text-orange-900">
-                      {event.date || "TBA"}
-                    </p>
-                  </div>
-                </div>
-              )}
-              {event.time && (
-                <div className="flex items-center gap-3 rounded-lg bg-orange-50 p-3">
-                  <ClockIcon className="h-6 w-6 text-orange-600" />
-                  <div>
-                    <p className="text-xs font-medium text-orange-600">Time</p>
-                    <p className="text-sm text-orange-900">{event.time}</p>
-                  </div>
-                </div>
-              )}
-              {event.venue && (
-                <div className="flex items-center gap-3 rounded-lg bg-orange-50 p-3">
-                  <MapPin className="h-6 w-6 text-orange-600" />
-                  <div>
-                    <p className="text-xs font-medium text-orange-600">Venue</p>
-                    <p className="text-sm text-orange-900">{event.venue}</p>
-                  </div>
-                </div>
-              )}
               {hasComboOffer && (
                 <div className="mt-4 rounded-lg bg-orange-100 p-4">
                   <h4 className="font-medium text-orange-900">

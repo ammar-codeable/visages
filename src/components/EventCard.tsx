@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Event } from "@/constants/events";
-import { Banknote, Calendar, Clock, MapPin } from "lucide-react";
+import { Banknote, Clock, Users } from "lucide-react";
 import { motion } from "motion/react";
 import { useState } from "react";
 import EventDialog from "./EventDialog";
@@ -8,8 +8,6 @@ import StarRating from "./StarRating";
 
 const EventCard = ({
   title,
-  date,
-  venue,
   image,
   description,
   rating,
@@ -20,7 +18,6 @@ const EventCard = ({
   cashPrize,
   eventHeadName,
   eventHeadNumber,
-  time,
 }: Event) => {
   const [dialogOpen, setDialogOpen] = useState(false);
 
@@ -51,35 +48,28 @@ const EventCard = ({
         </div>
 
         <div className="relative flex flex-1 flex-col bg-white/95 p-6 backdrop-blur-sm">
-          <h2 className="mb-3 line-clamp-1 text-xl font-bold text-orange-900 transition-colors group-hover:text-orange-700">
+          <h2 className="mb-2 line-clamp-1 text-xl font-bold text-orange-900 transition-colors group-hover:text-orange-700">
             {title}
           </h2>
 
+          {capacity && (
+            <div className="mb-3 flex items-center gap-2 text-orange-700">
+              <Users className="h-4 w-4" />
+              <p className="text-sm font-medium">{capacity}</p>
+            </div>
+          )}
+
           <div className="mb-2 space-y-2">
-            <div className="flex items-center gap-2 text-orange-700">
-              <Calendar className="h-4 w-4" />
-              <p className="text-sm font-medium">{date}</p>
-            </div>
-            <div className="flex items-center gap-2 text-orange-700">
-              <MapPin className="h-4 w-4" />
-              <p className="line-clamp-1 text-sm font-medium">{venue}</p>
-            </div>
-            {time && (
+            {registrationFee > 0 && (
               <div className="flex items-center gap-2 text-orange-700">
-                <Clock className="h-4 w-4" />
-                <p className="text-sm font-medium">{time}</p>
+                <Banknote className="h-4 w-4" />
+                <p className="text-sm font-medium">₹{registrationFee}</p>
               </div>
             )}
             {timeLimit && (
               <div className="flex items-center gap-2 text-orange-700">
                 <Clock className="h-4 w-4" />
                 <p className="text-sm font-medium">{timeLimit}</p>
-              </div>
-            )}
-            {registrationFee > 0 && (
-              <div className="flex items-center gap-2 text-orange-700">
-                <Banknote className="h-4 w-4" />
-                <p className="text-sm font-medium">₹{registrationFee}</p>
               </div>
             )}
           </div>
@@ -98,8 +88,6 @@ const EventCard = ({
         onOpenChange={setDialogOpen}
         event={{
           title,
-          date,
-          venue,
           image,
           description,
           rating,
@@ -110,7 +98,6 @@ const EventCard = ({
           cashPrize,
           eventHeadName,
           eventHeadNumber,
-          time,
         }}
       />
     </>

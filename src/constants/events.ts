@@ -3,8 +3,6 @@ import westernSolo from "@/assets/western-solo.jpg";
 
 export type Event = {
   title: string;
-  date: string;
-  venue: string;
   image: string;
   description: string;
   rating: number;
@@ -16,14 +14,11 @@ export type Event = {
   cashPrize?: number;
   eventHeadName: string;
   eventHeadNumber: string;
-  time: string;
 };
 
 export const events: readonly Event[] = [
   {
     title: "Indian Group Dance",
-    date: "",
-    venue: "Main Stage",
     image:
       "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/07/36/66/09.jpg",
     description: "A vibrant showcase of Indian dance styles and music.",
@@ -41,12 +36,9 @@ export const events: readonly Event[] = [
     cashPrize: 8000,
     eventHeadName: "Vismaya & Susan",
     eventHeadNumber: "Vismaya: 8867113115, Susan: 7306851373",
-    time: "",
   },
   {
     title: "Western Group Dance",
-    date: "",
-    venue: "Main Stage",
     image:
       "https://static.wixstatic.com/media/d90ac3_63db656ddfa8483bbd89dd3f926df712~mv2.jpg/v1/fill/w_1469,h_828,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01,enc_auto/d90ac3_63db656ddfa8483bbd89dd3f926df712~mv2.jpg",
     description: "A dynamic fusion of Western dance styles and music.",
@@ -65,12 +57,9 @@ export const events: readonly Event[] = [
     cashPrize: 8000,
     eventHeadName: "Keerthana & Dhanush",
     eventHeadNumber: "Keerthana: 7022492263, Dhanush: 7899750475",
-    time: "",
   },
   {
     title: "Fashion Walk",
-    date: "",
-    venue: "Main Stage",
     image:
       "https://img.freepik.com/premium-photo/model-walks-ramp-indian-fashion-show_997657-42418.jpg?w=1060",
     description:
@@ -91,12 +80,9 @@ export const events: readonly Event[] = [
     cashPrize: 8000,
     eventHeadName: "Pratham & Balraj",
     eventHeadNumber: "Pratham: 9113511958, Balraj: 7975160759",
-    time: "",
   },
   {
     title: "Indian Group Singing",
-    date: "",
-    venue: "University Auditorium",
     image:
       "https://th.bing.com/th/id/OIP.4a9lPOihbXzAAJK_w8WHFQHaE7?rs=1&pid=ImgDetMain",
     description: "A melodious journey through Indian languages and genres.",
@@ -115,12 +101,9 @@ export const events: readonly Event[] = [
     cashPrize: 5000,
     eventHeadName: "Supriya & Swathi",
     eventHeadNumber: "Supriya: 8660350610, Swathi: 7022807808",
-    time: "",
   },
   {
     title: "Western Group Singing",
-    date: "",
-    venue: "University Auditorium",
     image:
       "https://3.files.edl.io/a851/23/05/16/051433-e30c7c6b-2ac3-4f3a-9079-df55c40e0a08.jpg",
     description: "A celebration of vocal harmony and live Western music.",
@@ -141,12 +124,9 @@ export const events: readonly Event[] = [
     cashPrize: 5000,
     eventHeadName: "Gareth & Angel",
     eventHeadNumber: "Gareth: 7760345707, Angel: 9380337608",
-    time: "",
   },
   {
     title: "Mad Ads",
-    date: "",
-    venue: "Main Stage",
     image: "https://contentfuel.co/wp-content/uploads/2021/04/clown.jpeg",
     description: "Creative advertisements with humor and ingenuity.",
     rating: 5,
@@ -165,12 +145,9 @@ export const events: readonly Event[] = [
     cashPrize: 5000,
     eventHeadName: "Sachin & Lohit",
     eventHeadNumber: "Sachin: 9739364613, Lohit: 7411211988",
-    time: "",
   },
   {
     title: "Personality",
-    date: "",
-    venue: "University Auditorium",
     image: "https://cpu.edu.ph/wp-content/uploads/2018/09/mscpu3.jpg",
     description: "An individual event showcasing charisma and uniqueness.",
     rating: 5,
@@ -181,17 +158,14 @@ export const events: readonly Event[] = [
       "Props will be allowed at the Judge's discretion.",
       "There could be multiple rounds left to the Judges.",
     ],
-    capacity: undefined,
+    capacity: "Individual participation",
     open: false,
     cashPrize: 3000,
     eventHeadName: "Melwin & Abhay",
     eventHeadNumber: "Melwin: 7349396204, Abhay: 9742987683",
-    time: "",
   },
   {
     title: "Street Play",
-    date: "",
-    venue: "Hostel Block",
     image:
       "https://im.indiatimes.in/content/2016/Dec/002_inside_1480572106.jpg?w=725&h=483&cc=1&webp=1&q=75",
     description: "Expressive performances on open themes with live sound.",
@@ -212,12 +186,9 @@ export const events: readonly Event[] = [
     cashPrize: 4000,
     eventHeadName: "Benny & Adarsh",
     eventHeadNumber: "Benny: 9844520704, Adarsh: 7022715411",
-    time: "",
   },
   {
     title: "Mock Rock",
-    date: "",
-    venue: "University Auditorium",
     image: "https://images3.alphacoders.com/134/1347639.png",
     description:
       "A hilarious performance combining music, memes, and creativity.",
@@ -235,12 +206,9 @@ export const events: readonly Event[] = [
     cashPrize: 4000,
     eventHeadName: "Aloysius & Carlein",
     eventHeadNumber: "Aloysius: 7338555271, Carlein: 7204288674",
-    time: "",
   },
   {
     title: "Air Crash",
-    date: "",
-    venue: "",
     image: airCrash,
     description:
       "On-the-spot characters and creative scenarios to test your imagination.",
@@ -256,12 +224,9 @@ export const events: readonly Event[] = [
     cashPrize: 3000,
     eventHeadName: "Loyal & Naomi",
     eventHeadNumber: "Loyal: 9945482428, Naomi: 9902477648",
-    time: "",
   },
   {
     title: "Indian Solo Dance",
-    date: "",
-    venue: "Aloysius Hall",
     image:
       "https://cdn.groupmuse.com/b186beaa-467c-45d1-b858-6b472ea8b3d8/-/scale_crop/1800x960/center/-/max_icc_size/10/-/format/auto/-/quality/lighter/-/progressive/yes/",
     description:
@@ -280,12 +245,9 @@ export const events: readonly Event[] = [
     cashPrize: 3000,
     eventHeadName: "Norah & Kabani",
     eventHeadNumber: "Norah: 9995572516, Kabani: 9496244119",
-    time: "",
   },
   {
     title: "Reel Making",
-    date: "",
-    venue: "",
     timeLimit: "Less than 1 minute.",
     image:
       "https://www.maketecheasier.com/assets/uploads/2022/08/best-apps-to-make-instagram-reels-featured-image-800x400.jpg",
@@ -306,12 +268,9 @@ export const events: readonly Event[] = [
     cashPrize: 3000,
     eventHeadName: "Aayesha & Gayathry",
     eventHeadNumber: "Aayesha: 9101213609, Gayathry: 7736740185",
-    time: "",
   },
   {
     title: "Stand-up Comedy",
-    date: "",
-    venue: "Arrupe",
     image:
       "https://media.gqindia.com/wp-content/uploads/2020/02/standup-comedy-specials.jpg",
     description:
@@ -330,12 +289,9 @@ export const events: readonly Event[] = [
     cashPrize: 2000,
     eventHeadName: "Alwin",
     eventHeadNumber: "Alwin: 9986149499, Divanshi: 6232782362",
-    time: "",
   },
   {
     title: "Treasure Hunt",
-    date: "",
-    venue: "Campus-wide",
     image:
       "https://pluspng.com/img-png/treasure-hunt-png-hd-treasure-hunt-1920.jpg",
     description: "Follow clues and solve riddles to find the hidden treasure.",
@@ -352,12 +308,9 @@ export const events: readonly Event[] = [
     cashPrize: 2000,
     eventHeadName: "Fathima & Elizabeth",
     eventHeadNumber: "Fathima: 9995963767, Elizabeth: 8138056003",
-    time: "Starts at 10:00 AM",
   },
   {
     title: "Rap and Beatbox",
-    date: "",
-    venue: "",
     image: "https://25.media.tumblr.com/tumblr_lqllh1v18p1qb4z6jo1_500.gif",
     description:
       "A high-energy event featuring rappers and beatboxers competing in dynamic tag teams.",
@@ -377,12 +330,9 @@ export const events: readonly Event[] = [
     cashPrize: 2000,
     eventHeadName: "Shawn & Denzel",
     eventHeadNumber: "Shawn: 9769860609, Denzel: 9886781028",
-    time: "",
   },
   {
     title: "BGMI",
-    date: "",
-    venue: "Online",
     image:
       "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWRicmgxMGlnN3BzbGp1anZxMGJhdmN3ajFoeHdzNmd5MmQxYnV0eSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/vVwv7I87uB9gZ7avim/giphy.gif",
     description:
@@ -407,12 +357,9 @@ export const events: readonly Event[] = [
     cashPrize: 2000,
     eventHeadName: "Astle & Adwaith",
     eventHeadNumber: "Astle: 8590867797, Adwaith: 9895115798",
-    time: "",
   },
   {
     title: "Meme Making",
-    date: "",
-    venue: "",
     image: "https://media.tenor.com/jWTOcH5trbIAAAAC/meow-im-dancing.gif",
     description:
       "A fun and creative event where participants design memes based on on-the-spot themes within a limited time frame.",
@@ -432,12 +379,9 @@ export const events: readonly Event[] = [
     cashPrize: 2000,
     eventHeadName: "Satyam & Adam",
     eventHeadNumber: "Satyam: 9663469507, Adam: 9188182446",
-    time: "",
   },
   {
     title: "Battle of Bands",
-    date: "",
-    venue: "Main Stage",
     image:
       "https://i.pinimg.com/originals/95/e3/ed/95e3ed74aa66610a2bea7c58245b6fdd.gif",
     description:
@@ -460,12 +404,9 @@ export const events: readonly Event[] = [
     cashPrize: 15000,
     eventHeadName: "Neha & Ruth",
     eventHeadNumber: "Neha: 7736182950, Ruth: 7090282338",
-    time: "09:15 AM",
   },
   {
     title: "Improv",
-    date: "",
-    venue: "",
     image:
       "https://www.ere.net/_next/image?url=https%3A%2F%2Fapi.eremedia.com%2Fwp-content%2Fuploads%2F2018%2F06%2Fimprov.jpg&w=1200&q=75",
     description:
@@ -483,12 +424,9 @@ export const events: readonly Event[] = [
     cashPrize: 2000,
     eventHeadName: "Gnana",
     eventHeadNumber: "Gnana: 9448615863, Devikrishna: 8848055691",
-    time: "",
   },
   {
     title: "Face Painting",
-    date: "",
-    venue: "",
     image:
       "https://media.gettyimages.com/id/1419740490/video/happy-halloween-mother-paint-little-girls-face-makeup-applied-for-trick-or-treating-for.jpg?s=640x640&k=20&c=EuqSy19bgc_yGyZFXKR4CTIqEFYkfyrqCOK0Lz8vNZs=",
     description:
@@ -511,12 +449,9 @@ export const events: readonly Event[] = [
     cashPrize: 2000,
     eventHeadName: "Surabhi & Deepali",
     eventHeadNumber: "Surabhi: 9620455780, Deepali: 9916547269",
-    time: "",
   },
   {
     title: "Murder Mystery",
-    date: "",
-    venue: "",
     image: "https://www.indigoextra.com/web/images/-mystery(1).webp",
     description:
       "An engaging trio event where teams solve ciphers, compete in a treasure hunt, and use detective skills to unravel mysteries.",
@@ -533,12 +468,9 @@ export const events: readonly Event[] = [
     cashPrize: 2000,
     eventHeadName: "Isha",
     eventHeadNumber: "Isha: 9591859161, Saanvi: 7470885176",
-    time: "",
   },
   {
     title: "Solo Instrumental",
-    date: "",
-    venue: "",
     image:
       "https://cdn.pixabay.com/animation/2023/04/06/23/17/23-17-32-365_512.gif",
     description:
@@ -560,12 +492,9 @@ export const events: readonly Event[] = [
     cashPrize: 2000,
     eventHeadName: "Ebenezer & Ricky",
     eventHeadNumber: "Ebenezer: 7406099809, Ricky: 9725758959",
-    time: "",
   },
   {
     title: "DJ Wars",
-    date: "",
-    venue: "",
     image:
       "https://i0.wp.com/jasminpatterson.com/wp-content/uploads/2018/05/What-Acting-Like-The-World-Really-Means-5.21.18.jpg?w=1920&ssl=1",
     description:
@@ -583,12 +512,9 @@ export const events: readonly Event[] = [
     cashPrize: 3000,
     eventHeadName: "Karan & Karin",
     eventHeadNumber: "Karan: 9591005231, Karin: 8147012753",
-    time: "",
   },
   {
     title: "Indian Classical Solo Singing",
-    date: "",
-    venue: "",
     image:
       "https://indianewengland.com/wp-content/uploads/2018/03/Kaushiki_Chakraborty-LQ-e1522282105483.jpg",
     description:
@@ -607,12 +533,9 @@ export const events: readonly Event[] = [
     cashPrize: 3000,
     eventHeadName: "Sirikrishna & Anagha",
     eventHeadNumber: "Sirikrishna: 9901549528, Anagha: 9108220057",
-    time: "",
   },
   {
     title: "Western Solo Singing",
-    date: "",
-    venue: "",
     image:
       "https://www.careersinmusic.com/wp-content/uploads/2018/11/singing-competition.jpg",
     description:
@@ -632,12 +555,9 @@ export const events: readonly Event[] = [
     cashPrize: 3000,
     eventHeadName: "Joanna & Rose",
     eventHeadNumber: "Joanna: 9150443795, Rose: 8660624338",
-    time: "",
   },
   {
     title: "Indian Solo Singing",
-    date: "",
-    venue: "",
     image:
       "https://i0.wp.com/www.socialnews.xyz/wp-content/uploads/2023/03/23/9af842f4d6651f8e1238cb1a7686a4d1.jpg?fit=1999%2C1413&quality=80&zoom=1&ssl=1?v=1679584024",
     description:
@@ -661,12 +581,9 @@ export const events: readonly Event[] = [
     cashPrize: 3000,
     eventHeadName: "Girikrishnan & Nia",
     eventHeadNumber: "Girikrishnan: 7587436579, Nia: 7349627355",
-    time: "",
   },
   {
     title: "Art",
-    date: " ",
-    venue: "",
     image:
       "https://th.bing.com/th/id/OIP.ZB6Icf7u5qEgVZfkWwZyiQHaE7?rs=1&pid=ImgDetMain",
     description:
@@ -686,12 +603,9 @@ export const events: readonly Event[] = [
     capacity: "Individual participation",
     eventHeadName: "Ved & Tanisha",
     eventHeadNumber: "Ved: 8698062091, Tanisha: 8762468171",
-    time: "",
   },
   {
     title: "Minute to Win It",
-    date: "",
-    venue: "Classroom",
     image:
       "https://d8it4huxumps7.cloudfront.net/uploads/images/opportunity/mobile_banner/6540c1859cbc2_just-a-minute-competition.png",
     description:
@@ -708,12 +622,9 @@ export const events: readonly Event[] = [
     eventHeadName: "Suhotra",
     eventHeadNumber: "Suhotra: 9433046441, Sania: 8825586625",
     capacity: "Individual participation",
-    time: "",
   },
   {
     title: "Photography",
-    date: "",
-    venue: "Campus-wide",
     image: "https://cdn.mos.cms.futurecdn.net/gvQ9NhQP8wbbM32jXy4V3j.jpg",
     description:
       "Capture stunning moments around the campus in this on-the-spot photography competition.",
@@ -736,12 +647,9 @@ export const events: readonly Event[] = [
     cashPrize: 2000,
     eventHeadName: "Dhanush & Vignesh",
     eventHeadNumber: "Dhanush: 8867052135, Vignesh: 7975984061",
-    time: "",
   },
   {
     title: "Western Solo Dance",
-    date: "",
-    venue: "",
     image: westernSolo,
     description:
       "Show off your best western dance moves in this exciting solo competition!",
@@ -757,12 +665,10 @@ export const events: readonly Event[] = [
     cashPrize: 3000,
     eventHeadName: "Jennifer & Athena",
     eventHeadNumber: "Jennifer: 9945519371, Athena: 9747981102",
-    time: "Starts at 11:00 AM",
+    capacity: "Individual participation",
   },
   {
     title: "Council Wars",
-    date: "",
-    venue: "Main Stage",
     image:
       "https://www.careeraddict.com/uploads/article/60560/student-life-school-council-campaign.png",
     description: "",
@@ -781,7 +687,6 @@ export const events: readonly Event[] = [
     cashPrize: 5000,
     eventHeadName: "Adhithya & Aishwarya",
     eventHeadNumber: "Adhithya: 6361302660, Aishwarya: 9962522299",
-    time: "",
   },
   {
     title: "Pro Night - Day 1",
@@ -790,9 +695,7 @@ export const events: readonly Event[] = [
     image:
       "https://img.freepik.com/premium-photo/dj-club-with-party-peopleai-generative_46383-955.jpg",
     registrationFee: 500,
-    venue: "University Ground",
     timeLimit: "5:00 PM - 07:30 PM",
-    date: "February 21 2025",
     rating: 0,
     open: true,
     rules: [
@@ -804,7 +707,6 @@ export const events: readonly Event[] = [
     ],
     eventHeadName: "Anjali",
     eventHeadNumber: "+91 96566 47656",
-    time: "",
   },
   {
     title: "Pro Night - Day 2",
@@ -813,9 +715,7 @@ export const events: readonly Event[] = [
     image:
       "https://img.freepik.com/premium-photo/dj-playing-mixing-music-nightclub-party-night-edm-dance-music-club-with-crowd_457222-1500.jpg",
     registrationFee: 500,
-    venue: "University Ground",
     timeLimit: "5:00 PM - 07:30 PM",
-    date: "February 22, 2025",
     rating: 0,
     open: true,
     rules: [
@@ -827,7 +727,6 @@ export const events: readonly Event[] = [
     ],
     eventHeadName: "Anjali",
     eventHeadNumber: "+91 96566 47656",
-    time: "",
   },
 ];
 
