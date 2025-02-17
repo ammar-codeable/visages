@@ -58,7 +58,9 @@ const EventsTable = ({
   return (
     <div className="w-full">
       <table className="w-full border-collapse">
-        <thead className="sticky top-0 bg-white">
+        <thead className="sticky -top-px bg-white">
+          {" "}
+          {/* Changed from top-0 to -top-px */}
           <tr className="border-b-2 border-orange-200">
             <th className="bg-orange-50/80">
               <button
@@ -120,8 +122,8 @@ const ScheduleDialog = ({ open, onOpenChange }: ScheduleDialogProps) => {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-h-[85vh] max-w-4xl overflow-hidden p-0">
-        <DialogHeader className="bg-gradient-to-r from-orange-500 to-orange-600 p-6">
+      <DialogContent className="flex max-h-[95vh] max-w-4xl flex-col overflow-hidden p-0 sm:max-h-[90vh]">
+        <DialogHeader className="shrink-0 bg-gradient-to-r from-orange-500 to-orange-600 p-6">
           <div className="flex items-center gap-3">
             <Calendar className="h-7 w-7 text-white" />
             <DialogTitle className="text-2xl font-bold text-white">
@@ -136,7 +138,7 @@ const ScheduleDialog = ({ open, onOpenChange }: ScheduleDialogProps) => {
           </div>
         </DialogHeader>
 
-        <div className="border-b border-orange-200 bg-orange-50/50 p-4">
+        <div className="shrink-0 border-b border-orange-200 bg-orange-50/50 p-4">
           <h3 className="mb-2 text-sm font-semibold text-orange-800">
             Pre-Events - February 20
           </h3>
@@ -153,8 +155,8 @@ const ScheduleDialog = ({ open, onOpenChange }: ScheduleDialogProps) => {
           </table>
         </div>
 
-        <Tabs defaultValue="day1" className="h-full">
-          <TabsList className="w-full justify-start rounded-none border-b bg-orange-50/50 p-0">
+        <Tabs defaultValue="day1" className="flex min-h-0 flex-1 flex-col">
+          <TabsList className="w-full shrink-0 justify-start rounded-none border-b bg-orange-50/50 p-0">
             <TabsTrigger
               value="day1"
               className="rounded-none border-b-2 border-transparent px-6 py-3 data-[state=active]:border-orange-500 data-[state=active]:bg-white"
@@ -169,23 +171,25 @@ const ScheduleDialog = ({ open, onOpenChange }: ScheduleDialogProps) => {
             </TabsTrigger>
           </TabsList>
 
-          <ScrollArea className="h-[calc(60vh-5rem)]">
-            <TabsContent value="day1" className="m-0">
-              <EventsTable
-                events={dayOneEvents}
-                sortConfig={sortConfig}
-                onSortChange={handleSort}
-              />
-            </TabsContent>
+          <div className="min-h-0 flex-1">
+            <ScrollArea className="h-[calc(95vh-22rem)] sm:h-[calc(90vh-20rem)]">
+              <TabsContent value="day1" className="m-0 p-0">
+                <EventsTable
+                  events={dayOneEvents}
+                  sortConfig={sortConfig}
+                  onSortChange={handleSort}
+                />
+              </TabsContent>
 
-            <TabsContent value="day2" className="m-0">
-              <EventsTable
-                events={dayTwoEvents}
-                sortConfig={sortConfig}
-                onSortChange={handleSort}
-              />
-            </TabsContent>
-          </ScrollArea>
+              <TabsContent value="day2" className="m-0 p-0">
+                <EventsTable
+                  events={dayTwoEvents}
+                  sortConfig={sortConfig}
+                  onSortChange={handleSort}
+                />
+              </TabsContent>
+            </ScrollArea>
+          </div>
         </Tabs>
       </DialogContent>
     </Dialog>
