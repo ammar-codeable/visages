@@ -467,7 +467,7 @@ export const events: readonly Event[] = [
     open: false,
     cashPrize: 2000,
     eventHeadName: "Isha",
-    eventHeadNumber: "Isha: 9591859161, Saanvi: 7470885176",
+    eventHeadNumber: "Isha: 9591859151, Saanvi: 7470885176",
   },
   {
     title: "Solo Instrumental",
