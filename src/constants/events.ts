@@ -452,7 +452,7 @@ export const events: readonly Event[] = [
   },
   {
     title: "Murder Mystery",
-    image: "https://www.indigoextra.com/web/images/-mystery(1).webp",
+    image: "https://is3-ssl.mzstatic.com/image/thumb/Podcasts113/v4/86/20/fe/8620fe6b-5177-81d1-d029-13ad0a9fa469/mza_3811589724885074256.jpg/1200x1200bb.jpg",
     description:
       "An engaging trio event where teams solve ciphers, compete in a treasure hunt, and use detective skills to unravel mysteries.",
     rating: 3,
