@@ -118,7 +118,7 @@ export const events: readonly Event[] = [
       "Exceeding the time limit may result in a penalty or disqualification.",
       "Use of vulgar language is prohibited.",
     ],
-    capacity: "6-10 members, 2 team per college. Cap at 15 teams",
+    capacity: "6-10 members. Cap at 15 teams",
     timeLimit: "6+2 minutes (6 minutes performance + 2 minute soundcheck)",
     open: false,
     cashPrize: 5000,
