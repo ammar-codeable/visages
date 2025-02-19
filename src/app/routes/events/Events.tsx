@@ -307,7 +307,7 @@ const Events = () => {
 
       <div className="relative z-10">
         {/* Page heading */}
-        <div className="px-4 pb-8 pt-24">
+        <div className="px-4 pb-4 pt-24">
           <div className="container relative mx-auto max-w-[90rem]">
             <motion.div
               className="text-center"
@@ -327,6 +327,27 @@ const Events = () => {
               <p className="mt-6 text-lg text-orange-700">
                 Discover and participate in our exciting cultural events and
                 competitions
+              </p>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Add Notice Section */}
+        <div className="mb-8 px-4">
+          <div className="container mx-auto max-w-[90rem]">
+            <motion.div
+              className="rounded-lg border-2 border-orange-200 bg-orange-50 p-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              <h3 className="font-semibold text-orange-950">
+                Important Notice for St Joseph's University Students
+              </h3>
+              <p className="mt-1 text-orange-800">
+                St Joseph's University students are not eligible to participate
+                in any events except BGMI. This includes both individual and
+                contingent registrations.
               </p>
             </motion.div>
           </div>
