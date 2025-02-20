@@ -4,6 +4,8 @@ import FancyText from "@/components/FancyText";
 import VisagesHighlights from "@/components/VisagesHighlights";
 import { motion } from "motion/react";
 import VisagesLogo from "/visages-logo.png";
+import { DJNightSection } from "@/components/DJNightSection";
+import { events } from "@/constants/events";
 
 const Home = () => (
   <div className="relative min-h-screen">
@@ -42,6 +44,7 @@ const Home = () => (
       </motion.div>
 
       <VisagesHighlights />
+      <DJNightSection events={events} index={0} />
 
       <motion.div
         initial={{ opacity: 0 }}
