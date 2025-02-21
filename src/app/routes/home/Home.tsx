@@ -43,13 +43,13 @@ const Home = () => (
         </div>
       </motion.div>
 
-      <VisagesHighlights />
-
       <div className="relative w-full bg-gradient-to-br from-purple-950 via-orange-950 to-purple-950 py-16">
         <div className="container mx-auto max-w-7xl px-4">
           <DJNightSection events={events} index={0} />
         </div>
       </div>
+      
+      <VisagesHighlights />
 
       <motion.div
         initial={{ opacity: 0 }}
