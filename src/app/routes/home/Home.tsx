@@ -4,6 +4,8 @@ import FancyText from "@/components/FancyText";
 import VisagesHighlights from "@/components/VisagesHighlights";
 import { motion } from "motion/react";
 import VisagesLogo from "/visages-logo.png";
+import { DJNightSection } from "@/components/DJNightSection";
+import { events } from "@/constants/events";
 
 const Home = () => (
   <div className="relative min-h-screen">
@@ -42,6 +44,12 @@ const Home = () => (
       </motion.div>
 
       <VisagesHighlights />
+
+      <div className="relative w-full bg-gradient-to-br from-purple-950 via-orange-950 to-purple-950 py-16">
+        <div className="container mx-auto max-w-7xl px-4">
+          <DJNightSection events={events} index={0} />
+        </div>
+      </div>
 
       <motion.div
         initial={{ opacity: 0 }}

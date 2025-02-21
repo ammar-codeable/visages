@@ -566,7 +566,7 @@ export const events: readonly Event[] = [
     registrationFee: 400,
     rules: [
       "Participants will have to sing a song based on one of the following themes: 'Nature', 'Adipoli', or 'Retro (1980s-90s)'.",
-      "Participants can pick any of the above mentioned themes and choose a song that aligns with the theme",
+      "Participants can pick any of the above mentioned themes and choose a song that aligns with the theme.",
       "Songs must belong to Indian languages (any) and genres only.",
       "Those performing their original compositions needn't follow the themes.",
       "One accompanying instrumentalist is allowed.",
